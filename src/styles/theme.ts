@@ -20,11 +20,20 @@ export const theme = {
     border: 'hsl(var(--border))',
     input: 'hsl(var(--input))',
     ring: 'hsl(var(--ring))',
+    brand: 'var(--brand)',
+    brandDark: 'var(--brand-dark)',
+    brandGlow: 'var(--brand-glow)',
+    surface: 'var(--surface)',
+    surfaceSolid: 'var(--surface-solid)',
+    faint: 'var(--faint)',
+    rule: 'var(--rule)',
+    navBg: 'var(--nav-bg)',
   },
   radii: {
     base: 'var(--radius)',
     sm: 'calc(var(--radius) - 4px)',
     lg: 'calc(var(--radius) + 4px)',
+    pill: '100px',
   },
 } as const;
 

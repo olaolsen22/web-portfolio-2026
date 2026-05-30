@@ -1,4 +1,4 @@
-@import '@fontsource-variable/geist';
+@import '@fontsource-variable/plus-jakarta-sans';
 @import '@fontsource-variable/geist-mono';
 
 @tailwind base;
@@ -6,53 +6,73 @@
 @tailwind utilities;
 
 :root {
-  --font-sans: 'Geist Variable', system-ui, sans-serif;
+  --font-sans: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-mono: 'Geist Mono Variable', monospace;
 
   /* shadcn/ui color tokens — light mode */
-  --background: 0 0% 100%;
-  --foreground: 240 10% 3.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 3.9%;
-  --primary: 240 5.9% 10%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 240 4.8% 95.9%;
-  --secondary-foreground: 240 5.9% 10%;
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
-  --accent: 240 4.8% 95.9%;
-  --accent-foreground: 240 5.9% 10%;
+  --background: 42 33% 94%;
+  --foreground: 40 13% 9%;
+  --card: 44 36% 96%;
+  --card-foreground: 40 13% 9%;
+  --popover: 44 36% 96%;
+  --popover-foreground: 40 13% 9%;
+  --primary: 40 13% 9%;
+  --primary-foreground: 42 33% 94%;
+  --secondary: 42 26% 90%;
+  --secondary-foreground: 40 13% 9%;
+  --muted: 42 26% 90%;
+  --muted-foreground: 33 10% 38%;
+  --accent: 42 26% 90%;
+  --accent-foreground: 40 13% 9%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
-  --border: 240 5.9% 90%;
-  --input: 240 5.9% 90%;
-  --ring: 240 5.9% 10%;
+  --border: 42 18% 85%;
+  --input: 42 18% 85%;
+  --ring: 160 84% 39%;
   --radius: 0.5rem;
+
+  /* extended design tokens */
+  --brand: #10b981;
+  --brand-dark: #059669;
+  --brand-glow: rgba(16, 185, 129, 0.2);
+  --surface: rgba(255, 255, 255, 0.62);
+  --surface-solid: hsl(44 36% 96%);
+  --faint: hsl(36 10% 66%);
+  --rule: rgba(0, 0, 0, 0.12);
+  --nav-bg: rgba(245, 242, 235, 0.8);
 }
 
 .dark {
   /* shadcn/ui color tokens — dark mode */
-  --background: 240 10% 3.9%;
-  --foreground: 0 0% 98%;
-  --card: 240 10% 3.9%;
-  --card-foreground: 0 0% 98%;
-  --popover: 240 10% 3.9%;
-  --popover-foreground: 0 0% 98%;
-  --primary: 0 0% 98%;
-  --primary-foreground: 240 5.9% 10%;
-  --secondary: 240 3.7% 15.9%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
-  --accent: 240 3.7% 15.9%;
-  --accent-foreground: 0 0% 98%;
+  --background: 40 15% 4%;
+  --foreground: 41 30% 89%;
+  --card: 40 20% 6%;
+  --card-foreground: 41 30% 89%;
+  --popover: 40 20% 6%;
+  --popover-foreground: 41 30% 89%;
+  --primary: 41 30% 89%;
+  --primary-foreground: 40 15% 4%;
+  --secondary: 42 12% 14%;
+  --secondary-foreground: 41 30% 89%;
+  --muted: 42 12% 14%;
+  --muted-foreground: 35 8% 44%;
+  --accent: 42 12% 14%;
+  --accent-foreground: 41 30% 89%;
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
-  --ring: 240 4.9% 83.9%;
+  --border: 40 8% 16%;
+  --input: 40 8% 16%;
+  --ring: 160 84% 39%;
+
+  /* extended design tokens */
+  --brand: #10b981;
+  --brand-dark: #059669;
+  --brand-glow: rgba(16, 185, 129, 0.18);
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-solid: hsl(40 20% 6%);
+  --faint: hsl(42 12% 21%);
+  --rule: rgba(255, 255, 255, 0.1);
+  --nav-bg: rgba(12, 11, 9, 0.85);
 }
 
 @layer base {

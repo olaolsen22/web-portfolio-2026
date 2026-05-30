@@ -16,6 +16,10 @@ export default {
       '2xl': `${breakpoints['2xl']}px`,
     },
     extend: {
+      fontFamily: {
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'monospace'],
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -50,6 +54,11 @@ export default {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        brand: {
+          DEFAULT: '#10b981',
+          dark: '#059669',
+        },
+        faint: 'hsl(var(--faint))',
       },
       borderRadius: {
         lg: 'var(--radius)',
