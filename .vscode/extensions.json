@@ -1,0 +1,34 @@
+{
+  "recommendations": [
+    // Linting & formatting
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+
+    // Tailwind
+    "bradlc.vscode-tailwindcss",
+
+    // TypeScript
+    "ms-vscode.vscode-typescript-next",
+
+    // React
+    "dsznajder.es7-react-js-snippets",
+
+    // styled-components
+    "styled-components.vscode-styled-components",
+
+    // Testing
+    "vitest.explorer",
+
+    // Git & code quality
+    "eamodio.gitlens",
+    "usernamehw.errorlens",
+
+    // Storybook
+    "storybook.storybook-vscode-official",
+
+    // Utilities
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "wix.vscode-import-cost"
+  ]
+}
