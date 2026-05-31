@@ -3,9 +3,10 @@ import type { Translations } from './en';
 export const nb: Translations = {
   nav: {
     home: 'Hjem',
-    projects: 'Prosjekter',
-    about: 'Om meg',
-    contact: 'Kontakt',
+    journey: 'Reise',
+    work: 'Arbeid',
+    connect: 'Kontakt',
+    techStack: 'Tech Stack',
   },
   accessibility: {
     enableAnimations: 'Animasjoner er deaktivert på enheten din. Slå dem på for dette nettstedet?',
