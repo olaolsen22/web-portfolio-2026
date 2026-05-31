@@ -1,9 +1,10 @@
 export interface Translations {
   nav: {
     home: string;
-    projects: string;
-    about: string;
-    contact: string;
+    journey: string;
+    work: string;
+    connect: string;
+    techStack: string;
   };
   accessibility: {
     enableAnimations: string;
@@ -18,9 +19,10 @@ export interface Translations {
 export const en: Translations = {
   nav: {
     home: 'Home',
-    projects: 'Projects',
-    about: 'About',
-    contact: 'Contact',
+    journey: 'Journey',
+    work: 'Work',
+    connect: 'Connect',
+    techStack: 'Tech Stack',
   },
   accessibility: {
     enableAnimations: 'Animations are disabled on your device. Enable them for this site?',
