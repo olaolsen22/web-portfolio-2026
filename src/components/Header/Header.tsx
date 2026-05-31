@@ -13,6 +13,7 @@ import { useReducedTransparency } from '@/hooks/useReducedTransparency';
 import { useDarkMode } from '@/hooks/useDarkMode';
 import { useLanguage } from '@/hooks/useLanguage';
 import { NAV_LINKS } from '@/constants/nav';
+import { NavLogo, NavLink, NavLinkMobile } from '@/components/ui/typography';
 import { cn } from '@/utils';
 import { animation } from '@/utils/animationConfig';
 
@@ -36,12 +37,8 @@ export const Header = () => {
       >
         {/* 3-column grid: logo | nav (centered) | controls */}
         <div className="flex items-center justify-between h-16 px-4 md:grid md:grid-cols-[1fr_auto_1fr] md:px-8">
-          <a
-            href="/"
-            className="text-xl font-semibold text-brand leading-none"
-            aria-label="Ola – go to top"
-          >
-            Ola.
+          <a href="/" className="leading-none" aria-label="Ola – go to top">
+            <NavLogo className="text-brand">Ola.</NavLogo>
           </a>
 
           <nav className="hidden md:flex" aria-label="Primary navigation">
@@ -51,9 +48,11 @@ export const Header = () => {
                   <NavigationMenuItem key={href}>
                     <NavigationMenuLink
                       href={href}
-                      className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      className="group/navlink px-3 py-2 transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     >
-                      {t(key)}
+                      <NavLink className="transition-colors group-hover/navlink:text-foreground">
+                        {t(key)}
+                      </NavLink>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 ))}
@@ -125,10 +124,12 @@ export const Header = () => {
                   <li key={href}>
                     <a
                       href={href}
-                      className="text-2xl font-semibold text-foreground hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1"
+                      className="group transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1"
                       onClick={() => setMenuOpen(false)}
                     >
-                      {t(key)}
+                      <NavLinkMobile className="transition-colors group-hover:text-primary">
+                        {t(key)}
+                      </NavLinkMobile>
                     </a>
                   </li>
                 ))}
