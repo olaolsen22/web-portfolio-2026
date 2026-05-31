@@ -34,7 +34,7 @@ export const en: Translations = {
   },
   hero: {
     workStatus: 'Open to work',
-    location: 'Norway',
+    location: 'Norway 🇳🇴',
     name: '[Your Name]',
     title: '[Professional Title]',
     details: '[Details about you with **bold** highlights go here.]',

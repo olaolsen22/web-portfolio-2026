@@ -10,7 +10,7 @@ export const nb: Translations = {
   },
   hero: {
     workStatus: 'Åpen for jobb',
-    location: 'Norge',
+    location: 'Norge 🇳🇴',
     name: '[Ditt navn]',
     title: '[Profesjonell tittel]',
     details: '[Detaljer om deg med **uthevede** ord går her.]',
