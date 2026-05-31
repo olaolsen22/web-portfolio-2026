@@ -8,6 +8,14 @@ export const nb: Translations = {
     connect: 'Kontakt',
     techStack: 'Tech Stack',
   },
+  hero: {
+    workStatus: 'Åpen for jobb',
+    location: 'Norge',
+    name: '[Ditt navn]',
+    title: '[Profesjonell tittel]',
+    details: '[Detaljer om deg med **uthevede** ord går her.]',
+    viewMyWork: 'Se mitt arbeid',
+  },
   accessibility: {
     enableAnimations: 'Animasjoner er deaktivert på enheten din. Slå dem på for dette nettstedet?',
     enableTransparency:

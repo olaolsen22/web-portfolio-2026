@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { LanguageProvider } from './context/LanguageContext';
 import { SkipLink } from './components/SkipLink/SkipLink';
 import { AccessibilityPrompts } from './components/AccessibilityPrompts/AccessibilityPrompts';
 import { Header } from './components/Header/Header';
@@ -18,7 +19,9 @@ const PortfolioApp = () => (
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <PortfolioApp />
+    <LanguageProvider>
+      <PortfolioApp />
+    </LanguageProvider>
   </QueryClientProvider>
 );
 
