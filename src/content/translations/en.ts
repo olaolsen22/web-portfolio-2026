@@ -6,6 +6,14 @@ export interface Translations {
     connect: string;
     techStack: string;
   };
+  hero: {
+    workStatus: string;
+    location: string;
+    name: string;
+    title: string;
+    details: string;
+    viewMyWork: string;
+  };
   accessibility: {
     enableAnimations: string;
     enableTransparency: string;
@@ -23,6 +31,14 @@ export const en: Translations = {
     work: 'Work',
     connect: 'Connect',
     techStack: 'Tech Stack',
+  },
+  hero: {
+    workStatus: 'Open to work',
+    location: 'Norway',
+    name: '[Your Name]',
+    title: '[Professional Title]',
+    details: '[Details about you with **bold** highlights go here.]',
+    viewMyWork: 'View My Work',
   },
   accessibility: {
     enableAnimations: 'Animations are disabled on your device. Enable them for this site?',
