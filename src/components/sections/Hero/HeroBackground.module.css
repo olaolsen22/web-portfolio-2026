@@ -1,0 +1,199 @@
+@keyframes drift1 {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(-80px, 60px) scale(1.08);
+  }
+}
+
+@keyframes drift2 {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(70px, -50px) scale(1.06);
+  }
+}
+
+@keyframes drift3 {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(50px, 40px) scale(0.92);
+  }
+}
+
+@keyframes dotFloat {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(80vw, -63vh);
+    opacity: 0;
+  }
+}
+
+/* ── Container ─────────────────────────────────── */
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  contain: layout style paint;
+}
+
+/* ── Layer 1: Vertical grid ─────────────────────── */
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, var(--rule) 1px, transparent 1px);
+  background-size: 80px 100%;
+  opacity: 0.5;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 45%, black, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 45%, black, transparent 80%);
+}
+
+/* ── Layer 2: Gradient blobs ─────────────────────── */
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  will-change: transform;
+}
+
+/* Blob 1 — accent, top-right */
+.s1 {
+  width: 540px;
+  height: 540px;
+  top: -120px;
+  right: -80px;
+  background: radial-gradient(circle, var(--brand), transparent 70%);
+  opacity: 0.22;
+  animation: drift1 22s ease-in-out infinite alternate;
+}
+
+:global(.dark) .s1 {
+  opacity: 0.18;
+}
+
+/* Blob 2 — warm amber, bottom-left */
+.s2 {
+  width: 420px;
+  height: 420px;
+  bottom: -100px;
+  left: -60px;
+  background: radial-gradient(circle, #f59e0b, transparent 70%);
+  opacity: 0.13;
+  animation: drift2 28s ease-in-out infinite alternate;
+}
+
+:global(.dark) .s2 {
+  opacity: 0.1;
+}
+
+/* Blob 3 — accent echo, mid-center */
+.s3 {
+  width: 280px;
+  height: 280px;
+  top: 30%;
+  left: 35%;
+  background: radial-gradient(circle, var(--brand), transparent 70%);
+  opacity: 0.1;
+  animation: drift3 26s ease-in-out infinite alternate;
+}
+
+:global(.dark) .s3 {
+  opacity: 0.09;
+}
+
+/* ── Layer 3: Floating accent dots ──────────────── */
+
+.dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 18px var(--brand);
+  top: 75%;
+  left: 10%;
+  animation: dotFloat linear infinite;
+}
+
+.d1 {
+  animation-duration: 18s;
+  animation-delay: 0s;
+}
+.d2 {
+  animation-duration: 22s;
+  animation-delay: -7s;
+}
+.d3 {
+  animation-duration: 20s;
+  animation-delay: -13s;
+}
+
+/* ── Layer 4: Grain overlay ─────────────────────── */
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.045;
+}
+
+/* ── Mobile / coarse-pointer ─────────────────────── */
+/* Touch devices: cut GPU cost by halving blur, removing dots + s3 + grain */
+
+@media (pointer: coarse) {
+  .shape {
+    filter: blur(40px);
+  }
+  .s3 {
+    display: none;
+  }
+  .dot {
+    display: none;
+  }
+  .grain {
+    display: none;
+  }
+  .grid {
+    opacity: 0.35;
+  }
+}
+
+/* ── Reduced motion ──────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .shape,
+  .dot {
+    animation: none;
+  }
+}
+
+/* ── No-perf (JS-applied for low-hardware desktops) ─ */
+
+.noPerf .shape,
+.noPerf .dot {
+  animation: none;
+}
+.noPerf .grid {
+  opacity: 0.25;
+}

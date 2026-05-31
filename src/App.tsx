@@ -3,6 +3,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import { SkipLink } from './components/SkipLink/SkipLink';
 import { AccessibilityPrompts } from './components/AccessibilityPrompts/AccessibilityPrompts';
 import { Header } from './components/Header/Header';
+import { Hero } from './components/sections/Hero/Hero';
 
 const queryClient = new QueryClient();
 
@@ -11,7 +12,7 @@ const PortfolioApp = () => (
     <SkipLink />
     <Header />
     <main id="main" className="pt-16">
-      {/* sections go here */}
+      <Hero />
     </main>
     <AccessibilityPrompts />
   </div>

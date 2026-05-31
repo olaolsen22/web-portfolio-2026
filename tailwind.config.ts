@@ -58,6 +58,8 @@ export default {
           DEFAULT: '#10b981',
           dark: '#059669',
         },
+        'border-mid': 'var(--border-mid)',
+        surface: 'var(--surface)',
         faint: 'hsl(var(--faint))',
       },
       fontSize: {

@@ -38,6 +38,7 @@
   --surface: rgba(255, 255, 255, 0.62);
   --surface-solid: hsl(44 36% 96%);
   --faint: hsl(36 10% 66%);
+  --border-mid: rgba(0, 0, 0, 0.14);
   --rule: rgba(0, 0, 0, 0.12);
   --nav-bg: rgba(245, 242, 235, 0.8);
   --menu-bg: rgba(245, 242, 235, 0.96);
@@ -72,6 +73,7 @@
   --surface: rgba(255, 255, 255, 0.04);
   --surface-solid: hsl(40 20% 6%);
   --faint: hsl(42 12% 21%);
+  --border-mid: rgba(255, 255, 255, 0.13);
   --rule: rgba(255, 255, 255, 0.1);
   --nav-bg: rgba(12, 11, 9, 0.85);
   --menu-bg: rgba(12, 11, 9, 0.97);
