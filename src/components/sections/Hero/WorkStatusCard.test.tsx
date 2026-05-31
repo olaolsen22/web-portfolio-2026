@@ -20,7 +20,7 @@ describe('WorkStatusCard', () => {
   });
 
   it('renders the flag emoji', () => {
-    render(<WorkStatusCard workStatus="Open to work" location="Norway" />);
+    render(<WorkStatusCard workStatus="Open to work" location="Norway 🇳🇴" />);
     expect(screen.getByText(/🇳🇴/)).toBeInTheDocument();
   });
 });
