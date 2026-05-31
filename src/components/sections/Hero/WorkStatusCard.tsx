@@ -13,7 +13,7 @@ export const WorkStatusCard = ({ workStatus, location, className }: WorkStatusCa
       <span className="absolute inline-flex size-full rounded-full bg-brand opacity-75 animate-ping" />
       <span className="relative inline-flex size-2.5 rounded-full bg-brand" />
     </span>
-    <span className="flex justify-between gap-1 w-full text-white">
+    <span className="flex justify-between gap-1 w-full text-foreground">
       <span>{workStatus}</span>
       <span className="text-muted-foreground" aria-hidden="true">
         ·
