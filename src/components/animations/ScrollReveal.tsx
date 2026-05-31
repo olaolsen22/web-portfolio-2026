@@ -13,7 +13,7 @@ interface ScrollRevealProps {
 export const ScrollReveal = ({
   children,
   delay = 0,
-  duration = animation.duration.base,
+  duration = animation.duration.scroll,
   className,
 }: ScrollRevealProps) => {
   const { motionAllowed } = useReducedMotion();
@@ -25,7 +25,7 @@ export const ScrollReveal = ({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration, delay, ease: animation.ease.out }}
