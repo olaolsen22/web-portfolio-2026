@@ -1,21 +1,13 @@
 import { useState } from 'react';
-import { Moon, Sun, Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Button } from '@/components/ui/button';
-import {
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuLink,
-} from '@/components/ui/navigation-menu';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { useReducedTransparency } from '@/hooks/useReducedTransparency';
 import { useDarkMode } from '@/hooks/useDarkMode';
 import { useLanguage } from '@/hooks/useLanguage';
-import { NAV_LINKS } from '@/constants/nav';
-import { NavLogo, NavLink, NavLinkMobile } from '@/components/ui/typography';
+import { NavLogo } from '@/components/ui/typography';
 import { cn } from '@/utils';
-import { animation } from '@/utils/animationConfig';
+import { NavDesktop } from './NavDesktop';
+import { HeaderControls } from './HeaderControls';
+import { NavMobile } from './NavMobile';
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -41,103 +33,27 @@ export const Header = () => {
             <NavLogo className="text-brand">Ola.</NavLogo>
           </a>
 
-          <nav className="hidden md:flex" aria-label="Primary navigation">
-            <NavigationMenu>
-              <NavigationMenuList>
-                {NAV_LINKS.map(({ key, href }) => (
-                  <NavigationMenuItem key={href}>
-                    <NavigationMenuLink
-                      href={href}
-                      className="group/navlink px-3 py-2 transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                    >
-                      <NavLink className="transition-colors group-hover/navlink:text-foreground">
-                        {t(key)}
-                      </NavLink>
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
-          </nav>
+          <NavDesktop t={t} />
 
-          <div className="flex items-center justify-end gap-2">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={toggleLang}
-              aria-label={lang === 'en' ? 'Switch to Norwegian' : 'Switch to English'}
-            >
-              <span className="text-xs font-semibold">{lang === 'en' ? 'NO' : 'EN'}</span>
-            </Button>
-
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={toggleDark}
-              aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-            >
-              {isDark ? <Sun /> : <Moon />}
-            </Button>
-
-            <Button
-              variant="outline"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setMenuOpen((prev) => !prev)}
-              aria-expanded={menuOpen}
-              aria-controls="mobile-menu"
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            >
-              {menuOpen ? <X /> : <Menu />}
-            </Button>
-          </div>
+          <HeaderControls
+            lang={lang}
+            toggleLang={toggleLang}
+            isDark={isDark}
+            toggleDark={toggleDark}
+            menuOpen={menuOpen}
+            setMenuOpen={setMenuOpen}
+          />
         </div>
       </header>
 
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            id="mobile-menu"
-            key="mobile-menu"
-            initial={{ opacity: 0, y: motionAllowed ? -8 : 0 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: motionAllowed ? -8 : 0 }}
-            transition={{
-              duration: motionAllowed ? animation.duration.fast : 0,
-              ease: animation.ease.out,
-            }}
-            className={cn(
-              'fixed inset-0 z-[49] flex flex-col md:hidden',
-              transparencyAllowed ? 'backdrop-blur-xl' : 'bg-background'
-            )}
-            style={transparencyAllowed ? { backgroundColor: 'var(--menu-bg)' } : undefined}
-            role="dialog"
-            aria-modal="true"
-            aria-label={lang === 'en' ? 'Navigation menu' : 'Navigasjonsmeny'}
-          >
-            <nav
-              className="flex flex-1 items-center justify-center pt-16"
-              aria-label={lang === 'en' ? 'Mobile navigation' : 'Mobil navigasjon'}
-            >
-              <ul className="flex flex-col items-center gap-8">
-                {NAV_LINKS.map(({ key, href }) => (
-                  <li key={href}>
-                    <a
-                      href={href}
-                      className="group transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      <NavLinkMobile className="transition-colors group-hover:text-primary">
-                        {t(key)}
-                      </NavLinkMobile>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <NavMobile
+        menuOpen={menuOpen}
+        motionAllowed={motionAllowed}
+        transparencyAllowed={transparencyAllowed}
+        lang={lang}
+        t={t}
+        onClose={() => setMenuOpen(false)}
+      />
     </>
   );
 };
