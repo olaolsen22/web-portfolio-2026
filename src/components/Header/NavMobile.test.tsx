@@ -32,17 +32,17 @@ describe('NavMobile', () => {
 
   it('renders a link for each nav item', () => {
     render(<NavMobile {...defaults} />);
-    expect(screen.getByRole('link', { name: 'nav.journey' })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'nav.work' })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'nav.connect' })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'nav.techStack' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /nav\.journey/ })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /nav\.work/ })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /nav\.connect/ })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /nav\.techStack/ })).toBeInTheDocument();
   });
 
   it('calls onClose when a nav link is clicked', async () => {
     const onClose = vi.fn();
     const user = userEvent.setup();
     render(<NavMobile {...defaults} onClose={onClose} />);
-    await user.click(screen.getByRole('link', { name: 'nav.journey' }));
+    await user.click(screen.getByRole('link', { name: /nav\.journey/ }));
     expect(onClose).toHaveBeenCalledOnce();
   });
 
