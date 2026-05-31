@@ -28,7 +28,7 @@ export const Header = () => {
         style={transparencyAllowed ? { backgroundColor: 'var(--nav-bg)' } : undefined}
       >
         {/* 3-column grid: logo | nav (centered) | controls */}
-        <div className="flex items-center justify-between h-16 px-4 md:grid md:grid-cols-[1fr_auto_1fr] md:px-8">
+        <div className="flex items-center justify-between h-[5.3rem] px-4 md:grid md:grid-cols-[1fr_auto_1fr] md:px-8">
           <a href="/" className="leading-none" aria-label="Ola – go to top">
             <NavLogo className="text-brand">Ola.</NavLogo>
           </a>
