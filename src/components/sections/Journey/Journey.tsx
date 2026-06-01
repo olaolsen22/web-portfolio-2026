@@ -9,10 +9,15 @@ export const Journey = () => {
   return (
     <section
       aria-labelledby="journey-heading"
-      className="w-full border-t border-[var(--rule)] py-16"
+      className="w-full border-t border-[var(--rule)] py-16 min-h-dvh flex flex-col justify-center"
     >
       <div className="container">
-        <SectionHeader id="journey-heading" title={t('journey.title')} className="mb-10" />
+        <SectionHeader
+          id="journey-heading"
+          title={t('journey.title')}
+          description={t('journey.description')}
+          className="mb-10"
+        />
         <JourneyList items={journeyItems} />
       </div>
     </section>
