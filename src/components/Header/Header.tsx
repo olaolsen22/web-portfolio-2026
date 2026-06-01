@@ -23,7 +23,9 @@ export const Header = () => {
       <header
         className={cn(
           'fixed top-0 left-0 right-0 z-50 w-full border-b',
-          transparencyAllowed ? 'backdrop-blur-md border-border/60' : 'bg-background border-border'
+          transparencyAllowed
+            ? 'backdrop-blur-xl backdrop-saturate-[1.6] border-border-mid'
+            : 'bg-background border-border'
         )}
         style={transparencyAllowed ? { backgroundColor: 'var(--nav-bg)' } : undefined}
       >
