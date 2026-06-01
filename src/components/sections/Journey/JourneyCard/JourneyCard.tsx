@@ -1,5 +1,5 @@
 import { cn } from '@/utils';
-import { H3, Small, P } from '@/components/ui/typography';
+import { H3, Label, P } from '@/components/ui/typography';
 import type { JourneyItem } from '@/content/journeyItems';
 
 interface JourneyCardProps {
@@ -15,20 +15,20 @@ export const JourneyCard = ({ index, item, className }: JourneyCardProps) => {
     <article
       className={cn('group flex gap-6 border-b border-[var(--rule)] py-8 md:gap-10', className)}
     >
-      <div className="w-10 shrink-0 pt-1 md:w-14">
+      <div className="w-14 shrink-0 self-start pt-1 md:w-20">
         <span
           aria-hidden="true"
-          className="font-mono text-[0.9rem] font-bold text-brand opacity-30 transition-opacity group-hover:opacity-100"
+          className="text-[clamp(2rem,5vw,4rem)] font-extrabold leading-none tracking-[-0.04em] text-brand opacity-[0.18] transition-opacity group-hover:opacity-100"
         >
           {formattedIndex}
         </span>
       </div>
 
-      <div className="flex min-w-0 flex-1 flex-col gap-1">
-        <Small className="not-italic">{item.yearRange}</Small>
-        <H3>{item.title}</H3>
-        <P className="font-medium text-muted-foreground">{item.organization}</P>
-        <P className="mt-1">{item.details}</P>
+      <div className="flex min-w-0 flex-1 flex-col">
+        <Label className="mb-[6px]">{item.yearRange}</Label>
+        <H3 className="text-[clamp(1.1rem,2vw,1.3rem)] mb-[3px]">{item.title}</H3>
+        <P className="font-semibold mb-[10px]">{item.organization}</P>
+        <P className="leading-[1.72] max-w-[540px]">{item.details}</P>
       </div>
     </article>
   );
