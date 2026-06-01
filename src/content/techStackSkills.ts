@@ -1,0 +1,15 @@
+export const techStackSkills = [
+  'TypeScript',
+  'React',
+  'Vite',
+  'Tailwind CSS',
+  'Next.js',
+  'shadcn/ui',
+  'Motion',
+  'React Query',
+  'Figma',
+  'Vitest',
+  'Storybook',
+  'Node.js',
+  'Git',
+];

@@ -14,6 +14,10 @@ export interface Translations {
     details: string;
     viewMyWork: string;
   };
+  techStack: {
+    pause: string;
+    play: string;
+  };
   accessibility: {
     enableAnimations: string;
     enableTransparency: string;
@@ -40,6 +44,10 @@ export const en: Translations = {
     details:
       'I turn **TypeScript** and too much coffee into experiences people actually enjoy using. 4+ years shipping interfaces at TwistResources and D.W. Morgan — obsessing over the details that make products feel **native, not just functional.**',
     viewMyWork: 'View My Work',
+  },
+  techStack: {
+    pause: 'Pause',
+    play: 'Play',
   },
   accessibility: {
     enableAnimations: 'Animations are disabled on your device. Enable them for this site?',

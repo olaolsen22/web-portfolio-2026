@@ -4,6 +4,7 @@ import { SkipLink } from './components/SkipLink/SkipLink';
 import { AccessibilityPrompts } from './components/AccessibilityPrompts/AccessibilityPrompts';
 import { Header } from './components/Header/Header';
 import { Hero } from './components/sections/Hero/Hero';
+import { TechStackMarquee } from './components/sections/TechStackMarquee/TechStackMarquee';
 
 const queryClient = new QueryClient();
 
@@ -11,8 +12,9 @@ const PortfolioApp = () => (
   <div className="min-h-screen bg-background text-foreground">
     <SkipLink />
     <Header />
-    <main id="main" className="pt-16">
+    <main id="main" className="flex h-dvh flex-col pt-16">
       <Hero />
+      <TechStackMarquee />
     </main>
     <AccessibilityPrompts />
   </div>
