@@ -10,7 +10,7 @@ export const Hero = () => {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative isolate flex min-h-[calc(100dvh-4rem)] flex-col px-6 py-10 md:px-12 lg:px-20 justify-end"
+      className="relative isolate flex flex-1 flex-col px-6 py-10 md:px-12 lg:px-20 justify-end"
     >
       <HeroBackground />
 
