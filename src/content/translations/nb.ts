@@ -16,6 +16,10 @@ export const nb: Translations = {
     details: '[Detaljer om deg med **uthevede** ord går her.]',
     viewMyWork: 'Se mitt arbeid',
   },
+  techStack: {
+    pause: 'Pause',
+    play: 'Spill av',
+  },
   accessibility: {
     enableAnimations: 'Animasjoner er deaktivert på enheten din. Slå dem på for dette nettstedet?',
     enableTransparency:
