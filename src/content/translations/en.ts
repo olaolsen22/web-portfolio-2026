@@ -18,6 +18,9 @@ export interface Translations {
     pause: string;
     play: string;
   };
+  journey: {
+    title: string;
+  };
   accessibility: {
     enableAnimations: string;
     enableTransparency: string;
@@ -48,6 +51,9 @@ export const en: Translations = {
   techStack: {
     pause: 'Pause',
     play: 'Play',
+  },
+  journey: {
+    title: '[Journey section title]',
   },
   accessibility: {
     enableAnimations: 'Animations are disabled on your device. Enable them for this site?',
