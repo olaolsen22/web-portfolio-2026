@@ -35,9 +35,10 @@ export const en: Translations = {
   hero: {
     workStatus: 'Open to work',
     location: 'Norway 🇳🇴',
-    name: '[Your Name]',
-    title: '[Professional Title]',
-    details: '[Details about you with **bold** highlights go here.]',
+    name: 'OLA O.',
+    title: 'FRONTEND DEVELOPER',
+    details:
+      'I turn **TypeScript** and too much coffee into experiences people actually enjoy using. 4+ years shipping interfaces at TwistResources and D.W. Morgan — obsessing over the details that make products feel **native, not just functional.**',
     viewMyWork: 'View My Work',
   },
   accessibility: {
