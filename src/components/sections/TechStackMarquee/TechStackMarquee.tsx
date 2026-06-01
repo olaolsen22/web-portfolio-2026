@@ -1,0 +1,48 @@
+import { useState } from 'react';
+import { Pause, Play } from 'lucide-react';
+import { useLanguage } from '@/hooks/useLanguage';
+import { useReducedMotion } from '@/hooks/useReducedMotion';
+import { Button } from '@/components/ui/button';
+import { techStackSkills } from '@/content/techStackSkills';
+import { Marquee } from './Marquee';
+
+export const TechStackMarquee = () => {
+  const { t } = useLanguage();
+  const { motionAllowed } = useReducedMotion();
+  const [isPaused, setIsPaused] = useState(false);
+
+  const toggle = () => setIsPaused((p) => !p);
+
+  return (
+    <section aria-label={t('nav.techStack')} className="w-full border-t border-[var(--rule)] py-4">
+      {motionAllowed && !isPaused && (
+        <ul className="sr-only">
+          {techStackSkills.map((skill) => (
+            <li key={skill}>{skill}</li>
+          ))}
+        </ul>
+      )}
+
+      <div className={`flex ${isPaused ? 'items-start' : 'items-center'}`}>
+        <div className="min-w-0 flex-1">
+          <Marquee skills={techStackSkills} isPaused={isPaused} />
+        </div>
+
+        {motionAllowed && (
+          <div className="shrink-0 px-6 ">
+            <Button variant="ghost" size="sm" onClick={toggle} aria-pressed={isPaused}>
+              {isPaused ? (
+                <Play size={13} aria-hidden="true" className="shrink-0" />
+              ) : (
+                <Pause size={13} aria-hidden="true" className="shrink-0" />
+              )}
+              <span className="hidden sm:inline">
+                {isPaused ? t('techStack.play') : t('techStack.pause')}
+              </span>
+            </Button>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
