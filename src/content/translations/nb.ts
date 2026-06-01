@@ -20,6 +20,10 @@ export const nb: Translations = {
     pause: 'Pause',
     play: 'Spill av',
   },
+  journey: {
+    title: '[Tittel for reise-seksjonen]',
+    description: 'Slik ble jeg utvikler.',
+  },
   accessibility: {
     enableAnimations: 'Animasjoner er deaktivert på enheten din. Slå dem på for dette nettstedet?',
     enableTransparency:

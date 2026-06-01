@@ -5,6 +5,7 @@ import { AccessibilityPrompts } from './components/AccessibilityPrompts/Accessib
 import { Header } from './components/Header/Header';
 import { Hero } from './components/sections/Hero/Hero';
 import { TechStackMarquee } from './components/sections/TechStackMarquee/TechStackMarquee';
+import { Journey } from './components/sections/Journey/Journey';
 
 const queryClient = new QueryClient();
 
@@ -12,9 +13,12 @@ const PortfolioApp = () => (
   <div className="min-h-screen bg-background text-foreground">
     <SkipLink />
     <Header />
-    <main id="main" className="flex h-dvh flex-col pt-16">
-      <Hero />
-      <TechStackMarquee />
+    <main id="main">
+      <div className="flex h-dvh lg:max-h-[1080px] flex-col pt-16">
+        <Hero />
+        <TechStackMarquee />
+      </div>
+      <Journey />
     </main>
     <AccessibilityPrompts />
   </div>

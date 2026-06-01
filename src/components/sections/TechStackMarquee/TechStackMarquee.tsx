@@ -15,33 +15,35 @@ export const TechStackMarquee = () => {
 
   return (
     <section aria-label={t('nav.techStack')} className="w-full border-t border-[var(--rule)] py-4">
-      {motionAllowed && !isPaused && (
-        <ul className="sr-only">
-          {techStackSkills.map((skill) => (
-            <li key={skill}>{skill}</li>
-          ))}
-        </ul>
-      )}
-
-      <div className={`flex ${isPaused ? 'items-start' : 'items-center'}`}>
-        <div className="min-w-0 flex-1">
-          <Marquee skills={techStackSkills} isPaused={isPaused} />
-        </div>
-
-        {motionAllowed && (
-          <div className="shrink-0 px-6 ">
-            <Button variant="ghost" size="sm" onClick={toggle} aria-pressed={isPaused}>
-              {isPaused ? (
-                <Play size={13} aria-hidden="true" className="shrink-0" />
-              ) : (
-                <Pause size={13} aria-hidden="true" className="shrink-0" />
-              )}
-              <span className="hidden sm:inline">
-                {isPaused ? t('techStack.play') : t('techStack.pause')}
-              </span>
-            </Button>
-          </div>
+      <div className="mx-auto max-w-[1920px] px-6 md:px-12 lg:px-20">
+        {motionAllowed && !isPaused && (
+          <ul className="sr-only">
+            {techStackSkills.map((skill) => (
+              <li key={skill}>{skill}</li>
+            ))}
+          </ul>
         )}
+
+        <div className={`flex ${isPaused ? 'items-start' : 'items-center'}`}>
+          <div className="min-w-0 flex-1">
+            <Marquee skills={techStackSkills} isPaused={isPaused} />
+          </div>
+
+          {motionAllowed && (
+            <div className="shrink-0 pl-4">
+              <Button variant="ghost" size="sm" onClick={toggle} aria-pressed={isPaused}>
+                {isPaused ? (
+                  <Play size={13} aria-hidden="true" className="shrink-0" />
+                ) : (
+                  <Pause size={13} aria-hidden="true" className="shrink-0" />
+                )}
+                <span className="hidden sm:inline">
+                  {isPaused ? t('techStack.play') : t('techStack.pause')}
+                </span>
+              </Button>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

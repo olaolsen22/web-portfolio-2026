@@ -18,6 +18,10 @@ export interface Translations {
     pause: string;
     play: string;
   };
+  journey: {
+    title: string;
+    description: string;
+  };
   accessibility: {
     enableAnimations: string;
     enableTransparency: string;
@@ -42,12 +46,16 @@ export const en: Translations = {
     name: 'OLA O.',
     title: 'FRONTEND DEVELOPER',
     details:
-      'I turn **TypeScript** and too much coffee into experiences people actually enjoy using. 4+ years shipping interfaces at TwistResources and D.W. Morgan — obsessing over the details that make products feel **native, not just functional.**',
+      'I turn **TypeScript** and too much coffee into experiences people actually enjoy using. 4+ years shipping interfaces at X and Y — obsessing over the details that make products feel **native, not just functional.**',
     viewMyWork: 'View My Work',
   },
   techStack: {
     pause: 'Pause',
     play: 'Play',
+  },
+  journey: {
+    title: '[Journey section title]',
+    description: 'How I became a developer.',
   },
   accessibility: {
     enableAnimations: 'Animations are disabled on your device. Enable them for this site?',
