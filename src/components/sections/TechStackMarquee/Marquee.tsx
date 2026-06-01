@@ -31,7 +31,7 @@ export const Marquee = ({ skills, isPaused }: MarqueeProps) => {
 
   if (!motionAllowed || isPaused) {
     return (
-      <div className="flex flex-wrap justify-center gap-y-3 px-6 md:px-12 lg:px-20" role="list">
+      <div className="flex flex-wrap justify-center gap-y-3" role="list">
         {skills.map((skill, i) => (
           <Pill key={skill} role="listitem" className="flex items-center">
             {i > 0 && (
