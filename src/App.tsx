@@ -5,6 +5,7 @@ import { AccessibilityPrompts } from './components/AccessibilityPrompts/Accessib
 import { Header } from './components/Header/Header';
 import { Hero } from './components/sections/Hero/Hero';
 import { TechStackMarquee } from './components/sections/TechStackMarquee/TechStackMarquee';
+import { Journey } from './components/sections/Journey/Journey';
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ const PortfolioApp = () => (
     <main id="main" className="flex h-dvh flex-col pt-16">
       <Hero />
       <TechStackMarquee />
+      <Journey />
     </main>
     <AccessibilityPrompts />
   </div>
