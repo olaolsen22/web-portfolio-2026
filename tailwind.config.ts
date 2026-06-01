@@ -7,6 +7,21 @@ export default {
   darkMode: 'class',
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1.5rem',
+        md: '3rem',
+        lg: '5rem',
+      },
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1152px',
+        xl: '1152px',
+        '2xl': '1152px',
+      },
+    },
     screens: {
       xs: `${breakpoints.xs}px`,
       sm: `${breakpoints.sm}px`,
