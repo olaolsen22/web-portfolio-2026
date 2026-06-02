@@ -24,6 +24,10 @@ export const nb: Translations = {
     title: '[Tittel for reise-seksjonen]',
     description: 'Slik ble jeg utvikler.',
   },
+  selectedWork: {
+    title: 'Utvalgte prosjekter',
+    description: 'Sideprosjekter jeg faktisk er stolt av.',
+  },
   accessibility: {
     enableAnimations: 'Animasjoner er deaktivert på enheten din. Slå dem på for dette nettstedet?',
     enableTransparency:

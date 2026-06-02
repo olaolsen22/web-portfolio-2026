@@ -22,6 +22,10 @@ export interface Translations {
     title: string;
     description: string;
   };
+  selectedWork: {
+    title: string;
+    description: string;
+  };
   accessibility: {
     enableAnimations: string;
     enableTransparency: string;
@@ -56,6 +60,10 @@ export const en: Translations = {
   journey: {
     title: '[Journey section title]',
     description: 'How I became a developer.',
+  },
+  selectedWork: {
+    title: 'Selected Work',
+    description: "Side quests I'm actually proud of.",
   },
   accessibility: {
     enableAnimations: 'Animations are disabled on your device. Enable them for this site?',
