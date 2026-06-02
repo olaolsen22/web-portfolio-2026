@@ -1,6 +1,7 @@
 import { cn } from '@/utils';
 import { IndexedCard } from '@/components/ui/IndexedCard/IndexedCard';
-import { H3, Tag, P } from '@/components/ui/typography';
+import { H3, P } from '@/components/ui/typography';
+import { Badge } from '@/components/ui/badge';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import type { SelectedWorkItem, WorkStatus } from '@/content/selectedWorkItems';
 
@@ -62,10 +63,10 @@ export const SelectedWorkCard = ({ index, item, className }: SelectedWorkCardPro
             {statusLabels[item.status]}
           </span>
         </div>
-        <ul className="flex flex-wrap gap-x-3 gap-y-1 list-none" aria-label="Technologies">
+        <ul className="flex flex-wrap gap-[6px] list-none" aria-label="Technologies">
           {item.tags.map((tag) => (
             <li key={tag}>
-              <Tag>{tag}</Tag>
+              <Badge variant="stack">{tag}</Badge>
             </li>
           ))}
         </ul>
