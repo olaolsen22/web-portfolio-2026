@@ -4,7 +4,7 @@ import { journeyItems } from '@/content/journeyItems';
 import { JourneyList } from './JourneyList/JourneyList';
 
 export const Journey = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   return (
     <section
@@ -18,7 +18,7 @@ export const Journey = () => {
           description={t('journey.description')}
           className="mb-10"
         />
-        <JourneyList items={journeyItems} />
+        <JourneyList items={journeyItems[lang]} />
       </div>
     </section>
   );
