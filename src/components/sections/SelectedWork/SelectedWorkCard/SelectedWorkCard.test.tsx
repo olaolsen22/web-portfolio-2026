@@ -3,6 +3,18 @@ import { axe } from 'vitest-axe';
 import { SelectedWorkCard } from './SelectedWorkCard';
 import type { SelectedWorkItem } from '@/content/selectedWorkItems';
 
+vi.mock('@/hooks/useLanguage', () => ({
+  useLanguage: () => ({
+    t: (key: string) => key,
+    lang: 'en' as const,
+    setLang: vi.fn(),
+  }),
+}));
+
+vi.mock('@/hooks/useReducedMotion', () => ({
+  useReducedMotion: () => ({ motionAllowed: false }),
+}));
+
 const mockItem: SelectedWorkItem = {
   id: '1',
   title: 'Nordlys Dashboard',
@@ -36,17 +48,17 @@ describe('SelectedWorkCard', () => {
 
   it('renders the status label for live', () => {
     render(<SelectedWorkCard index={1} item={mockItem} />);
-    expect(screen.getByText('Live')).toBeInTheDocument();
+    expect(screen.getByText('selectedWork.status.live')).toBeInTheDocument();
   });
 
   it('renders the status label for in-progress', () => {
     render(<SelectedWorkCard index={1} item={{ ...mockItem, status: 'in-progress' }} />);
-    expect(screen.getByText('In Progress')).toBeInTheDocument();
+    expect(screen.getByText('selectedWork.status.inProgress')).toBeInTheDocument();
   });
 
   it('renders the status label for blueprinted', () => {
     render(<SelectedWorkCard index={1} item={{ ...mockItem, status: 'blueprinted' }} />);
-    expect(screen.getByText('Blueprinted')).toBeInTheDocument();
+    expect(screen.getByText('selectedWork.status.blueprinted')).toBeInTheDocument();
   });
 
   it('renders all technology tags', () => {
