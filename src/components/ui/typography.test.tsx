@@ -12,7 +12,6 @@ import {
   NavLogo,
   NavLink,
   NavLinkMobile,
-  Tag,
   Pill,
   ToolkitCategory,
   ToolkitSkill,
@@ -89,11 +88,6 @@ describe('Typography', () => {
   it('NavLinkMobile renders', () => {
     const { getByText } = render(<NavLinkMobile>Work</NavLinkMobile>);
     expect(getByText('Work')).toBeInTheDocument();
-  });
-
-  it('Tag renders', () => {
-    const { getByText } = render(<Tag>React</Tag>);
-    expect(getByText('React')).toBeInTheDocument();
   });
 
   it('Pill renders', () => {

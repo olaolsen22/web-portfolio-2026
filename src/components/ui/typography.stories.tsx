@@ -11,7 +11,6 @@ import {
   NavLogo,
   NavLink,
   NavLinkMobile,
-  Tag,
   Pill,
   ToolkitCategory,
   ToolkitSkill,
@@ -120,18 +119,10 @@ export const Nav: Story = {
   ),
 };
 
-export const TagsAndPills: Story = {
-  name: 'Tags & Pills',
+export const Pills: Story = {
+  name: 'Pills',
   render: () => (
     <div className="space-y-6">
-      <div>
-        <Label>Stack tag</Label>
-        <div className="mt-1 flex gap-2 flex-wrap">
-          <Tag>React</Tag>
-          <Tag>TypeScript</Tag>
-          <Tag>Tailwind</Tag>
-        </div>
-      </div>
       <div>
         <Label>Skill pill</Label>
         <div className="mt-1 flex gap-3 flex-wrap">

@@ -134,17 +134,6 @@ const NavLinkMobile = React.forwardRef<HTMLSpanElement, React.HTMLAttributes<HTM
 );
 NavLinkMobile.displayName = 'NavLinkMobile';
 
-const Tag = React.forwardRef<HTMLSpanElement, React.HTMLAttributes<HTMLSpanElement>>(
-  ({ className, ...props }, ref) => (
-    <span
-      ref={ref}
-      className={cn('text-[0.68rem] font-bold tracking-[0.05em] uppercase text-brand', className)}
-      {...props}
-    />
-  )
-);
-Tag.displayName = 'Tag';
-
 const Pill = React.forwardRef<HTMLSpanElement, React.HTMLAttributes<HTMLSpanElement>>(
   ({ className, ...props }, ref) => (
     <span
@@ -203,7 +192,6 @@ export {
   NavLogo,
   NavLink,
   NavLinkMobile,
-  Tag,
   Pill,
   ToolkitCategory,
   ToolkitSkill,
