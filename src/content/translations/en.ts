@@ -25,6 +25,11 @@ export interface Translations {
   selectedWork: {
     title: string;
     description: string;
+    status: {
+      live: string;
+      inProgress: string;
+      blueprinted: string;
+    };
   };
   accessibility: {
     enableAnimations: string;
@@ -64,6 +69,11 @@ export const en: Translations = {
   selectedWork: {
     title: 'Selected Work',
     description: "Side quests I'm actually proud of.",
+    status: {
+      live: 'Live',
+      inProgress: 'In Progress',
+      blueprinted: 'Blueprinted',
+    },
   },
   accessibility: {
     enableAnimations: 'Animations are disabled on your device. Enable them for this site?',

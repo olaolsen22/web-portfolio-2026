@@ -27,6 +27,11 @@ export const nb: Translations = {
   selectedWork: {
     title: 'Utvalgte prosjekter',
     description: 'Sideprosjekter jeg faktisk er stolt av.',
+    status: {
+      live: 'Live',
+      inProgress: 'Pågår',
+      blueprinted: 'Planlagt',
+    },
   },
   accessibility: {
     enableAnimations: 'Animasjoner er deaktivert på enheten din. Slå dem på for dette nettstedet?',

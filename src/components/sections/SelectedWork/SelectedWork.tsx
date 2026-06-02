@@ -4,7 +4,7 @@ import { selectedWorkItems } from '@/content/selectedWorkItems';
 import { SelectedWorkList } from './SelectedWorkList/SelectedWorkList';
 
 export const SelectedWork = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   return (
     <section
@@ -18,7 +18,7 @@ export const SelectedWork = () => {
           description={t('selectedWork.description')}
           className="mb-10"
         />
-        <SelectedWorkList items={selectedWorkItems} />
+        <SelectedWorkList items={selectedWorkItems[lang]} />
       </div>
     </section>
   );

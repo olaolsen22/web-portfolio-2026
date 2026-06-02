@@ -3,6 +3,14 @@ import { axe } from 'vitest-axe';
 import { SelectedWorkList } from './SelectedWorkList';
 import type { SelectedWorkItem } from '@/content/selectedWorkItems';
 
+vi.mock('@/hooks/useLanguage', () => ({
+  useLanguage: () => ({
+    t: (key: string) => key,
+    lang: 'en' as const,
+    setLang: vi.fn(),
+  }),
+}));
+
 vi.mock('@/hooks/useReducedMotion', () => ({
   useReducedMotion: () => ({ motionAllowed: false }),
 }));

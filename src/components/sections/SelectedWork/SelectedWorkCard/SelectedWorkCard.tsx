@@ -2,7 +2,9 @@ import { cn } from '@/utils';
 import { IndexedCard } from '@/components/ui/IndexedCard/IndexedCard';
 import { H3, P } from '@/components/ui/typography';
 import { Badge } from '@/components/ui/badge';
+import { useLanguage } from '@/hooks/useLanguage';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
+import type { TranslationKey } from '@/content';
 import type { SelectedWorkItem, WorkStatus } from '@/content/selectedWorkItems';
 
 interface SelectedWorkCardProps {
@@ -17,13 +19,14 @@ const statusStyles: Record<WorkStatus, string> = {
   blueprinted: 'text-[hsl(var(--muted-foreground))]',
 };
 
-const statusLabels: Record<WorkStatus, string> = {
-  live: 'Live',
-  'in-progress': 'In Progress',
-  blueprinted: 'Blueprinted',
+const statusKeyMap: Record<WorkStatus, TranslationKey> = {
+  live: 'selectedWork.status.live',
+  'in-progress': 'selectedWork.status.inProgress',
+  blueprinted: 'selectedWork.status.blueprinted',
 };
 
 export const SelectedWorkCard = ({ index, item, className }: SelectedWorkCardProps) => {
+  const { t } = useLanguage();
   const { motionAllowed } = useReducedMotion();
 
   return (
@@ -60,7 +63,7 @@ export const SelectedWorkCard = ({ index, item, className }: SelectedWorkCardPro
               statusStyles[item.status]
             )}
           >
-            {statusLabels[item.status]}
+            {t(statusKeyMap[item.status])}
           </span>
         </div>
         <ul className="flex flex-wrap gap-[6px] list-none" aria-label="Technologies">
