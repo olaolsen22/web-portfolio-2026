@@ -33,6 +33,13 @@ export const nb: Translations = {
       blueprinted: 'Planlagt',
     },
   },
+  connect: {
+    headline1: 'La oss',
+    headline2: 'snakke.',
+    subtext: 'Si fra — jeg har ikke leselappvarsler på, det lover jeg.',
+    github: 'GitHub',
+    linkedin: 'LinkedIn',
+  },
   accessibility: {
     enableAnimations: 'Animasjoner er deaktivert på enheten din. Slå dem på for dette nettstedet?',
     enableTransparency:

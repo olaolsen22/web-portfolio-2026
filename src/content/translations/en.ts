@@ -31,6 +31,13 @@ export interface Translations {
       blueprinted: string;
     };
   };
+  connect: {
+    headline1: string;
+    headline2: string;
+    subtext: string;
+    github: string;
+    linkedin: string;
+  };
   accessibility: {
     enableAnimations: string;
     enableTransparency: string;
@@ -74,6 +81,13 @@ export const en: Translations = {
       inProgress: 'In Progress',
       blueprinted: 'Blueprinted',
     },
+  },
+  connect: {
+    headline1: "Let's",
+    headline2: 'talk.',
+    subtext: "Drop a line — I don't keep read receipts off, I promise.",
+    github: 'GitHub',
+    linkedin: 'LinkedIn',
   },
   accessibility: {
     enableAnimations: 'Animations are disabled on your device. Enable them for this site?',

@@ -7,6 +7,7 @@ import { Hero } from './components/sections/Hero/Hero';
 import { TechStackMarquee } from './components/sections/TechStackMarquee/TechStackMarquee';
 import { Journey } from './components/sections/Journey/Journey';
 import { SelectedWork } from './components/sections/SelectedWork/SelectedWork';
+import { Connect } from './components/sections/Connect/Connect';
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const PortfolioApp = () => (
       </div>
       <Journey />
       <SelectedWork />
+      <Connect />
     </main>
     <AccessibilityPrompts />
   </div>
