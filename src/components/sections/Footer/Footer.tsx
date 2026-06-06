@@ -10,7 +10,7 @@ export const Footer = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <footer className="w-full border-t border-[var(--rule)] bg-background py-5 sm:py-6">
+    <footer className="w-full border-t border-rule bg-background py-10 sm:py-6">
       <div className="mx-auto w-full max-w-[1920px] px-4 sm:px-6 md:px-12 lg:px-20">
         <FadeIn delay={0.1}>
           <div className="grid grid-cols-1 gap-3 justify-items-center text-center sm:grid-cols-2 sm:justify-items-stretch sm:items-center sm:text-left lg:grid-cols-3">
@@ -20,14 +20,14 @@ export const Footer = () => {
               {new Date().getFullYear()}
             </Small>
 
-            <Small className="text-center text-[0.75rem] tracking-[0.02em] sm:hidden lg:block">
+            <Small className="text-center text-xs tracking-[0.02em] sm:hidden lg:block">
               {t('footer.crafted')}
             </Small>
 
             <div className="flex justify-center sm:justify-end">
               <Button
                 variant="link"
-                className="h-auto min-h-[44px] px-1 py-[10px] text-[0.8rem] font-medium text-faint underline underline-offset-[3px] transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--brand)] focus-visible:outline-offset-[3px] focus-visible:rounded-[2px]"
+                className="p-0 h-auto text-[0.8rem] min-h-0"
                 onClick={() => setOpen(true)}
               >
                 {t('footer.privacy')}

@@ -74,6 +74,7 @@ export default {
           dark: '#059669',
         },
         'border-mid': 'var(--border-mid)',
+        rule: 'var(--rule)',
         surface: 'var(--surface)',
         faint: 'var(--faint)',
       },
