@@ -1,0 +1,61 @@
+@keyframes driftConnect {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(-70px, -50px) scale(1.1);
+  }
+}
+
+/* ── Container ─────────────────────────────────── */
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  contain: layout style paint;
+}
+
+/* ── Glow blob — bottom-right accent ───────────── */
+
+.blob {
+  position: absolute;
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  bottom: -200px;
+  right: -120px;
+  background: radial-gradient(circle, var(--brand), transparent 70%);
+  filter: blur(90px);
+  opacity: 0.12;
+  will-change: transform;
+  animation: driftConnect 30s ease-in-out infinite alternate;
+}
+
+:global(.dark) .blob {
+  opacity: 0.1;
+}
+
+/* ── Mobile / coarse-pointer ─────────────────────── */
+
+@media (pointer: coarse) {
+  .blob {
+    filter: blur(45px);
+  }
+}
+
+/* ── Reduced motion ──────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .blob {
+    animation: none;
+  }
+}
+
+/* ── No-perf (JS-applied for low-hardware desktops) ─ */
+
+.noPerf .blob {
+  animation: none;
+}
