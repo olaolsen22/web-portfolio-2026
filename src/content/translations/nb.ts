@@ -48,5 +48,27 @@ export const nb: Translations = {
     enable: 'Slå på',
     changePreferences: 'Endre tilgjengelighetsinnstillinger',
   },
+  footer: {
+    credit: 'Designet & bygget av Ola · 2026',
+    crafted: 'Laget med React, Tailwind og Claude',
+    privacy: 'Personvernerklæring',
+  },
+  privacyNotice: {
+    title: 'Personvernerklæring',
+    intro: 'Dette er et personlig porteføljenettsted. Personvernet ditt er viktig.',
+    noDataTitle: 'Ingen personopplysninger samles inn',
+    noDataBody:
+      'Nettstedet bruker ikke analyse, sporingspiksel eller tredjeparts informasjonskapsler. Ingen personlig informasjon samles inn eller lagres på noen server.',
+    localStorageTitle: 'Lokal lagring',
+    localStorageBody:
+      'Språkpreferansen din (EN/NB) lagres i nettleserens localStorage. Disse dataene forlater aldri enheten din.',
+    githubTitle: 'GitHub API',
+    githubBody:
+      'Offentlige repositoriumdata hentes fra GitHub API for å vise prosjekter. Det brukes ingen autentisering, og ingen brukerdata samles inn i denne prosessen.',
+    contactTitle: 'Spørsmål?',
+    contactBody:
+      'Har du spørsmål om denne personvernerklæringen, ta kontakt på olatalabaolsen@gmail.com.',
+    close: 'Lukk',
+  },
   skipToContent: 'Hopp til hovedinnhold',
 };

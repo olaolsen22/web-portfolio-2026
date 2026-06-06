@@ -45,6 +45,24 @@ export interface Translations {
     enable: string;
     changePreferences: string;
   };
+  footer: {
+    credit: string;
+    crafted: string;
+    privacy: string;
+  };
+  privacyNotice: {
+    title: string;
+    intro: string;
+    noDataTitle: string;
+    noDataBody: string;
+    localStorageTitle: string;
+    localStorageBody: string;
+    githubTitle: string;
+    githubBody: string;
+    contactTitle: string;
+    contactBody: string;
+    close: string;
+  };
   skipToContent: string;
 }
 
@@ -96,6 +114,28 @@ export const en: Translations = {
     keepOff: 'Keep off',
     enable: 'Enable',
     changePreferences: 'Change accessibility preferences',
+  },
+  footer: {
+    credit: 'Designed & built by Ola · 2026',
+    crafted: 'Crafted with React, Tailwind and Claude',
+    privacy: 'Privacy notice',
+  },
+  privacyNotice: {
+    title: 'Privacy Notice',
+    intro: 'This is a personal portfolio site. Your privacy matters.',
+    noDataTitle: 'No personal data collected',
+    noDataBody:
+      'This site does not use analytics, tracking pixels, or third-party cookies. No personal information is collected or stored on any server.',
+    localStorageTitle: 'Local storage',
+    localStorageBody:
+      "Your language preference (EN/NB) is saved in your browser's localStorage. This data never leaves your device.",
+    githubTitle: 'GitHub API',
+    githubBody:
+      'Public repository data is fetched from the GitHub API to display projects. No authentication is used and no user data is collected in this process.',
+    contactTitle: 'Questions?',
+    contactBody:
+      'If you have questions about this privacy notice, reach out at olatalabaolsen@gmail.com.',
+    close: 'Close',
   },
   skipToContent: 'Skip to main content',
 };
