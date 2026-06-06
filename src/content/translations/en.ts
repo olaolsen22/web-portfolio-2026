@@ -45,6 +45,27 @@ export interface Translations {
     enable: string;
     changePreferences: string;
   };
+  footer: {
+    credit: string;
+    crafted: string;
+    privacy: string;
+  };
+  privacyNotice: {
+    title: string;
+    whatSiteCollectsTitle: string;
+    whatSiteCollectsBody: string;
+    hostingProviderTitle: string;
+    hostingProviderBody: string;
+    githubPagesTitle: string;
+    githubPagesBody: string;
+    netlifyTitle: string;
+    netlifyBody: string;
+    gdprTitle: string;
+    gdprBody: string;
+    questionsTitle: string;
+    questionsBody: string;
+    close: string;
+  };
   skipToContent: string;
 }
 
@@ -96,6 +117,32 @@ export const en: Translations = {
     keepOff: 'Keep off',
     enable: 'Enable',
     changePreferences: 'Change accessibility preferences',
+  },
+  footer: {
+    credit: 'Designed & built by',
+    crafted: 'Crafted with React, Tailwind and Claude',
+    privacy: 'Privacy notice',
+  },
+  privacyNotice: {
+    title: 'Privacy Notice',
+    whatSiteCollectsTitle: 'What this site collects',
+    whatSiteCollectsBody:
+      'This portfolio does not collect, store, or process any personal data. There are no contact forms, user accounts, cookies, or analytics scripts on this site.',
+    hostingProviderTitle: 'What your hosting provider may collect',
+    hostingProviderBody:
+      'This site is hosted on a third-party platform (e.g. GitHub Pages or Netlify). As with any web server, your visit may result in basic server logs being recorded — including your IP address, browser type, referring page, and the time of your visit. This is standard infrastructure behaviour outside of my control.',
+    githubPagesTitle: 'GitHub Pages',
+    githubPagesBody:
+      'If hosted on GitHub Pages: GitHub may collect technical data as described in their Privacy Statement (github.com/site/privacy). GitHub is operated by GitHub, Inc. and subject to US law, but GitHub states they do not use this data for advertising.',
+    netlifyTitle: 'Netlify',
+    netlifyBody:
+      'If hosted on Netlify: Netlify may log request metadata per their Privacy Policy (netlify.com/privacy). Netlify is certified under the EU-US Data Privacy Framework.',
+    gdprTitle: 'Your rights (GDPR)',
+    gdprBody:
+      'As a person in the EU/EEA you have the right to access, correct, or request deletion of any personal data held about you. Since I hold none, the relevant contact is your hosting provider directly. Norwegian residents may also contact Datatilsynet at datatilsynet.no.',
+    questionsTitle: 'Questions?',
+    questionsBody: 'Reach out via LinkedIn or GitHub if you have any questions about this notice.',
+    close: 'Close',
   },
   skipToContent: 'Skip to main content',
 };

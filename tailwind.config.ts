@@ -74,8 +74,9 @@ export default {
           dark: '#059669',
         },
         'border-mid': 'var(--border-mid)',
+        rule: 'var(--rule)',
         surface: 'var(--surface)',
-        faint: 'hsl(var(--faint))',
+        faint: 'var(--faint)',
       },
       fontSize: {
         'display-hero':    ['clamp(3.5rem, 14vw, 13rem)',  { lineHeight: '0.88', letterSpacing: '-0.04em', fontWeight: '800' }],
