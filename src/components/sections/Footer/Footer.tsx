@@ -3,14 +3,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { FadeIn } from '@/components/animations/FadeIn';
 import { Button } from '@/components/ui/button';
 import { Small } from '@/components/ui/typography';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogFooter,
-  DialogClose,
-} from '@/components/ui/dialog';
+import { PrivacyNoticeModal } from './PrivacyNoticeModal';
 
 export const Footer = () => {
   const { t } = useLanguage();
@@ -18,17 +11,23 @@ export const Footer = () => {
 
   return (
     <footer className="w-full border-t border-[var(--rule)] bg-background py-5 sm:py-6">
-      <div className="container">
+      <div className="mx-auto w-full max-w-[1920px] px-4 sm:px-6 md:px-12 lg:px-20">
         <FadeIn delay={0.1}>
-          <div className="grid grid-cols-1 gap-3 text-center sm:grid-cols-3 sm:items-center sm:text-left">
-            <Small className="text-muted-foreground">{t('footer.credit')}</Small>
+          <div className="grid grid-cols-1 gap-3 justify-items-center text-center sm:grid-cols-2 sm:justify-items-stretch sm:items-center sm:text-left lg:grid-cols-3">
+            <Small>
+              {t('footer.credit')} <em className="not-italic font-bold text-brand">Ola</em>
+              {' · '}
+              {new Date().getFullYear()}
+            </Small>
 
-            <Small className="text-center text-muted-foreground">{t('footer.crafted')}</Small>
+            <Small className="text-center text-[0.75rem] tracking-[0.02em] sm:hidden lg:block">
+              {t('footer.crafted')}
+            </Small>
 
             <div className="flex justify-center sm:justify-end">
               <Button
                 variant="link"
-                className="h-auto p-0 text-[0.8rem] font-medium text-muted-foreground hover:text-foreground"
+                className="h-auto min-h-[44px] px-1 py-[10px] text-[0.8rem] font-medium text-faint underline underline-offset-[3px] transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--brand)] focus-visible:outline-offset-[3px] focus-visible:rounded-[2px]"
                 onClick={() => setOpen(true)}
               >
                 {t('footer.privacy')}
@@ -38,53 +37,7 @@ export const Footer = () => {
         </FadeIn>
       </div>
 
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-h-[85dvh] overflow-y-auto sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>{t('privacyNotice.title')}</DialogTitle>
-          </DialogHeader>
-
-          <p className="text-sm text-muted-foreground">{t('privacyNotice.intro')}</p>
-
-          <div className="space-y-4">
-            <div>
-              <p className="mb-1 text-sm font-semibold text-foreground">
-                {t('privacyNotice.noDataTitle')}
-              </p>
-              <p className="text-sm text-muted-foreground">{t('privacyNotice.noDataBody')}</p>
-            </div>
-
-            <div>
-              <p className="mb-1 text-sm font-semibold text-foreground">
-                {t('privacyNotice.localStorageTitle')}
-              </p>
-              <p className="text-sm text-muted-foreground">{t('privacyNotice.localStorageBody')}</p>
-            </div>
-
-            <div>
-              <p className="mb-1 text-sm font-semibold text-foreground">
-                {t('privacyNotice.githubTitle')}
-              </p>
-              <p className="text-sm text-muted-foreground">{t('privacyNotice.githubBody')}</p>
-            </div>
-
-            <div>
-              <p className="mb-1 text-sm font-semibold text-foreground">
-                {t('privacyNotice.contactTitle')}
-              </p>
-              <p className="text-sm text-muted-foreground">{t('privacyNotice.contactBody')}</p>
-            </div>
-          </div>
-
-          <DialogFooter>
-            <DialogClose asChild>
-              <Button variant="outline" size="sm">
-                {t('privacyNotice.close')}
-              </Button>
-            </DialogClose>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+      <PrivacyNoticeModal open={open} onOpenChange={setOpen} />
     </footer>
   );
 };

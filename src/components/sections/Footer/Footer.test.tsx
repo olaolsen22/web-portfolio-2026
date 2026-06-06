@@ -31,9 +31,14 @@ describe('Footer', () => {
     expect(screen.getByRole('contentinfo')).toBeInTheDocument();
   });
 
-  it('renders the credit text', () => {
+  it('renders the credit text prefix', () => {
     render(<Footer />);
-    expect(screen.getByText('footer.credit')).toBeInTheDocument();
+    expect(screen.getByText(/footer\.credit/)).toBeInTheDocument();
+  });
+
+  it('renders "Ola" in accent in the credit span', () => {
+    render(<Footer />);
+    expect(screen.getByText('Ola')).toBeInTheDocument();
   });
 
   it('renders the crafted-with text', () => {
@@ -46,27 +51,10 @@ describe('Footer', () => {
     expect(screen.getByRole('button', { name: 'footer.privacy' })).toBeInTheDocument();
   });
 
-  it('opens the privacy notice dialog when button is clicked', async () => {
+  it('opens the privacy notice dialog when the button is clicked', async () => {
     const user = userEvent.setup();
     render(<Footer />);
     await user.click(screen.getByRole('button', { name: 'footer.privacy' }));
     expect(screen.getByRole('dialog')).toBeInTheDocument();
-    expect(screen.getByText('privacyNotice.title')).toBeInTheDocument();
-  });
-
-  it('closes the dialog when the Close button is clicked', async () => {
-    const user = userEvent.setup();
-    render(<Footer />);
-    await user.click(screen.getByRole('button', { name: 'footer.privacy' }));
-    await user.click(screen.getByRole('button', { name: 'privacyNotice.close' }));
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
-  });
-
-  it('closes the dialog on Escape key', async () => {
-    const user = userEvent.setup();
-    render(<Footer />);
-    await user.click(screen.getByRole('button', { name: 'footer.privacy' }));
-    await user.keyboard('{Escape}');
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 });
