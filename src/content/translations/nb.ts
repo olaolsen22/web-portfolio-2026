@@ -49,25 +49,30 @@ export const nb: Translations = {
     changePreferences: 'Endre tilgjengelighetsinnstillinger',
   },
   footer: {
-    credit: 'Designet & bygget av Ola · 2026',
+    credit: 'Designet & bygget av',
     crafted: 'Laget med React, Tailwind og Claude',
     privacy: 'Personvernerklæring',
   },
   privacyNotice: {
     title: 'Personvernerklæring',
-    intro: 'Dette er et personlig porteføljenettsted. Personvernet ditt er viktig.',
-    noDataTitle: 'Ingen personopplysninger samles inn',
-    noDataBody:
-      'Nettstedet bruker ikke analyse, sporingspiksel eller tredjeparts informasjonskapsler. Ingen personlig informasjon samles inn eller lagres på noen server.',
-    localStorageTitle: 'Lokal lagring',
-    localStorageBody:
-      'Språkpreferansen din (EN/NB) lagres i nettleserens localStorage. Disse dataene forlater aldri enheten din.',
-    githubTitle: 'GitHub API',
-    githubBody:
-      'Offentlige repositoriumdata hentes fra GitHub API for å vise prosjekter. Det brukes ingen autentisering, og ingen brukerdata samles inn i denne prosessen.',
-    contactTitle: 'Spørsmål?',
-    contactBody:
-      'Har du spørsmål om denne personvernerklæringen, ta kontakt på olatalabaolsen@gmail.com.',
+    whatSiteCollectsTitle: 'Hva dette nettstedet samler inn',
+    whatSiteCollectsBody:
+      'Dette porteføljenettstedet samler ikke inn, lagrer eller behandler personopplysninger. Det finnes ingen kontaktskjemaer, brukerkontoer, informasjonskapsler (cookies) eller analyseskript på siden.',
+    hostingProviderTitle: 'Hva vertstjenesten kan samle inn',
+    hostingProviderBody:
+      'Nettstedet er hostet på en tredjeparts plattform (f.eks. GitHub Pages eller Netlify). Som med enhver webserver kan besøket ditt resultere i at det lagres standard serverlogger — inkludert IP-adresse, nettlesertype, referanseside og tidspunkt. Dette er normal infrastrukturatferd utenfor min kontroll.',
+    githubPagesTitle: 'GitHub Pages',
+    githubPagesBody:
+      'Hvis hostet på GitHub Pages: GitHub kan samle inn tekniske data som beskrevet i deres personvernerklæring (github.com/site/privacy). GitHub er underlagt amerikansk lovgivning, men oppgir at de ikke bruker disse dataene til reklameformål.',
+    netlifyTitle: 'Netlify',
+    netlifyBody:
+      'Hvis hostet på Netlify: Netlify kan logge forespørselsmetadata per deres personvernpolicy (netlify.com/privacy). Netlify er sertifisert under EU-US Data Privacy Framework.',
+    gdprTitle: 'Dine rettigheter (GDPR)',
+    gdprBody:
+      'Som person i EU/EØS har du rett til å få tilgang til, korrigere eller be om sletting av personopplysninger som er lagret om deg. Siden jeg ikke har noen, er relevant kontakt din vertsleverandør direkte. Norske brukere kan også kontakte Datatilsynet på datatilsynet.no.',
+    questionsTitle: 'Spørsmål?',
+    questionsBody:
+      'Ta kontakt via LinkedIn eller GitHub hvis du har spørsmål om denne personvernerklæringen.',
     close: 'Lukk',
   },
   skipToContent: 'Hopp til hovedinnhold',
