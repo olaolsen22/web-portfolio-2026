@@ -8,6 +8,7 @@ import { TechStackMarquee } from './components/sections/TechStackMarquee/TechSta
 import { Journey } from './components/sections/Journey/Journey';
 import { SelectedWork } from './components/sections/SelectedWork/SelectedWork';
 import { Connect } from './components/sections/Connect/Connect';
+import { Footer } from './components/sections/Footer/Footer';
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const PortfolioApp = () => (
       <SelectedWork />
       <Connect />
     </main>
+    <Footer />
     <AccessibilityPrompts />
   </div>
 );
