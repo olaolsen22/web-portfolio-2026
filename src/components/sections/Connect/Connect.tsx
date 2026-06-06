@@ -2,6 +2,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { ScrollReveal } from '@/components/animations/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { H2Display, Muted } from '@/components/ui/typography';
+import { ConnectBackground } from './ConnectBackground';
 
 const GITHUB_URL = 'https://github.com/olaolsen22';
 const LINKEDIN_URL = '#';
@@ -25,8 +26,9 @@ export const Connect = () => {
     <section
       id="connect"
       aria-labelledby="connect-heading"
-      className="w-full border-t border-b border-[var(--rule)] bg-[var(--bg2)] py-16 sm:py-20 lg:py-[120px] relative overflow-hidden isolate"
+      className="w-full bg-background py-16 sm:py-20 lg:py-[120px] relative overflow-hidden isolate"
     >
+      <ConnectBackground />
       <div className="container relative z-[1]">
         <ScrollReveal delay={0.1}>
           <H2Display id="connect-heading" className="mb-8 lg:mb-12">
