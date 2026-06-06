@@ -15,13 +15,13 @@ type Story = StoryObj<typeof JourneyList>;
 
 export const Default: Story = {
   args: {
-    items: journeyItems,
+    items: journeyItems.en,
   },
 };
 
 export const DarkMode: Story = {
   args: {
-    items: journeyItems,
+    items: journeyItems.en,
   },
   parameters: {
     backgrounds: { default: 'dark' },
