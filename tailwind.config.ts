@@ -75,7 +75,7 @@ export default {
         },
         'border-mid': 'var(--border-mid)',
         surface: 'var(--surface)',
-        faint: 'hsl(var(--faint))',
+        faint: 'var(--faint)',
       },
       fontSize: {
         'display-hero':    ['clamp(3.5rem, 14vw, 13rem)',  { lineHeight: '0.88', letterSpacing: '-0.04em', fontWeight: '800' }],
