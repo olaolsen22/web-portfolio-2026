@@ -1,5 +1,6 @@
 import { cn } from '@/utils';
 import { IndexedCard } from '@/components/ui/IndexedCard/IndexedCard';
+import { LazyImage } from '@/components/ui/LazyImage/LazyImage';
 import { H3, P } from '@/components/ui/typography';
 import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -37,16 +38,14 @@ export const SelectedWorkCard = ({ index, item, className }: SelectedWorkCardPro
       aside={
         <div className="rounded-md ring-1 ring-transparent transition-all duration-200 group-hover:ring-brand/60">
           <div className="overflow-hidden rounded-md">
-            <img
+            <LazyImage
               src={item.imageUrl}
               alt={item.imageAlt}
-              className={cn(
-                'w-full aspect-[4/3] md:aspect-[3/2] object-cover',
+              aspectClassName="aspect-[4/3] md:aspect-[3/2]"
+              imgClassName={cn(
                 motionAllowed &&
                   'will-change-transform transition-transform duration-[350ms] ease-out group-hover:scale-105'
               )}
-              loading="lazy"
-              decoding="async"
             />
           </div>
         </div>
