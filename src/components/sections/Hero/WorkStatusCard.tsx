@@ -10,7 +10,10 @@ interface WorkStatusCardProps {
 export const WorkStatusCard = ({ workStatus, location, className }: WorkStatusCardProps) => (
   <Badge
     variant="glass"
-    className={cn('self-start flex-shrink-0 gap-3 px-6 py-3 text-base font-bold', className)}
+    className={cn(
+      'self-start flex-shrink-0 gap-3 px-6 py-3 text-sm xs:text-base font-bold',
+      className
+    )}
   >
     <span className="relative flex size-2.5 shrink-0" aria-hidden="true">
       <span className="absolute inline-flex size-full rounded-full bg-brand opacity-75 animate-ping" />
