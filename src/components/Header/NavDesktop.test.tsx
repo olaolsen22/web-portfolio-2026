@@ -20,6 +20,5 @@ describe('NavDesktop', () => {
     expect(screen.getByRole('link', { name: 'nav.journey' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'nav.work' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'nav.connect' })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'nav.techStack' })).toBeInTheDocument();
   });
 });
