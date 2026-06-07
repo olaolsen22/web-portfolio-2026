@@ -33,6 +33,8 @@ export const nb: Translations = {
       inProgress: 'Pågående',
       blueprinted: 'Planlagt',
     },
+    github: 'GitHub',
+    demo: 'Demo',
   },
   connect: {
     headline1: 'La oss',

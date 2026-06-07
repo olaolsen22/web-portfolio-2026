@@ -8,6 +8,8 @@ export interface SelectedWorkItem {
   description: string;
   imageUrl: string;
   imageAlt: string;
+  githubUrl?: string;
+  demoUrl?: string;
 }
 
 export const selectedWorkItems: Record<'en' | 'nb', SelectedWorkItem[]> = {
@@ -21,6 +23,8 @@ export const selectedWorkItems: Record<'en' | 'nb', SelectedWorkItem[]> = {
         'Personal portfolio built with React and TypeScript. Claude Code was part of the development workflow, used for planning and acceleration.',
       imageUrl: '',
       imageAlt: "Screenshot of Ola O.'s personal developer portfolio website",
+      githubUrl: 'https://github.com/olaolsen22/web-portfolio-2026',
+      demoUrl: 'https://olao-dev.netlify.app/',
     },
     {
       id: 'project-habit-tracker',
@@ -55,6 +59,8 @@ export const selectedWorkItems: Record<'en' | 'nb', SelectedWorkItem[]> = {
         'Personlig portefølje bygget med React og TypeScript. Claude Code var en del av utviklingsarbeidet, brukt til planlegging og fremdrift.',
       imageUrl: '',
       imageAlt: 'Skjermbilde av Ola O.s personlige porteføljenettsted',
+      githubUrl: 'https://github.com/olaolsen22/web-portfolio-2026',
+      demoUrl: 'https://olaolsen22.github.io/web-portfolio-2026',
     },
     {
       id: 'project-habit-tracker',

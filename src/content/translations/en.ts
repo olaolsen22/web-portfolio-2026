@@ -30,6 +30,8 @@ export interface Translations {
       inProgress: string;
       blueprinted: string;
     };
+    github: string;
+    demo: string;
   };
   connect: {
     headline1: string;
@@ -102,6 +104,8 @@ export const en: Translations = {
       inProgress: 'In Progress',
       blueprinted: 'Blueprinted',
     },
+    github: 'GitHub',
+    demo: 'Demo',
   },
   connect: {
     headline1: "Let's",
