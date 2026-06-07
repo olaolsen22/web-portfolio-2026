@@ -34,14 +34,11 @@ export const PrivacyNoticeModal = ({ open, onOpenChange }: PrivacyNoticeModalPro
 
   const modalContent = (
     <>
-      <DialogHeader className="relative pr-10">
-        <DialogTitle className="text-[1.05rem] font-extrabold tracking-[-0.02em]">
+      <DialogHeader className="relative flex flex-row justify-between items-center">
+        <DialogTitle className="text-[1.05rem] font-extrabold tracking-[-0.02em] text-left">
           {t('privacyNotice.title')}
         </DialogTitle>
-        <DialogPrimitive.Close
-          aria-label={t('privacyNotice.close')}
-          className="absolute right-0 top-0 flex min-h-[44px] min-w-[44px] items-center justify-center rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-        >
+        <DialogPrimitive.Close aria-label={t('privacyNotice.close')} className=" p-2">
           <X className="h-4 w-4" />
         </DialogPrimitive.Close>
       </DialogHeader>
@@ -59,7 +56,7 @@ export const PrivacyNoticeModal = ({ open, onOpenChange }: PrivacyNoticeModalPro
 
       <DialogFooter>
         <DialogPrimitive.Close asChild>
-          <Button variant="default" size="sm">
+          <Button variant="default" size="sm" className="mt-3">
             {t('privacyNotice.close')}
           </Button>
         </DialogPrimitive.Close>
@@ -85,7 +82,7 @@ export const PrivacyNoticeModal = ({ open, onOpenChange }: PrivacyNoticeModalPro
 
               <DialogPrimitive.Content asChild forceMount>
                 {/* Wrapper owns centering; motion.div owns animation — avoids transform conflict */}
-                <div className="fixed left-1/2 top-1/2 z-50 w-[calc(100vw-2rem)] max-w-md -translate-x-1/2 -translate-y-1/2 focus:outline-none">
+                <div className="fixed left-1/2 top-1/2 z-50 w-[calc(100vw-2rem)] sm:max-w-xl -translate-x-1/2 -translate-y-1/2 focus:outline-none">
                   <motion.div
                     className="w-full max-h-[85dvh] overflow-y-auto rounded-lg border bg-background p-6 shadow-lg"
                     initial={motionAllowed ? { opacity: 0, scale: 0.96, y: -8 } : false}
