@@ -18,7 +18,7 @@ export const TechStackMarquee = () => {
   return (
     <section
       aria-label={t('techStack.label')}
-      className="w-full border-t border-[var(--rule)] py-4"
+      className="w-full border-t border-b border-[var(--rule)] py-4"
     >
       <div className="mx-auto max-w-[1920px] px-6 md:px-12 lg:px-20">
         <div className={`flex ${showStatic ? 'items-start' : 'items-center'}`}>
