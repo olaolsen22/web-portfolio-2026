@@ -6,7 +6,7 @@ import { GitHubIcon } from '@/components/icons/BrandIcons';
 import { ConnectBackground } from './ConnectBackground';
 
 const GITHUB_URL = 'https://github.com/olaolsen22';
-const LINKEDIN_URL = '#';
+const LINKEDIN_URL = 'https://www.linkedin.com/in/ola-olsen-442b07a3/';
 
 const LinkedInIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
