@@ -27,7 +27,7 @@ export const journeyItems: Record<'en' | 'nb', JourneyItem[]> = {
     {
       id: 'exp-twist-fse',
       yearRange: 'Mar 2019–May 2022',
-      title: 'Frontend Software Engineer',
+      title: 'Junior Frontend Software Engineer',
       organization: 'Twist Resources',
       details:
         'Primary frontend developer for multiple international client applications at a software outsourcing firm.',
@@ -68,7 +68,7 @@ export const journeyItems: Record<'en' | 'nb', JourneyItem[]> = {
     {
       id: 'exp-twist-fse',
       yearRange: 'mar 2019–mai 2022',
-      title: 'Frontend-utvikler',
+      title: 'Junior Frontend-utvikler',
       organization: 'Twist Resources',
       details:
         'Primær frontend-utvikler for internasjonale klientapplikasjoner hos et programvarekonsulentselskap.',
