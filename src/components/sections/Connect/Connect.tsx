@@ -26,14 +26,17 @@ export const Connect = () => {
       <ConnectBackground />
       <div className="container relative z-[1]">
         <ScrollReveal delay={0.1}>
-          <H2Display id="connect-heading" className="mb-8 lg:mb-12">
+          <H2Display
+            id="connect-heading"
+            className="mb-4 lg:mb-3 text-[clamp(5rem,10vw,8rem)] leading-[0.95] tracking-[-0.04em] font-extrabold"
+          >
             <span className="block">{t('connect.headline1')}</span>
             <em className="not-italic text-[var(--brand)] block">{t('connect.headline2')}</em>
           </H2Display>
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
-          <Muted className="text-[clamp(1rem,2.5vw,1.2rem)] leading-relaxed max-w-[480px] mb-8 lg:mb-12">
+          <Muted className="text-[clamp(1rem,2.5vw,1.2rem)] leading-relaxed max-w-[480px] mb-5">
             {t('connect.subtext')}
           </Muted>
         </ScrollReveal>
