@@ -14,7 +14,7 @@ export const Hero = () => {
       <div className="flex flex-1 flex-col justify-end px-6 py-10 md:px-12 lg:px-20 mx-auto w-full max-w-[1920px]">
         <WorkStatusCard workStatus={t('hero.workStatus')} location={t('hero.location')} />
 
-        <div className="mt-8 flex flex-col gap-10 md:flex-row md:items-end">
+        <div className="mt-8 flex flex-col md:flex-row md:items-end md:gap-10">
           <HeadlineText
             name={t('hero.name')}
             title={t('hero.title')}
@@ -24,7 +24,7 @@ export const Hero = () => {
           <HeroButtonGroup
             viewMyWork={t('hero.viewMyWork')}
             connect={t('nav.connect')}
-            className="md:w-2/5 md:flex md:justify-end"
+            className="mt-4 md:mt-0 md:w-2/5 md:flex md:justify-end"
           />
         </div>
       </div>

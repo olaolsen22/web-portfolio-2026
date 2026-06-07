@@ -11,11 +11,16 @@ interface SectionHeaderProps {
 }
 
 export const SectionHeader = ({ id, label, title, description, className }: SectionHeaderProps) => (
-  <FadeIn className={cn('flex flex-row items-center justify-between gap-8', className)}>
+  <FadeIn
+    className={cn(
+      'flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-8',
+      className
+    )}
+  >
     <div className="flex flex-col gap-3">
       {label && <Label>{label}</Label>}
       <H2 id={id}>{title}</H2>
     </div>
-    {description && <Muted className="text-right max-w-[300px] ml-auto">{description}</Muted>}
+    {description && <Muted className="md:text-right max-w-[300px] ">{description}</Muted>}
   </FadeIn>
 );

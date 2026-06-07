@@ -84,4 +84,46 @@ describe('SelectedWorkCard', () => {
       'lazy'
     );
   });
+
+  it('renders GitHub button when githubUrl is provided', () => {
+    render(
+      <SelectedWorkCard
+        index={1}
+        item={{ ...mockItem, githubUrl: 'https://github.com/test/repo' }}
+      />
+    );
+    const link = screen.getByRole('link', { name: /selectedWork\.github/i });
+    expect(link).toHaveAttribute('href', 'https://github.com/test/repo');
+    expect(link).toHaveAttribute('target', '_blank');
+  });
+
+  it('renders Demo button when demoUrl is provided', () => {
+    render(
+      <SelectedWorkCard index={1} item={{ ...mockItem, demoUrl: 'https://demo.example.com' }} />
+    );
+    const link = screen.getByRole('link', { name: /selectedWork\.demo/i });
+    expect(link).toHaveAttribute('href', 'https://demo.example.com');
+    expect(link).toHaveAttribute('target', '_blank');
+  });
+
+  it('renders both buttons when both URLs are provided', () => {
+    render(
+      <SelectedWorkCard
+        index={1}
+        item={{
+          ...mockItem,
+          githubUrl: 'https://github.com/test/repo',
+          demoUrl: 'https://demo.example.com',
+        }}
+      />
+    );
+    expect(screen.getByRole('link', { name: /selectedWork\.github/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /selectedWork\.demo/i })).toBeInTheDocument();
+  });
+
+  it('renders no link buttons when neither URL is provided', () => {
+    render(<SelectedWorkCard index={1} item={mockItem} />);
+    expect(screen.queryByRole('link', { name: /selectedWork\.github/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: /selectedWork\.demo/i })).not.toBeInTheDocument();
+  });
 });

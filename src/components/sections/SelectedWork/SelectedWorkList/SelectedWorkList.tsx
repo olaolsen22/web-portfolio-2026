@@ -10,7 +10,7 @@ interface SelectedWorkListProps {
 }
 
 export const SelectedWorkList = ({ items, className }: SelectedWorkListProps) => (
-  <ol className={cn('list-none', className)}>
+  <ol className={cn('list-none [&>li:last-child_article]:border-b-0', className)}>
     {items.map((item, i) => (
       <li key={item.id}>
         <ScrollReveal delay={i * animation.stagger}>

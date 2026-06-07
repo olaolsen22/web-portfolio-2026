@@ -10,7 +10,7 @@ interface JourneyListProps {
 }
 
 export const JourneyList = ({ items, className }: JourneyListProps) => (
-  <ol className={cn('list-none', className)}>
+  <ol className={cn('list-none [&>li:last-child_article]:border-b-0', className)}>
     {items.map((item, i) => (
       <li key={item.id}>
         <ScrollReveal delay={i * animation.stagger}>

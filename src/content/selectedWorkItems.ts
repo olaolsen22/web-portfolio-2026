@@ -8,71 +8,79 @@ export interface SelectedWorkItem {
   description: string;
   imageUrl: string;
   imageAlt: string;
+  githubUrl?: string;
+  demoUrl?: string;
 }
 
 export const selectedWorkItems: Record<'en' | 'nb', SelectedWorkItem[]> = {
   en: [
     {
-      id: '1',
-      title: 'Nordlys Dashboard',
+      id: 'project-portfolio',
+      title: 'Portfolio Website',
       status: 'live',
-      tags: ['React', 'TypeScript', 'Recharts', 'TanStack Query'],
+      tags: ['React', 'TypeScript', 'Tailwind CSS', 'shadcn', 'Claude Code'],
       description:
-        'A real-time analytics dashboard for monitoring distributed IoT sensors across remote Norwegian sites. Focused on low-latency updates and offline-first resilience.',
-      imageUrl: 'https://placehold.co/480x320/10b981/ffffff?text=Nordlys',
-      imageAlt: 'Screenshot of the Nordlys Dashboard showing sensor data charts',
+        'Personal portfolio built with React and TypeScript. Claude Code was part of the development workflow, used for planning and acceleration.',
+      imageUrl: '',
+      imageAlt: "Screenshot of Ola O.'s personal developer portfolio website",
+      githubUrl: 'https://github.com/olaolsen22/web-portfolio-2026',
+      demoUrl: 'https://olao-dev.netlify.app/',
     },
     {
-      id: '2',
-      title: 'Kart Editor',
-      status: 'in-progress',
-      tags: ['TypeScript', 'Leaflet', 'Zustand', 'Tailwind CSS'],
-      description:
-        'A collaborative map annotation tool for field teams to mark, annotate, and share geographic data without a GIS background. Built for slow 3G conditions.',
-      imageUrl: 'https://placehold.co/480x320/059669/ffffff?text=Kart+Editor',
-      imageAlt: 'Screenshot of the Kart Editor with an annotated map layer',
-    },
-    {
-      id: '3',
-      title: 'Typeset',
+      id: 'project-habit-tracker',
+      title: 'Habit Tracker',
       status: 'blueprinted',
-      tags: ['React', 'CSS Custom Properties', 'Storybook', 'Vitest'],
+      tags: ['React Native', 'Wear OS'],
       description:
-        'A minimal design-token playground that lets designers preview font scale, spacing, and color ramps live in the browser and export to CSS or Figma tokens.',
-      imageUrl: 'https://placehold.co/480x320/6366f1/ffffff?text=Typeset',
-      imageAlt: 'Screenshot of the Typeset playground showing a type scale',
+        'A daily habit tracker with Wear OS support. Built to be lightweight and focused, for people who want a consistent routine without the noise.',
+      imageUrl: '',
+      imageAlt:
+        'Concept illustration for a minimalist habit tracking mobile app with Wear OS support',
+    },
+    {
+      id: 'project-language-tool',
+      title: 'Language Tool',
+      status: 'blueprinted',
+      tags: ['React Native', 'AI', 'OCR'],
+      description:
+        'AI-assisted language learning tool with OCR-based photo input to reduce token costs. Planned as a mobile-first or installable web app.',
+      imageUrl: '',
+      imageAlt:
+        'Concept illustration for an AI-assisted language learning tool with photo input support',
     },
   ],
   nb: [
     {
-      id: '1',
-      title: 'Nordlys Dashboard',
+      id: 'project-portfolio',
+      title: 'Portefølje',
       status: 'live',
-      tags: ['React', 'TypeScript', 'Recharts', 'TanStack Query'],
+      tags: ['React', 'TypeScript', 'Tailwind CSS', 'shadcn', 'Claude Code'],
       description:
-        'Et sanntids analysedashbord for overvåking av distribuerte IoT-sensorer på avsidesliggende norske steder. Fokusert på lav forsinkelse og offline-resiliens.',
-      imageUrl: 'https://placehold.co/480x320/10b981/ffffff?text=Nordlys',
-      imageAlt: 'Skjermbilde av Nordlys Dashboard som viser sensordata-grafer',
+        'Personlig portefølje bygget med React og TypeScript. Claude Code var en del av utviklingsarbeidet, brukt til planlegging og fremdrift.',
+      imageUrl: '',
+      imageAlt: 'Skjermbilde av Ola O.s personlige porteføljenettsted',
+      githubUrl: 'https://github.com/olaolsen22/web-portfolio-2026',
+      demoUrl: 'https://olaolsen22.github.io/web-portfolio-2026',
     },
     {
-      id: '2',
-      title: 'Kart Editor',
-      status: 'in-progress',
-      tags: ['TypeScript', 'Leaflet', 'Zustand', 'Tailwind CSS'],
-      description:
-        'Et samarbeidsverktøy for kartannotering der feltteam kan merke, annotere og dele geografiske data uten GIS-bakgrunn. Bygget for trege 3G-forhold.',
-      imageUrl: 'https://placehold.co/480x320/059669/ffffff?text=Kart+Editor',
-      imageAlt: 'Skjermbilde av Kart Editor med et annotert kartlag',
-    },
-    {
-      id: '3',
-      title: 'Typeset',
+      id: 'project-habit-tracker',
+      title: 'Habit Tracker',
       status: 'blueprinted',
-      tags: ['React', 'CSS Custom Properties', 'Storybook', 'Vitest'],
+      tags: ['React Native', 'Wear OS'],
       description:
-        'En minimal design-token-lekeplass som lar designere forhåndsvise skriftstørrelse, avstand og fargeskalaer live i nettleseren og eksportere til CSS eller Figma tokens.',
-      imageUrl: 'https://placehold.co/480x320/6366f1/ffffff?text=Typeset',
-      imageAlt: 'Skjermbilde av Typeset-lekeplassen som viser en typografiskala',
+        'En daglig app for å spore vaner med støtte for Wear OS. Bygget for å være enkel og fokusert, for de som vil ha en konsekvent rutine uten støy.',
+      imageUrl: '',
+      imageAlt: 'Konseptillustrasjon for en enkel vanesporing-app med Wear OS-støtte',
+    },
+    {
+      id: 'project-language-tool',
+      title: 'Language Tool',
+      status: 'blueprinted',
+      tags: ['React Native', 'AI', 'OCR'],
+      description:
+        'AI-assistert språklæringsverktøy med OCR-basert bildeinput for å redusere tokenkostnader. Planlagt som mobilapp eller installerbar webapplikasjon.',
+      imageUrl: '',
+      imageAlt: 'Konseptillustrasjon for et AI-assistert språklæringsverktøy med bildeinput',
     },
   ],
 };

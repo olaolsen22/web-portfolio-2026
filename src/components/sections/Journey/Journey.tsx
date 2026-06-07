@@ -8,8 +8,9 @@ export const Journey = () => {
 
   return (
     <section
+      id="journey"
       aria-labelledby="journey-heading"
-      className="w-full border-t border-[var(--rule)] py-16 min-h-svh flex flex-col justify-center"
+      className="w-full py-16 min-h-svh flex flex-col justify-center"
     >
       <div className="container">
         <SectionHeader

@@ -17,7 +17,7 @@ const PortfolioApp = () => (
     <SkipLink />
     <Header />
     <main id="main">
-      <div className="flex h-svh lg:max-h-[1080px] flex-col pt-16">
+      <div className="flex min-h-svh lg:max-h-[1080px] flex-col pt-16">
         <Hero />
         <TechStackMarquee />
       </div>

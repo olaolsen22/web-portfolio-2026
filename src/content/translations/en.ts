@@ -4,7 +4,6 @@ export interface Translations {
     journey: string;
     work: string;
     connect: string;
-    techStack: string;
   };
   hero: {
     workStatus: string;
@@ -15,6 +14,7 @@ export interface Translations {
     viewMyWork: string;
   };
   techStack: {
+    label: string;
     pause: string;
     play: string;
   };
@@ -30,6 +30,8 @@ export interface Translations {
       inProgress: string;
       blueprinted: string;
     };
+    github: string;
+    demo: string;
   };
   connect: {
     headline1: string;
@@ -73,75 +75,78 @@ export const en: Translations = {
   nav: {
     home: 'Home',
     journey: 'Journey',
-    work: 'Work',
+    work: 'Projects',
     connect: 'Connect',
-    techStack: 'Tech Stack',
   },
   hero: {
-    workStatus: 'Open to work',
+    workStatus: 'Open to Work',
     location: 'Norway 🇳🇴',
     name: 'OLA O.',
     title: 'FRONTEND DEVELOPER',
     details:
-      'I turn **TypeScript** and too much coffee into experiences people actually enjoy using. 4+ years shipping interfaces at X and Y — obsessing over the details that make products feel **native, not just functional.**',
+      '**6 years** building interfaces that **work** and **look right**. Good with details, easy to work with, and moving into fullstack. I use **AI** to **work better**, not to replace the thinking.',
     viewMyWork: 'View My Work',
   },
   techStack: {
+    label: 'Tech Stack',
     pause: 'Pause',
     play: 'Play',
   },
   journey: {
-    title: '[Journey section title]',
-    description: 'How I became a developer.',
+    title: 'Journey',
+    description: 'Where I have been so far',
   },
   selectedWork: {
-    title: 'Selected Work',
-    description: "Side quests I'm actually proud of.",
+    title: 'Personal Projects',
+    description: 'Ideas I build for myself',
     status: {
       live: 'Live',
       inProgress: 'In Progress',
       blueprinted: 'Blueprinted',
     },
+    github: 'GitHub',
+    demo: 'Demo',
   },
   connect: {
     headline1: "Let's",
-    headline2: 'talk.',
-    subtext: "Drop a line — I don't keep read receipts off, I promise.",
+    headline2: 'Talk.',
+    subtext: 'Open to new opportunities and collaboration. Feel free to reach out.',
     github: 'GitHub',
     linkedin: 'LinkedIn',
   },
   accessibility: {
-    enableAnimations: 'Animations are disabled on your device. Enable them for this site?',
-    enableTransparency:
-      'Transparency effects are disabled on your device. Enable them for this site?',
-    keepOff: 'Keep off',
+    enableAnimations:
+      'Animations are off based on your system settings. Enable them for this site?',
+    enableTransparency: 'Transparency effects are off based on your system settings. Enable them?',
+    keepOff: 'Keep Off',
     enable: 'Enable',
-    changePreferences: 'Change accessibility preferences',
+    changePreferences: 'Change motion and transparency preferences',
   },
   footer: {
-    credit: 'Designed & built by',
-    crafted: 'Crafted with React, Tailwind and Claude',
-    privacy: 'Privacy notice',
+    credit: 'Designed and built by',
+    crafted: 'Built with React, TypeScript, and Claude Code.',
+    privacy: 'Privacy Notice',
   },
   privacyNotice: {
     title: 'Privacy Notice',
-    whatSiteCollectsTitle: 'What this site collects',
+    whatSiteCollectsTitle: 'What This Site Collects',
     whatSiteCollectsBody:
-      'This portfolio does not collect, store, or process any personal data. There are no contact forms, user accounts, cookies, or analytics scripts on this site.',
-    hostingProviderTitle: 'What your hosting provider may collect',
+      'This site does not use cookies, trackers, or analytics. No personal data is collected or stored through this website.',
+    hostingProviderTitle: 'Hosting Provider',
     hostingProviderBody:
-      'This site is hosted on a third-party platform (e.g. GitHub Pages or Netlify). As with any web server, your visit may result in basic server logs being recorded — including your IP address, browser type, referring page, and the time of your visit. This is standard infrastructure behaviour outside of my control.',
+      'This site is hosted on a third-party provider. The provider may collect standard server logs, including IP addresses and browser information, as part of their normal operations.',
     githubPagesTitle: 'GitHub Pages',
     githubPagesBody:
-      'If hosted on GitHub Pages: GitHub may collect technical data as described in their Privacy Statement (github.com/site/privacy). GitHub is operated by GitHub, Inc. and subject to US law, but GitHub states they do not use this data for advertising.',
+      "If hosted on GitHub Pages, GitHub may collect technical information such as IP addresses when you visit this site. See GitHub's Privacy Statement for more details.",
     netlifyTitle: 'Netlify',
     netlifyBody:
-      'If hosted on Netlify: Netlify may log request metadata per their Privacy Policy (netlify.com/privacy). Netlify is certified under the EU-US Data Privacy Framework.',
-    gdprTitle: 'Your rights (GDPR)',
+      "If hosted on Netlify, Netlify may log server-side data including IP addresses and request headers. See Netlify's Privacy Policy for more information.",
+    gdprTitle: 'Your Rights',
     gdprBody:
-      'As a person in the EU/EEA you have the right to access, correct, or request deletion of any personal data held about you. Since I hold none, the relevant contact is your hosting provider directly. Norwegian residents may also contact Datatilsynet at datatilsynet.no.',
-    questionsTitle: 'Questions?',
-    questionsBody: 'Reach out via LinkedIn or GitHub if you have any questions about this notice.',
+      'Under GDPR, you have the right to access, correct, and request deletion of any personal data held about you. Since this site does not collect personal data directly, there is nothing to request.',
+    questionsTitle: 'Questions',
+    questionsBody:
+      'If you have any questions about this privacy notice, feel free to reach out via the contact section on this site.',
     close: 'Close',
   },
   skipToContent: 'Skip to main content',

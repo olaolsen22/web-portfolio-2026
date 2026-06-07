@@ -23,7 +23,7 @@ const renderBold = (text: string): ReactNode[] =>
 export const HeadlineText = ({ name, title, details, className }: HeadlineTextProps) => (
   <div className={cn('flex flex-col gap-4', className)}>
     <H1 id="hero-heading">{name}</H1>
-    <Label className="text-[0.875rem] md:text-[1.1rem] font-bold text-brand">{title}</Label>
+    <Label className="text-display-hero-sub md:text-display-hero-sub-lg text-brand">{title}</Label>
     <Lead>{renderBold(details)}</Lead>
   </div>
 );
