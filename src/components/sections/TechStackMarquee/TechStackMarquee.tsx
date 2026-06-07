@@ -5,6 +5,7 @@ import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { Button } from '@/components/ui/button';
 import { techStackSkills } from '@/content/techStackSkills';
 import { Marquee } from './Marquee';
+import { TechStackStatic } from './TechStackStatic';
 
 export const TechStackMarquee = () => {
   const { t } = useLanguage();
@@ -12,21 +13,14 @@ export const TechStackMarquee = () => {
   const [isPaused, setIsPaused] = useState(false);
 
   const toggle = () => setIsPaused((p) => !p);
+  const showStatic = !motionAllowed || isPaused;
 
   return (
     <section aria-label={t('nav.techStack')} className="w-full border-t border-[var(--rule)] py-4">
       <div className="mx-auto max-w-[1920px] px-6 md:px-12 lg:px-20">
-        {motionAllowed && !isPaused && (
-          <ul className="sr-only">
-            {techStackSkills.map((skill) => (
-              <li key={skill}>{skill}</li>
-            ))}
-          </ul>
-        )}
-
-        <div className={`flex ${isPaused ? 'items-start' : 'items-center'}`}>
+        <div className={`flex ${showStatic ? 'items-start' : 'items-center'}`}>
           <div className="min-w-0 flex-1">
-            <Marquee skills={techStackSkills} isPaused={isPaused} />
+            {showStatic ? <TechStackStatic /> : <Marquee skills={techStackSkills} />}
           </div>
 
           {motionAllowed && (
