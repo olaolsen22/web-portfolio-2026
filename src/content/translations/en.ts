@@ -4,7 +4,6 @@ export interface Translations {
     journey: string;
     work: string;
     connect: string;
-    techStack: string;
   };
   hero: {
     workStatus: string;
@@ -15,6 +14,7 @@ export interface Translations {
     viewMyWork: string;
   };
   techStack: {
+    label: string;
     pause: string;
     play: string;
   };
@@ -77,7 +77,6 @@ export const en: Translations = {
     journey: 'Journey',
     work: 'Projects',
     connect: 'Connect',
-    techStack: 'Stack',
   },
   hero: {
     workStatus: 'Open to Work',
@@ -89,6 +88,7 @@ export const en: Translations = {
     viewMyWork: 'View My Work',
   },
   techStack: {
+    label: 'Tech Stack',
     pause: 'Pause',
     play: 'Play',
   },

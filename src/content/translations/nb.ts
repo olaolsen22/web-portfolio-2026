@@ -6,7 +6,6 @@ export const nb: Translations = {
     journey: 'Reisen',
     work: 'Prosjekter',
     connect: 'Kontakt',
-    techStack: 'Teknologi',
   },
   hero: {
     workStatus: 'Åpen for jobb',
@@ -18,6 +17,7 @@ export const nb: Translations = {
     viewMyWork: 'Se arbeidet mitt',
   },
   techStack: {
+    label: 'Teknologi',
     pause: 'Pause',
     play: 'Spill av',
   },
