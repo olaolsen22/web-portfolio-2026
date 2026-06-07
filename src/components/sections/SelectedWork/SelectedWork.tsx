@@ -9,7 +9,7 @@ export const SelectedWork = () => {
   return (
     <section
       aria-labelledby="selected-work-heading"
-      className="w-full border-t border-[var(--rule)] py-16 min-h-svh flex flex-col justify-center"
+      className="w-full py-16 min-h-svh flex flex-col justify-center"
     >
       <div className="container">
         <SectionHeader
