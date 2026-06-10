@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { LanguageProvider } from './context/LanguageContext';
 import { MotionProvider } from './context/MotionContext';
+import { useSiteTitle } from './hooks/useSiteTitle';
 import { SkipLink } from './components/SkipLink/SkipLink';
 import { AccessibilityPrompts } from './components/AccessibilityPrompts/AccessibilityPrompts';
 import { Header } from './components/Header/Header';
@@ -13,23 +14,26 @@ import { Footer } from './components/sections/Footer/Footer';
 
 const queryClient = new QueryClient();
 
-const PortfolioApp = () => (
-  <div className="min-h-screen bg-background text-foreground">
-    <SkipLink />
-    <Header />
-    <main id="main">
-      <div className="flex min-h-svh lg:max-h-[1080px] flex-col pt-16">
-        <Hero />
-        <TechStackMarquee />
-      </div>
-      <Journey />
-      <SelectedWork />
-      <Connect />
-    </main>
-    <Footer />
-    <AccessibilityPrompts />
-  </div>
-);
+const PortfolioApp = () => {
+  useSiteTitle();
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <SkipLink />
+      <Header />
+      <main id="main">
+        <div className="flex min-h-svh lg:max-h-[1080px] flex-col pt-16">
+          <Hero />
+          <TechStackMarquee />
+        </div>
+        <Journey />
+        <SelectedWork />
+        <Connect />
+      </main>
+      <Footer />
+      <AccessibilityPrompts />
+    </div>
+  );
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
