@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { AnimatePresence } from 'motion/react';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { useReducedTransparency } from '@/hooks/useReducedTransparency';
 import { useDarkMode } from '@/hooks/useDarkMode';
@@ -8,13 +9,19 @@ import { cn } from '@/utils';
 import { NavDesktop } from './NavDesktop';
 import { HeaderControls } from './HeaderControls';
 import { NavMobile } from './NavMobile';
+import { NorwegianBanner } from './NorwegianBanner';
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [bannerDismissed, setBannerDismissed] = useState(false);
   const { motionAllowed } = useReducedMotion();
   const { transparencyAllowed } = useReducedTransparency();
   const { isDark, toggle: toggleDark } = useDarkMode();
   const { lang, setLang, t } = useLanguage();
+
+  useEffect(() => {
+    if (lang === 'nb') setBannerDismissed(false);
+  }, [lang]);
 
   const toggleLang = () => setLang(lang === 'en' ? 'nb' : 'en');
 
@@ -47,6 +54,18 @@ export const Header = () => {
           />
         </div>
       </header>
+
+      <AnimatePresence>
+        {lang === 'nb' && !bannerDismissed && (
+          <NorwegianBanner
+            key="nb-banner"
+            onClose={() => setBannerDismissed(true)}
+            t={t}
+            motionAllowed={motionAllowed}
+            transparencyAllowed={transparencyAllowed}
+          />
+        )}
+      </AnimatePresence>
 
       <NavMobile
         menuOpen={menuOpen}
