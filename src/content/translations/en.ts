@@ -68,6 +68,10 @@ export interface Translations {
     questionsBody: string;
     close: string;
   };
+  banner: {
+    langNote: string;
+    dismiss: string;
+  };
   skipToContent: string;
 }
 
@@ -148,6 +152,10 @@ export const en: Translations = {
     questionsBody:
       'If you have any questions about this privacy notice, feel free to reach out via the contact section on this site.',
     close: 'Close',
+  },
+  banner: {
+    langNote: '',
+    dismiss: '',
   },
   skipToContent: 'Skip to main content',
 };
