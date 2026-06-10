@@ -23,7 +23,7 @@ export const Connect = () => {
       id="connect"
       aria-labelledby="connect-heading"
       noBorder
-      className="bg-background sm:py-20 lg:py-[120px] md:min-h-[50svh] lg:min-h-0 relative overflow-hidden isolate"
+      className="bg-background justify-end md:min-h-[50svh] lg:min-h-[70svh] relative overflow-hidden isolate"
     >
       <ConnectBackground />
       <div className="container relative z-[1]">
