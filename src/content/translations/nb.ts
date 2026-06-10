@@ -79,5 +79,10 @@ export const nb: Translations = {
       'Har du spørsmål om denne personvernerklæringen, ta gjerne kontakt via kontaktdelen på dette nettstedet.',
     close: 'Lukk',
   },
+  banner: {
+    langNote:
+      'OBS: Norsk innhold er under utvikling. Teksten er KI-oversatt mens jeg lærer meg norsk. Takk for tålmodigheten!',
+    dismiss: 'Lukk banner',
+  },
   skipToContent: 'Hopp til hovedinnhold',
 };
