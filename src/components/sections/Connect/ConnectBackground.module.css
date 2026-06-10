@@ -1,3 +1,38 @@
+@keyframes dotFloatConnect {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-80vw, -63vh);
+    opacity: 0;
+  }
+}
+
+@keyframes driftMid {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(50px, 40px) scale(0.92);
+  }
+}
+
+@keyframes driftAmber {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(70px, -50px) scale(1.06);
+  }
+}
+
 @keyframes driftConnect {
   from {
     transform: translate(0, 0) scale(1);
@@ -38,24 +73,106 @@
   opacity: 0.1;
 }
 
+/* ── Mid blob — center ───────────────────────────── */
+
+.mid {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  top: 30%;
+  left: 35%;
+  background: radial-gradient(circle, var(--brand), transparent 70%);
+  filter: blur(80px);
+  opacity: 0.1;
+  will-change: transform;
+  animation: driftMid 26s ease-in-out infinite alternate;
+}
+
+:global(.dark) .mid {
+  opacity: 0.09;
+}
+
+/* ── Amber blob — top-right ──────────────────────── */
+
+.amber {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  top: -100px;
+  left: -60px;
+  background: radial-gradient(circle, #f59e0b, transparent 70%);
+  filter: blur(80px);
+  opacity: 0.13;
+  will-change: transform;
+  animation: driftAmber 28s ease-in-out infinite alternate;
+}
+
+:global(.dark) .amber {
+  opacity: 0.1;
+}
+
+/* ── Floating accent dots ────────────────────────── */
+
+.dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 18px var(--brand);
+  top: 75%;
+  right: 10%;
+  animation: dotFloatConnect linear infinite;
+}
+
+.d1 {
+  animation-duration: 18s;
+  animation-delay: 0s;
+}
+.d2 {
+  animation-duration: 22s;
+  animation-delay: -7s;
+}
+.d3 {
+  animation-duration: 20s;
+  animation-delay: -13s;
+}
+
 /* ── Mobile / coarse-pointer ─────────────────────── */
 
 @media (pointer: coarse) {
   .blob {
     filter: blur(45px);
   }
+  .amber {
+    filter: blur(40px);
+  }
+  .mid {
+    display: none;
+  }
+  .dot {
+    display: none;
+  }
 }
 
 /* ── Reduced motion ──────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
-  .blob {
+  .blob,
+  .amber,
+  .mid,
+  .dot {
     animation: none;
   }
 }
 
 /* ── No-perf (JS-applied for low-hardware desktops) ─ */
 
-.noPerf .blob {
+.noPerf .blob,
+.noPerf .amber,
+.noPerf .mid,
+.noPerf .dot {
   animation: none;
 }
