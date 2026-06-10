@@ -131,6 +131,6 @@ Types: `feat` | `fix` | `chore` | `docs` | `style` | `refactor` | `perf` | `test
 - **Geist font**: imported via `@fontsource-variable/geist`, NOT Google Fonts.
 - **`dark:` class**: requires `darkMode: 'class'` in `tailwind.config.ts` (already set).
 - **pnpm 11**: project config lives in `pnpm.yaml`, not `package.json`'s `pnpm` field.
-- **Android reduced motion/transparency**: behavior unconfirmed — test manually on device.
+- **Android reduced motion/transparency**: `MotionContext` sets `data-motion-reduced` / `data-transparency-reduced` on `<html>` — CSS and JS both read these for consistent behaviour across platforms.
 - **Section backgrounds**: always fully opaque — ignore transparency preference.
 - **`tailwind.config.ts`**: imports `breakpoints.ts` directly — must build before Tailwind can resolve it.

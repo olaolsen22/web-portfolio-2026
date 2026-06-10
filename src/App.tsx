@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { LanguageProvider } from './context/LanguageContext';
+import { MotionProvider } from './context/MotionContext';
 import { SkipLink } from './components/SkipLink/SkipLink';
 import { AccessibilityPrompts } from './components/AccessibilityPrompts/AccessibilityPrompts';
 import { Header } from './components/Header/Header';
@@ -33,7 +34,9 @@ const PortfolioApp = () => (
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <LanguageProvider>
-      <PortfolioApp />
+      <MotionProvider>
+        <PortfolioApp />
+      </MotionProvider>
     </LanguageProvider>
   </QueryClientProvider>
 );

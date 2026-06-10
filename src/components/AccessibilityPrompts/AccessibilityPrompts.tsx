@@ -63,10 +63,8 @@ export const AccessibilityPrompts = () => {
         <button
           onClick={() => {
             if (showMotion) {
-              setMotionPref('disabled');
               setShowMotion(false);
             } else {
-              setTransparencyPref('disabled');
               setShowTransparency(false);
             }
           }}
