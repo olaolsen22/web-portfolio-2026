@@ -14,6 +14,11 @@ export const ConnectBackground = () => {
   return (
     <div aria-hidden="true" className={cn(styles.bg, noPerf && styles.noPerf)}>
       <div className={styles.blob} />
+      <div className={styles.mid} />
+      <div className={styles.amber} />
+      <div className={cn(styles.dot, styles.d1)} />
+      <div className={cn(styles.dot, styles.d2)} />
+      <div className={cn(styles.dot, styles.d3)} />
     </div>
   );
 };
