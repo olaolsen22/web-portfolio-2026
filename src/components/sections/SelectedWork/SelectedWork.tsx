@@ -1,4 +1,5 @@
 import { useLanguage } from '@/hooks/useLanguage';
+import { PageSection } from '@/components/ui/PageSection/PageSection';
 import { SectionHeader } from '@/components/ui/SectionHeader/SectionHeader';
 import { selectedWorkItems } from '@/content/selectedWorkItems';
 import { SelectedWorkList } from './SelectedWorkList/SelectedWorkList';
@@ -7,11 +8,7 @@ export const SelectedWork = () => {
   const { t, lang } = useLanguage();
 
   return (
-    <section
-      id="work"
-      aria-labelledby="selected-work-heading"
-      className="w-full py-16 min-h-svh flex flex-col justify-center"
-    >
+    <PageSection id="work" aria-labelledby="selected-work-heading">
       <div className="container">
         <SectionHeader
           id="selected-work-heading"
@@ -21,6 +18,6 @@ export const SelectedWork = () => {
         />
         <SelectedWorkList items={selectedWorkItems[lang]} />
       </div>
-    </section>
+    </PageSection>
   );
 };

@@ -1,4 +1,5 @@
 import { useLanguage } from '@/hooks/useLanguage';
+import { PageSection } from '@/components/ui/PageSection/PageSection';
 import { SectionHeader } from '@/components/ui/SectionHeader/SectionHeader';
 import { journeyItems } from '@/content/journeyItems';
 import { JourneyList } from './JourneyList/JourneyList';
@@ -7,11 +8,7 @@ export const Journey = () => {
   const { t, lang } = useLanguage();
 
   return (
-    <section
-      id="journey"
-      aria-labelledby="journey-heading"
-      className="w-full py-16 min-h-svh flex flex-col justify-center"
-    >
+    <PageSection id="journey" aria-labelledby="journey-heading">
       <div className="container">
         <SectionHeader
           id="journey-heading"
@@ -21,6 +18,6 @@ export const Journey = () => {
         />
         <JourneyList items={journeyItems[lang]} />
       </div>
-    </section>
+    </PageSection>
   );
 };
