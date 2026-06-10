@@ -1,4 +1,5 @@
 import { useLanguage } from '@/hooks/useLanguage';
+import { PageSection } from '@/components/ui/PageSection/PageSection';
 import { ScrollReveal } from '@/components/animations/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { H2Display, Muted } from '@/components/ui/typography';
@@ -18,10 +19,11 @@ export const Connect = () => {
   const { t } = useLanguage();
 
   return (
-    <section
+    <PageSection
       id="connect"
       aria-labelledby="connect-heading"
-      className="w-full bg-background py-16 sm:py-20 lg:py-[120px] relative overflow-hidden isolate"
+      noBorder
+      className="bg-background sm:py-20 lg:py-[120px] md:min-h-[50svh] lg:min-h-0 relative overflow-hidden isolate"
     >
       <ConnectBackground />
       <div className="container relative z-[1]">
@@ -68,6 +70,6 @@ export const Connect = () => {
           </div>
         </ScrollReveal>
       </div>
-    </section>
+    </PageSection>
   );
 };
