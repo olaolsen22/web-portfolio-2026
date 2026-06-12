@@ -87,4 +87,7 @@ export const nb: Translations = {
     dismiss: 'Lukk banner',
   },
   skipToContent: 'Hopp til hovedinnhold',
+  site: {
+    title: 'Ola O. - Frontend-utvikler',
+  },
 };

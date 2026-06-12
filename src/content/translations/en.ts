@@ -78,6 +78,9 @@ export interface Translations {
     dismiss: string;
   };
   skipToContent: string;
+  site: {
+    title: string;
+  };
 }
 
 export const en: Translations = {
@@ -166,4 +169,7 @@ export const en: Translations = {
     dismiss: '',
   },
   skipToContent: 'Skip to main content',
+  site: {
+    title: 'Ola O. - Frontend Developer',
+  },
 };
