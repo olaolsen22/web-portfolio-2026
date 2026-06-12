@@ -57,16 +57,20 @@ export interface Translations {
     title: string;
     whatSiteCollectsTitle: string;
     whatSiteCollectsBody: string;
-    hostingProviderTitle: string;
-    hostingProviderBody: string;
-    githubPagesTitle: string;
-    githubPagesBody: string;
     netlifyTitle: string;
     netlifyBody: string;
+    netlifyBodyLinkPre: string;
+    netlifyBodyLinkText: string;
+    netlifyBodyLinkPost: string;
     gdprTitle: string;
     gdprBody: string;
+    gdprBodyLinkPre: string;
+    gdprBodyLinkPost: string;
     questionsTitle: string;
-    questionsBody: string;
+    questionsBodyPre: string;
+    questionsEmailLinkText: string;
+    questionsBodyOr: string;
+    questionsBodyPost: string;
     close: string;
   };
   banner: {
@@ -137,22 +141,24 @@ export const en: Translations = {
     title: 'Privacy Notice',
     whatSiteCollectsTitle: 'What This Site Collects',
     whatSiteCollectsBody:
-      'This site does not use cookies, trackers, or analytics. No personal data is collected or stored through this website.',
-    hostingProviderTitle: 'Hosting Provider',
-    hostingProviderBody:
-      'This site is hosted on a third-party provider. The provider may collect standard server logs, including IP addresses and browser information, as part of their normal operations.',
-    githubPagesTitle: 'GitHub Pages',
-    githubPagesBody:
-      "If hosted on GitHub Pages, GitHub may collect technical information such as IP addresses when you visit this site. See GitHub's Privacy Statement for more details.",
-    netlifyTitle: 'Netlify',
+      "This site does not use cookies, trackers, or analytics scripts. No personal data is collected or stored by this website directly. Your theme and language preferences are saved in your browser's localStorage and are never transmitted to any server.",
+    netlifyTitle: 'Netlify (Hosting Provider)',
     netlifyBody:
-      "If hosted on Netlify, Netlify may log server-side data including IP addresses and request headers. See Netlify's Privacy Policy for more information.",
+      'This site is hosted by Netlify, Inc. As part of delivering and securing the site, Netlify automatically collects standard access logs — including visitor IP addresses, browser type, request timestamps, and HTTP response codes. This processing is based on legitimate interest and is necessary for operating a publicly hosted website. Netlify retains access logs for less than 30 days.',
+    netlifyBodyLinkPre: "See Netlify's ",
+    netlifyBodyLinkText: 'Privacy Policy',
+    netlifyBodyLinkPost: ' for details.',
     gdprTitle: 'Your Rights',
     gdprBody:
-      'Under GDPR, you have the right to access, correct, and request deletion of any personal data held about you. Since this site does not collect personal data directly, there is nothing to request.',
+      'Under the GDPR — which applies in Norway through the EEA agreement and the Personal Data Act — you have the right to access, rectify, restrict, and request deletion of personal data relating to you. Since this site collects no personal data itself, requests concerning server logs should be directed to Netlify.',
+    gdprBodyLinkPre:
+      'You also have the right to lodge a complaint with the Norwegian Data Protection Authority: Datatilsynet (',
+    gdprBodyLinkPost: ').',
     questionsTitle: 'Questions',
-    questionsBody:
-      'If you have any questions about this privacy notice, feel free to reach out via the contact section on this site.',
+    questionsBodyPre: 'Questions about this privacy notice can be sent via ',
+    questionsEmailLinkText: 'email',
+    questionsBodyOr: ' or ',
+    questionsBodyPost: '.',
     close: 'Close',
   },
   banner: {

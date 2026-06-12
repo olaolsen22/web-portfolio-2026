@@ -8,6 +8,13 @@ import { Button } from '@/components/ui/button';
 import { Label, P } from '@/components/ui/typography';
 import { DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
 
+import { EMAIL_ADDRESS, LINKEDIN_URL } from '@/constants/links';
+
+const NETLIFY_PRIVACY_URL = 'https://www.netlify.com/privacy/';
+const DATATILSYNET_URL = 'https://www.datatilsynet.no/';
+
+const linkClass = 'underline underline-offset-2 hover:opacity-80';
+
 interface PrivacyNoticeModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -17,19 +24,61 @@ export const PrivacyNoticeModal = ({ open, onOpenChange }: PrivacyNoticeModalPro
   const { t } = useLanguage();
   const { motionAllowed } = useReducedMotion();
 
-  const sections = [
+  const sections: Array<{ title: string; body: React.ReactNode }> = [
     {
       title: t('privacyNotice.whatSiteCollectsTitle'),
       body: t('privacyNotice.whatSiteCollectsBody'),
     },
     {
-      title: t('privacyNotice.hostingProviderTitle'),
-      body: t('privacyNotice.hostingProviderBody'),
+      title: t('privacyNotice.netlifyTitle'),
+      body: (
+        <>
+          {t('privacyNotice.netlifyBody')} {t('privacyNotice.netlifyBodyLinkPre')}
+          <a
+            href={NETLIFY_PRIVACY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkClass}
+          >
+            {t('privacyNotice.netlifyBodyLinkText')}
+          </a>
+          {t('privacyNotice.netlifyBodyLinkPost')}
+        </>
+      ),
     },
-    { title: t('privacyNotice.githubPagesTitle'), body: t('privacyNotice.githubPagesBody') },
-    { title: t('privacyNotice.netlifyTitle'), body: t('privacyNotice.netlifyBody') },
-    { title: t('privacyNotice.gdprTitle'), body: t('privacyNotice.gdprBody') },
-    { title: t('privacyNotice.questionsTitle'), body: t('privacyNotice.questionsBody') },
+    {
+      title: t('privacyNotice.gdprTitle'),
+      body: (
+        <>
+          {t('privacyNotice.gdprBody')} {t('privacyNotice.gdprBodyLinkPre')}
+          <a
+            href={DATATILSYNET_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkClass}
+          >
+            datatilsynet.no
+          </a>
+          {t('privacyNotice.gdprBodyLinkPost')}
+        </>
+      ),
+    },
+    {
+      title: t('privacyNotice.questionsTitle'),
+      body: (
+        <>
+          {t('privacyNotice.questionsBodyPre')}
+          <a href={`mailto:${EMAIL_ADDRESS}`} className={linkClass}>
+            {t('privacyNotice.questionsEmailLinkText')}
+          </a>
+          {t('privacyNotice.questionsBodyOr')}
+          <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>
+            LinkedIn
+          </a>
+          {t('privacyNotice.questionsBodyPost')}
+        </>
+      ),
+    },
   ];
 
   const modalContent = (
