@@ -39,6 +39,7 @@ export interface Translations {
     subtext: string;
     github: string;
     linkedin: string;
+    email: string;
   };
   accessibility: {
     enableAnimations: string;
@@ -117,6 +118,7 @@ export const en: Translations = {
     subtext: 'Open to new opportunities and collaboration. Feel free to reach out.',
     github: 'GitHub',
     linkedin: 'LinkedIn',
+    email: 'Email',
   },
   accessibility: {
     enableAnimations:

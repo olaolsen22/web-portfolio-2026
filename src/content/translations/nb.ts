@@ -42,6 +42,7 @@ export const nb: Translations = {
     subtext: 'Åpen for nye muligheter og samarbeid. Ta gjerne kontakt.',
     github: 'GitHub',
     linkedin: 'LinkedIn',
+    email: 'E-post',
   },
   accessibility: {
     enableAnimations:
