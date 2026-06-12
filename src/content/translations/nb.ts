@@ -42,6 +42,7 @@ export const nb: Translations = {
     subtext: 'Åpen for nye muligheter og samarbeid. Ta gjerne kontakt.',
     github: 'GitHub',
     linkedin: 'LinkedIn',
+    email: 'E-post',
   },
   accessibility: {
     enableAnimations:
@@ -61,22 +62,23 @@ export const nb: Translations = {
     title: 'Personvernerklæring',
     whatSiteCollectsTitle: 'Hva dette nettstedet samler inn',
     whatSiteCollectsBody:
-      'Dette nettstedet bruker ikke informasjonskapsler, sporingsverktøy eller analyseverktøy. Ingen personopplysninger samles inn eller lagres gjennom dette nettstedet.',
-    hostingProviderTitle: 'Hostingleverandør',
-    hostingProviderBody:
-      'Dette nettstedet er hostet hos en tredjepart. Leverandøren kan samle inn standard serverlogger, inkludert IP-adresser og nettleserinformasjon, som en del av sin normale drift.',
-    githubPagesTitle: 'GitHub Pages',
-    githubPagesBody:
-      'Dersom nettstedet er hostet på GitHub Pages, kan GitHub samle inn teknisk informasjon som IP-adresser. Se GitHubs personvernerklæring for mer informasjon.',
-    netlifyTitle: 'Netlify',
+      'Dette nettstedet bruker ikke informasjonskapsler, sporingsverktøy eller analyseskript. Ingen personopplysninger samles inn eller lagres direkte av dette nettstedet. Dine tema- og språkinnstillinger lagres i nettleserens localStorage og overføres aldri til noen server.',
+    netlifyTitle: 'Netlify (Hostingleverandør)',
     netlifyBody:
-      'Dersom nettstedet er hostet på Netlify, kan Netlify logge serverdata som IP-adresser og forespørselsheadere. Se Netlifys personvernpolicy for mer informasjon.',
+      'Dette nettstedet er hostet av Netlify, Inc. Som en del av å levere og sikre nettstedet samler Netlify automatisk inn standard tilgangslogger – inkludert besøkendes IP-adresser, nettlesertype, tidsstempler for forespørsler og HTTP-svarkoder. Denne behandlingen er basert på berettiget interesse og er nødvendig for drift av et offentlig hostet nettsted. Netlify oppbevarer tilgangslogger i mindre enn 30 dager.',
+    netlifyBodyLinkPre: 'Se Netlifys ',
+    netlifyBodyLinkText: 'personvernpolicy',
+    netlifyBodyLinkPost: ' for detaljer.',
     gdprTitle: 'Dine rettigheter',
     gdprBody:
-      'Etter GDPR har du rett til innsyn i, retting av og sletting av personopplysninger lagret om deg. Siden dette nettstedet ikke samler inn personopplysninger direkte, er det ingenting å be om.',
+      'Etter GDPR – som gjelder i Norge gjennom EØS-avtalen og personopplysningsloven – har du rett til innsyn i, retting av, begrensning av og sletting av personopplysninger om deg. Siden dette nettstedet ikke samler inn personopplysninger selv, bør henvendelser om serverlogger rettes til Netlify.',
+    gdprBodyLinkPre: 'Du har også rett til å klage til Datatilsynet (',
+    gdprBodyLinkPost: ').',
     questionsTitle: 'Spørsmål',
-    questionsBody:
-      'Har du spørsmål om denne personvernerklæringen, ta gjerne kontakt via kontaktdelen på dette nettstedet.',
+    questionsBodyPre: 'Spørsmål om denne personvernerklæringen kan sendes via ',
+    questionsEmailLinkText: 'e-post',
+    questionsBodyOr: ' eller ',
+    questionsBodyPost: '.',
     close: 'Lukk',
   },
   banner: {

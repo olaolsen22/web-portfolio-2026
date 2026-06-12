@@ -1,3 +1,4 @@
+import { Mail } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { PageSection } from '@/components/ui/PageSection/PageSection';
 import { ScrollReveal } from '@/components/animations/ScrollReveal';
@@ -5,9 +6,7 @@ import { Button } from '@/components/ui/button';
 import { H2Display, Muted } from '@/components/ui/typography';
 import { GitHubIcon } from '@/components/icons/BrandIcons';
 import { ConnectBackground } from './ConnectBackground';
-
-const GITHUB_URL = 'https://github.com/olaolsen22';
-const LINKEDIN_URL = 'https://www.linkedin.com/in/ola-olsen-442b07a3/';
+import { EMAIL_ADDRESS, GITHUB_URL, LINKEDIN_URL } from '@/constants/links';
 
 const LinkedInIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
@@ -45,6 +44,17 @@ export const Connect = () => {
 
         <ScrollReveal delay={0.2}>
           <div className="flex flex-col sm:flex-row flex-wrap gap-3 items-center">
+            <Button
+              variant="outline"
+              size="lg"
+              asChild
+              className="w-full sm:w-auto will-change-[transform] [&_svg]:size-[18px]"
+            >
+              <a href={`mailto:${EMAIL_ADDRESS}`}>
+                <Mail aria-hidden="true" />
+                {t('connect.email')}
+              </a>
+            </Button>
             <Button
               variant="outline"
               size="lg"

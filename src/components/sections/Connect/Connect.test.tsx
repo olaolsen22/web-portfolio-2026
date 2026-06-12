@@ -35,15 +35,25 @@ describe('Connect', () => {
     expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
   });
 
-  it('renders GitHub and LinkedIn links', () => {
+  it('renders email, GitHub and LinkedIn links', () => {
     renderWithProviders(<Connect />);
     const links = screen.getAllByRole('link');
-    expect(links).toHaveLength(2);
+    expect(links).toHaveLength(3);
   });
 
-  it('links open in new tab with noopener noreferrer', () => {
+  it('renders email link with mailto href', () => {
     renderWithProviders(<Connect />);
-    screen.getAllByRole('link').forEach((link) => {
+    const emailLink = screen.getByRole('link', { name: 'connect.email' });
+    expect(emailLink).toHaveAttribute('href', 'mailto:olatalabaolsen@gmail.com');
+  });
+
+  it('GitHub and LinkedIn links open in new tab with noopener noreferrer', () => {
+    renderWithProviders(<Connect />);
+    const externalLinks = screen
+      .getAllByRole('link')
+      .filter((link) => link.getAttribute('href')?.startsWith('http'));
+    expect(externalLinks).toHaveLength(2);
+    externalLinks.forEach((link) => {
       expect(link).toHaveAttribute('target', '_blank');
       expect(link).toHaveAttribute('rel', 'noopener noreferrer');
     });
