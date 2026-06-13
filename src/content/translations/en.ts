@@ -32,6 +32,7 @@ export interface Translations {
     };
     github: string;
     demo: string;
+    viewImage: string;
   };
   connect: {
     headline1: string;
@@ -118,6 +119,7 @@ export const en: Translations = {
     },
     github: 'GitHub',
     demo: 'Demo',
+    viewImage: 'View full image',
   },
   connect: {
     headline1: "Let's",

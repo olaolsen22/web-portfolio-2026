@@ -35,6 +35,7 @@ export const nb: Translations = {
     },
     github: 'GitHub',
     demo: 'Demo',
+    viewImage: 'Se fullstendig bilde',
   },
   connect: {
     headline1: 'La oss',

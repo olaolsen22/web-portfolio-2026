@@ -7,6 +7,7 @@ export interface SelectedWorkItem {
   tags: string[];
   description: string;
   imageUrl: string;
+  imageUrlLight?: string;
   imageAlt: string;
   githubUrl?: string;
   demoUrl?: string;
@@ -21,7 +22,8 @@ export const selectedWorkItems: Record<'en' | 'nb', SelectedWorkItem[]> = {
       tags: ['React', 'TypeScript', 'Tailwind CSS', 'shadcn', 'Claude Code'],
       description:
         'Personal portfolio built with React and TypeScript. Claude Code was part of the development workflow, used for planning and acceleration.',
-      imageUrl: '',
+      imageUrl: '/images/projects/project-portfolio-dark.jpg',
+      imageUrlLight: '/images/projects/project-portfolio-light.jpg',
       imageAlt: "Screenshot of Ola O.'s personal developer portfolio website",
       githubUrl: 'https://github.com/olaolsen22/web-portfolio-2026',
       demoUrl: 'https://olao-dev.netlify.app/',
@@ -57,7 +59,8 @@ export const selectedWorkItems: Record<'en' | 'nb', SelectedWorkItem[]> = {
       tags: ['React', 'TypeScript', 'Tailwind CSS', 'shadcn', 'Claude Code'],
       description:
         'Personlig portefølje bygget med React og TypeScript. Claude Code var en del av utviklingsarbeidet, brukt til planlegging og fremdrift.',
-      imageUrl: '',
+      imageUrl: '/images/projects/project-portfolio-dark.jpg',
+      imageUrlLight: '/images/projects/project-portfolio-light.jpg',
       imageAlt: 'Skjermbilde av Ola O.s personlige porteføljenettsted',
       githubUrl: 'https://github.com/olaolsen22/web-portfolio-2026',
       demoUrl: 'https://olaolsen22.github.io/web-portfolio-2026',
