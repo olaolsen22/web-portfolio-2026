@@ -21,7 +21,7 @@ export const IndexedCard = ({
     indexSize === 'lg' ? (
       <span
         aria-hidden="true"
-        className="text-[clamp(2rem,5vw,4rem)] font-extrabold leading-none tracking-[-0.04em] text-brand opacity-[0.18] transition-opacity group-hover:opacity-100"
+        className="text-[clamp(2rem,5vw,4rem)] font-extrabold leading-none tracking-[-0.04em] text-brand opacity-[0.18] transition-opacity can-hover:group-hover:opacity-100"
       >
         {formattedIndex}
       </span>
