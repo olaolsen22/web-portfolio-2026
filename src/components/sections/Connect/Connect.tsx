@@ -1,4 +1,4 @@
-import { Mail } from 'lucide-react';
+import { ArrowUpRight, Mail } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { PageSection } from '@/components/ui/PageSection/PageSection';
 import { ScrollReveal } from '@/components/animations/ScrollReveal';
@@ -64,6 +64,7 @@ export const Connect = () => {
               <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
                 <GitHubIcon />
                 {t('connect.github')}
+                <ArrowUpRight aria-hidden="true" />
               </a>
             </Button>
             <Button
@@ -75,6 +76,7 @@ export const Connect = () => {
               <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
                 <LinkedInIcon />
                 {t('connect.linkedin')}
+                <ArrowUpRight aria-hidden="true" />
               </a>
             </Button>
           </div>

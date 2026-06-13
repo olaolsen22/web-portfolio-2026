@@ -28,7 +28,13 @@ export const TechStackMarquee = () => {
 
           {motionAllowed && (
             <div className="shrink-0 pl-4">
-              <Button variant="ghost" size="sm" onClick={toggle} aria-pressed={isPaused}>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggle}
+                aria-pressed={isPaused}
+                aria-label={isPaused ? t('techStack.play') : t('techStack.pause')}
+              >
                 {isPaused ? (
                   <Play size={13} aria-hidden="true" className="shrink-0" />
                 ) : (
