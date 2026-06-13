@@ -14,7 +14,7 @@ export const JourneyList = ({ items, className }: JourneyListProps) => (
     {items.map((item, i) => (
       <li key={item.id}>
         <ScrollReveal delay={i * animation.stagger}>
-          <JourneyCard index={i + 1} item={item} />
+          <JourneyCard index={items.length - i} item={item} />
         </ScrollReveal>
       </li>
     ))}
