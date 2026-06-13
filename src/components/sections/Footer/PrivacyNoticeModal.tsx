@@ -3,6 +3,8 @@ import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
+import { useReducedTransparency } from '@/hooks/useReducedTransparency';
+import { cn } from '@/utils';
 import { animation } from '@/utils/animationConfig';
 import { Button } from '@/components/ui/button';
 import { Label, P } from '@/components/ui/typography';
@@ -13,7 +15,7 @@ import { EMAIL_ADDRESS, LINKEDIN_URL } from '@/constants/links';
 const NETLIFY_PRIVACY_URL = 'https://www.netlify.com/privacy/';
 const DATATILSYNET_URL = 'https://www.datatilsynet.no/';
 
-const linkClass = 'underline underline-offset-2 hover:opacity-80';
+const linkClass = 'underline underline-offset-2 can-hover:hover:opacity-80';
 
 interface PrivacyNoticeModalProps {
   open: boolean;
@@ -23,6 +25,7 @@ interface PrivacyNoticeModalProps {
 export const PrivacyNoticeModal = ({ open, onOpenChange }: PrivacyNoticeModalProps) => {
   const { t } = useLanguage();
   const { motionAllowed } = useReducedMotion();
+  const { transparencyAllowed } = useReducedTransparency();
 
   const sections: Array<{ title: string; body: React.ReactNode }> = [
     {
@@ -87,7 +90,10 @@ export const PrivacyNoticeModal = ({ open, onOpenChange }: PrivacyNoticeModalPro
         <DialogTitle className="text-[1.05rem] font-extrabold tracking-[-0.02em] text-left">
           {t('privacyNotice.title')}
         </DialogTitle>
-        <DialogPrimitive.Close aria-label={t('privacyNotice.close')} className=" p-2">
+        <DialogPrimitive.Close
+          aria-label={t('privacyNotice.close')}
+          className="p-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        >
           <X className="h-4 w-4" />
         </DialogPrimitive.Close>
       </DialogHeader>
@@ -121,7 +127,10 @@ export const PrivacyNoticeModal = ({ open, onOpenChange }: PrivacyNoticeModalPro
             <>
               <DialogPrimitive.Overlay asChild forceMount>
                 <motion.div
-                  className="fixed inset-0 z-50 bg-background/60 backdrop-blur-md"
+                  className={cn(
+                    'fixed inset-0 z-50',
+                    transparencyAllowed ? 'bg-background/60 backdrop-blur-md' : 'bg-background'
+                  )}
                   initial={motionAllowed ? { opacity: 0 } : false}
                   animate={{ opacity: 1 }}
                   exit={motionAllowed ? { opacity: 0 } : undefined}
