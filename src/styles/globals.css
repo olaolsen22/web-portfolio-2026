@@ -28,18 +28,18 @@
   --destructive-foreground: 0 0% 98%;
   --border: 42 18% 85%;
   --input: 42 18% 85%;
-  --ring: 160 84% 39%;
+  --ring: 160 84% 28%;
   --radius: 0.5rem;
 
   /* extended design tokens */
-  --brand: #10b981;
-  --brand-dark: #059669;
+  --brand: #047857;
+  --brand-dark: #065f46;
   --brand-glow: rgba(16, 185, 129, 0.2);
   --surface: rgba(255, 255, 255, 0.45);
   --surface-solid: hsl(44 36% 96%);
-  --faint: hsl(36 12% 56%);
+  --faint: hsl(36 12% 40%);
   --bg2: hsl(42 25% 91%);
-  --border-mid: rgba(0, 0, 0, 0.14);
+  --border-mid: rgba(0, 0, 0, 0.45);
   --rule: rgba(0, 0, 0, 0.12);
   --nav-bg: rgba(245, 242, 235, 0.8);
   --menu-bg: rgba(245, 242, 235, 0.96);
@@ -58,7 +58,7 @@
   --secondary: 42 12% 14%;
   --secondary-foreground: 41 30% 89%;
   --muted: 42 12% 14%;
-  --muted-foreground: 35 8% 44%;
+  --muted-foreground: 35 8% 48%;
   --accent: 42 12% 14%;
   --accent-foreground: 41 30% 89%;
   --destructive: 0 62.8% 30.6%;
@@ -73,9 +73,9 @@
   --brand-glow: rgba(16, 185, 129, 0.18);
   --surface: rgba(255, 255, 255, 0.04);
   --surface-solid: hsl(40 20% 6%);
-  --faint: hsl(42 14% 32%);
+  --faint: hsl(42 14% 46%);
   --bg2: #131108;
-  --border-mid: rgba(255, 255, 255, 0.13);
+  --border-mid: rgba(255, 255, 255, 0.35);
   --rule: rgba(255, 255, 255, 0.1);
   --nav-bg: rgba(12, 11, 9, 0.85);
   --menu-bg: rgba(12, 11, 9, 0.97);
