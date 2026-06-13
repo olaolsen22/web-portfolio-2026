@@ -50,7 +50,7 @@ export const NorwegianBanner = ({
           size="icon"
           aria-label={t('banner.dismiss')}
           onClick={onClose}
-          className="h-7 w-7 shrink-0 border-0 hover:border-0"
+          className="h-7 w-7 shrink-0 border-0 can-hover:hover:border-0"
         >
           <X size={14} aria-hidden="true" />
         </Button>

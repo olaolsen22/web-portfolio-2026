@@ -10,16 +10,16 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-primary text-primary-foreground font-bold hover:opacity-85 hover:-translate-y-0.5',
+          'bg-primary text-primary-foreground font-bold can-hover:hover:opacity-85 can-hover:hover:-translate-y-0.5',
         destructive:
-          'bg-[oklch(0.45_0.18_25)] text-destructive-foreground font-bold hover:opacity-85 hover:-translate-y-0.5',
+          'bg-[oklch(0.45_0.18_25)] text-destructive-foreground font-bold can-hover:hover:opacity-85 can-hover:hover:-translate-y-0.5',
         outline:
-          'border-[1.5px] border-[rgba(0,0,0,0.14)] dark:border-[rgba(255,255,255,0.13)] bg-transparent text-foreground font-bold hover:border-brand hover:text-brand dark:hover:border-brand dark:hover:text-brand hover:-translate-y-0.5',
+          'border-[1.5px] border-[rgba(0,0,0,0.14)] dark:border-[rgba(255,255,255,0.13)] bg-transparent text-foreground font-bold can-hover:hover:border-brand can-hover:hover:text-brand can-hover:dark:hover:border-brand can-hover:dark:hover:text-brand can-hover:hover:-translate-y-0.5',
         secondary:
-          'bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/80 hover:-translate-y-0.5',
+          'bg-secondary text-secondary-foreground font-semibold can-hover:hover:bg-secondary/80 can-hover:hover:-translate-y-0.5',
         ghost:
-          'bg-transparent text-muted-foreground font-bold border border-[rgba(0,0,0,0.14)] dark:border-[rgba(255,255,255,0.13)] hover:text-foreground hover:border-foreground dark:hover:text-foreground dark:hover:border-foreground',
-        link: 'text-faint underline underline-offset-3 font-medium hover:text-foreground focus-visible:ring-offset-[3px]',
+          'bg-transparent text-muted-foreground font-bold border border-[rgba(0,0,0,0.14)] dark:border-[rgba(255,255,255,0.13)] can-hover:hover:text-foreground can-hover:hover:border-foreground can-hover:dark:hover:text-foreground can-hover:dark:hover:border-foreground',
+        link: 'text-faint underline underline-offset-3 font-medium can-hover:hover:text-foreground focus-visible:ring-offset-[3px]',
       },
       size: {
         default: 'px-6 py-3.5 min-h-12 text-sm gap-2',
