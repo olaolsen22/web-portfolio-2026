@@ -6,6 +6,7 @@ import { H3, P } from '@/components/ui/typography';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { GitHubIcon } from '@/components/icons/BrandIcons';
+import { ImageViewer } from '@/components/ui/ImageViewer/ImageViewer';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import type { TranslationKey } from '@/content';
@@ -39,19 +40,64 @@ export const SelectedWorkCard = ({ index, item, className }: SelectedWorkCardPro
       indexSize="sm"
       className={cn('md:items-stretch', className)}
       aside={
-        <div className="rounded-md ring-1 ring-transparent transition-all duration-200 group-hover:ring-brand/60">
-          <div className="overflow-hidden rounded-md">
-            <LazyImage
-              src={item.imageUrl}
-              alt={item.imageAlt}
-              aspectClassName="aspect-[4/3] md:aspect-[3/2]"
-              imgClassName={cn(
-                motionAllowed &&
-                  'will-change-transform transition-transform duration-[350ms] ease-out group-hover:scale-105'
-              )}
-            />
+        item.imageUrl ? (
+          <ImageViewer src={item.imageUrl} srcLight={item.imageUrlLight} alt={item.imageAlt}>
+            <button
+              type="button"
+              aria-label={t('selectedWork.viewImage')}
+              className="w-full cursor-pointer rounded-md ring-1 ring-transparent transition-all duration-200 group-hover:ring-brand/60"
+            >
+              <div className="overflow-hidden rounded-md">
+                {item.imageUrlLight ? (
+                  <div className="relative aspect-[4/3] md:aspect-[3/2]">
+                    <div className="absolute inset-0 opacity-100 dark:opacity-0 transition-opacity duration-300">
+                      <LazyImage
+                        src={item.imageUrlLight}
+                        alt={item.imageAlt}
+                        aspectClassName="aspect-[4/3] md:aspect-[3/2]"
+                        imgClassName={cn(
+                          motionAllowed &&
+                            'will-change-transform transition-transform duration-[350ms] ease-out group-hover:scale-105'
+                        )}
+                      />
+                    </div>
+                    <div className="absolute inset-0 opacity-0 dark:opacity-100 transition-opacity duration-300">
+                      <LazyImage
+                        src={item.imageUrl}
+                        alt={item.imageAlt}
+                        aspectClassName="aspect-[4/3] md:aspect-[3/2]"
+                        imgClassName={cn(
+                          motionAllowed &&
+                            'will-change-transform transition-transform duration-[350ms] ease-out group-hover:scale-105'
+                        )}
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <LazyImage
+                    src={item.imageUrl}
+                    alt={item.imageAlt}
+                    aspectClassName="aspect-[4/3] md:aspect-[3/2]"
+                    imgClassName={cn(
+                      motionAllowed &&
+                        'will-change-transform transition-transform duration-[350ms] ease-out group-hover:scale-105'
+                    )}
+                  />
+                )}
+              </div>
+            </button>
+          </ImageViewer>
+        ) : (
+          <div className="rounded-md ring-1 ring-transparent">
+            <div className="overflow-hidden rounded-md">
+              <LazyImage
+                src={item.imageUrl}
+                alt={item.imageAlt}
+                aspectClassName="aspect-[4/3] md:aspect-[3/2]"
+              />
+            </div>
           </div>
-        </div>
+        )
       }
     >
       <div className="flex flex-col gap-2 md:h-full">
