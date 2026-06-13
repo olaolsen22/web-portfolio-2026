@@ -2,6 +2,7 @@ import { breakpoints } from './src/utils/breakpoints';
 import type { Config } from 'tailwindcss';
 import typography from '@tailwindcss/typography';
 import containerQueries from '@tailwindcss/container-queries';
+import plugin from 'tailwindcss/plugin';
 
 export default {
   darkMode: 'class',
@@ -95,5 +96,11 @@ export default {
       },
     },
   },
-  plugins: [typography, containerQueries],
+  plugins: [
+    typography,
+    containerQueries,
+    plugin(({ addVariant }) => {
+      addVariant('can-hover', '@media (hover: hover)');
+    }),
+  ],
 } satisfies Config;

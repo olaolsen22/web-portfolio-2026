@@ -1,3 +1,3 @@
 export { cn } from './cn';
-export { breakpoints, mq } from './breakpoints';
+export { breakpoints } from './breakpoints';
 export { animation } from './animationConfig';
