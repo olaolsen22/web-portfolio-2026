@@ -21,7 +21,7 @@ export const TechStackMarquee = () => {
       className="w-full border-t border-b border-[var(--rule)] py-4"
     >
       <div className="mx-auto max-w-[1920px] px-6 md:px-12 lg:px-20">
-        <div className={`flex ${showStatic ? 'items-start' : 'items-center'}`}>
+        <div className={`flex items-center`}>
           <div className="min-w-0 flex-1">
             {showStatic ? <TechStackStatic /> : <Marquee skills={techStackSkills} />}
           </div>
