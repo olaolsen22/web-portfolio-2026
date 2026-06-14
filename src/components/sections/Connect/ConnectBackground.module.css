@@ -62,7 +62,7 @@
   border-radius: 50%;
   bottom: -200px;
   right: -120px;
-  background: radial-gradient(circle, var(--brand), transparent 70%);
+  background: radial-gradient(circle, hsl(var(--brand)), transparent 70%);
   filter: blur(90px);
   opacity: 0.12;
   will-change: transform;
@@ -82,7 +82,7 @@
   border-radius: 50%;
   top: 30%;
   left: 35%;
-  background: radial-gradient(circle, var(--brand), transparent 70%);
+  background: radial-gradient(circle, hsl(var(--brand)), transparent 70%);
   filter: blur(80px);
   opacity: 0.1;
   will-change: transform;
@@ -120,8 +120,8 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--brand);
-  box-shadow: 0 0 18px var(--brand);
+  background: hsl(var(--brand));
+  box-shadow: 0 0 18px hsl(var(--brand));
   top: 75%;
   right: 10%;
   animation: dotFloatConnect linear infinite;

@@ -1,4 +1,7 @@
 export interface Translations {
+  common: {
+    close: string;
+  };
   nav: {
     home: string;
     journey: string;
@@ -85,6 +88,9 @@ export interface Translations {
 }
 
 export const en: Translations = {
+  common: {
+    close: 'Close',
+  },
   nav: {
     home: 'Home',
     journey: 'Journey',

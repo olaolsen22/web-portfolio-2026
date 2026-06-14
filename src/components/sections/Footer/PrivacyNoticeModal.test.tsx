@@ -15,6 +15,10 @@ vi.mock('@/hooks/useReducedMotion', () => ({
   useReducedMotion: () => ({ motionAllowed: false }),
 }));
 
+vi.mock('@/hooks/useReducedTransparency', () => ({
+  useReducedTransparency: () => ({ transparencyAllowed: true }),
+}));
+
 describe('PrivacyNoticeModal', () => {
   it('renders without crashing when closed', () => {
     const { container } = render(<PrivacyNoticeModal open={false} onOpenChange={vi.fn()} />);

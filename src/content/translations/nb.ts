@@ -1,6 +1,9 @@
 import type { Translations } from './en';
 
 export const nb: Translations = {
+  common: {
+    close: 'Lukk',
+  },
   nav: {
     home: 'Hjem',
     journey: 'Reisen',

@@ -1,11 +1,5 @@
 export const animation = {
   duration: {
-    // backwards-compat aliases
-    fast: 0.2,
-    base: 0.4,
-    slow: 0.6,
-    slower: 0.9,
-    // semantic tokens per design spec
     quick: 0.2, // color, border, opacity changes
     standard: 0.28, // transforms, interactive state changes
     enter: 0.28, // overlay / drawer fade-in

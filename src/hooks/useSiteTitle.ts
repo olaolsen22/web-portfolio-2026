@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { useLanguageContext } from '../context/LanguageContext';
+import { useLanguage } from './useLanguage';
 
 export const useSiteTitle = () => {
-  const { t } = useLanguageContext();
+  const { t } = useLanguage();
   useEffect(() => {
     document.title = t('site.title');
   }, [t]);

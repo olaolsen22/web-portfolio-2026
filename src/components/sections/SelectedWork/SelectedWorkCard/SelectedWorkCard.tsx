@@ -6,9 +6,9 @@ import { H3, P } from '@/components/ui/typography';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { GitHubIcon } from '@/components/icons/BrandIcons';
-import { ImageViewer } from '@/components/ui/ImageViewer/ImageViewer';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
+import { SelectedWorkCardImage } from './SelectedWorkCardImage';
 import type { TranslationKey } from '@/content';
 import type { SelectedWorkItem, WorkStatus } from '@/content/selectedWorkItems';
 
@@ -19,9 +19,9 @@ interface SelectedWorkCardProps {
 }
 
 const statusStyles: Record<WorkStatus, string> = {
-  live: 'text-emerald-600 dark:text-emerald-400',
-  'in-progress': 'text-amber-700 dark:text-amber-400',
-  blueprinted: 'text-[hsl(var(--muted-foreground))]',
+  live: 'text-brand',
+  'in-progress': 'text-status-progress',
+  blueprinted: 'text-muted-foreground',
 };
 
 const statusKeyMap: Record<WorkStatus, TranslationKey> = {
@@ -41,65 +41,12 @@ export const SelectedWorkCard = ({ index, item, className }: SelectedWorkCardPro
       className={cn('md:items-stretch', className)}
       aside={
         item.imageUrl ? (
-          <ImageViewer src={item.imageUrl} srcLight={item.imageUrlLight} alt={item.imageAlt}>
-            <button
-              type="button"
-              aria-label={t('selectedWork.viewImage')}
-              className={cn(
-                'w-full cursor-pointer rounded-md ring-1 ring-transparent can-hover:group-hover:ring-brand/60',
-                motionAllowed && 'transition-all duration-200'
-              )}
-            >
-              <div className="overflow-hidden rounded-md">
-                {item.imageUrlLight ? (
-                  <div className="relative aspect-[4/3] md:aspect-[3/2]">
-                    <div
-                      className={cn(
-                        'absolute inset-0 opacity-100 dark:opacity-0',
-                        motionAllowed && 'transition-opacity duration-300'
-                      )}
-                    >
-                      <LazyImage
-                        src={item.imageUrlLight}
-                        alt={item.imageAlt}
-                        aspectClassName="aspect-[4/3] md:aspect-[3/2]"
-                        imgClassName={cn(
-                          motionAllowed &&
-                            'will-change-transform transition-transform duration-[350ms] ease-out can-hover:group-hover:scale-105'
-                        )}
-                      />
-                    </div>
-                    <div
-                      className={cn(
-                        'absolute inset-0 opacity-0 dark:opacity-100',
-                        motionAllowed && 'transition-opacity duration-300'
-                      )}
-                    >
-                      <LazyImage
-                        src={item.imageUrl}
-                        alt={item.imageAlt}
-                        aspectClassName="aspect-[4/3] md:aspect-[3/2]"
-                        imgClassName={cn(
-                          motionAllowed &&
-                            'will-change-transform transition-transform duration-[350ms] ease-out can-hover:group-hover:scale-105'
-                        )}
-                      />
-                    </div>
-                  </div>
-                ) : (
-                  <LazyImage
-                    src={item.imageUrl}
-                    alt={item.imageAlt}
-                    aspectClassName="aspect-[4/3] md:aspect-[3/2]"
-                    imgClassName={cn(
-                      motionAllowed &&
-                        'will-change-transform transition-transform duration-[350ms] ease-out can-hover:group-hover:scale-105'
-                    )}
-                  />
-                )}
-              </div>
-            </button>
-          </ImageViewer>
+          <SelectedWorkCardImage
+            imageUrl={item.imageUrl}
+            imageUrlLight={item.imageUrlLight}
+            imageAlt={item.imageAlt}
+            motionAllowed={motionAllowed}
+          />
         ) : (
           <div className="rounded-md ring-1 ring-transparent">
             <div className="overflow-hidden rounded-md">

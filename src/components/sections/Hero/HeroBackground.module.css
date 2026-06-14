@@ -80,7 +80,7 @@
   height: 540px;
   top: -120px;
   right: -80px;
-  background: radial-gradient(circle, var(--brand), transparent 70%);
+  background: radial-gradient(circle, hsl(var(--brand)), transparent 70%);
   opacity: 0.22;
   animation: drift1 22s ease-in-out infinite alternate;
 }
@@ -110,7 +110,7 @@
   height: 280px;
   top: 30%;
   left: 35%;
-  background: radial-gradient(circle, var(--brand), transparent 70%);
+  background: radial-gradient(circle, hsl(var(--brand)), transparent 70%);
   opacity: 0.1;
   animation: drift3 26s ease-in-out infinite alternate;
 }
@@ -126,8 +126,8 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--brand);
-  box-shadow: 0 0 18px var(--brand);
+  background: hsl(var(--brand));
+  box-shadow: 0 0 18px hsl(var(--brand));
   top: 75%;
   left: 10%;
   animation: dotFloat linear infinite;

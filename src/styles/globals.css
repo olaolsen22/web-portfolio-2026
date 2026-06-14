@@ -32,9 +32,10 @@
   --radius: 0.5rem;
 
   /* extended design tokens */
-  --brand: #047857;
-  --brand-dark: #065f46;
+  --brand: 160 84% 18%;
+  --brand-dark: 158 88% 15%;
   --brand-glow: rgba(16, 185, 129, 0.2);
+  --status-progress: 33 77% 28%;
   --surface: rgba(255, 255, 255, 0.45);
   --surface-solid: hsl(44 36% 96%);
   --faint: hsl(36 12% 40%);
@@ -68,9 +69,10 @@
   --ring: 160 84% 39%;
 
   /* extended design tokens */
-  --brand: #10b981;
-  --brand-dark: #059669;
+  --brand: 160 84% 39%;
+  --brand-dark: 160 84% 28%;
   --brand-glow: rgba(16, 185, 129, 0.18);
+  --status-progress: 38 92% 50%;
   --surface: rgba(255, 255, 255, 0.04);
   --surface-solid: hsl(40 20% 6%);
   --faint: hsl(42 14% 46%);

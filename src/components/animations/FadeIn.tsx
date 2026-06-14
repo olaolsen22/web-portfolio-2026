@@ -13,7 +13,7 @@ interface FadeInProps {
 export const FadeIn = ({
   children,
   delay = 0,
-  duration = animation.duration.base,
+  duration = animation.duration.standard,
   className,
 }: FadeInProps) => {
   const { motionAllowed } = useReducedMotion();

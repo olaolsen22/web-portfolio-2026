@@ -19,7 +19,7 @@ const badgeVariants = cva(
         glass:
           'border-border-mid bg-surface text-foreground backdrop-blur-sm shadow-md dark:shadow-none',
         stack:
-          'rounded-[4px] px-[10px] py-1 text-[0.68rem] font-bold tracking-[0.05em] text-brand bg-[var(--brand-glow)] border-[rgba(16,185,129,0.2)]',
+          'rounded-[4px] px-[10px] py-1 text-[0.68rem] font-bold tracking-[0.05em] text-brand bg-[var(--brand-glow)] border-[var(--brand-glow)]',
       },
     },
     defaultVariants: {

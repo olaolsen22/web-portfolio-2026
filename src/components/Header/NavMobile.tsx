@@ -110,7 +110,7 @@ export const NavMobile = ({
               height: 540,
               top: -200,
               right: -260,
-              background: 'radial-gradient(circle, #10b981, transparent 70%)',
+              background: 'radial-gradient(circle, hsl(var(--brand)), transparent 70%)',
               filter: 'blur(80px)',
               willChange: 'transform',
             }}

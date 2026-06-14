@@ -24,7 +24,7 @@ export const SlideIn = ({
   children,
   direction = 'left',
   delay = 0,
-  duration = animation.duration.base,
+  duration = animation.duration.standard,
   className,
 }: SlideInProps) => {
   const { motionAllowed } = useReducedMotion();
