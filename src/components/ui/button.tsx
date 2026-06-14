@@ -14,11 +14,11 @@ const buttonVariants = cva(
         destructive:
           'bg-[oklch(0.45_0.18_25)] text-destructive-foreground font-bold can-hover:hover:opacity-85 can-hover:hover:-translate-y-0.5',
         outline:
-          'border-[1.5px] border-[rgba(0,0,0,0.14)] dark:border-[rgba(255,255,255,0.13)] bg-transparent text-foreground font-bold can-hover:hover:border-brand can-hover:hover:text-brand can-hover:dark:hover:border-brand can-hover:dark:hover:text-brand can-hover:hover:-translate-y-0.5',
+          'border-[1.5px] border-[var(--border-mid)] bg-transparent text-foreground font-bold can-hover:hover:border-brand can-hover:hover:text-brand can-hover:dark:hover:border-brand can-hover:dark:hover:text-brand can-hover:hover:-translate-y-0.5',
         secondary:
           'bg-secondary text-secondary-foreground font-semibold can-hover:hover:bg-secondary/80 can-hover:hover:-translate-y-0.5',
         ghost:
-          'bg-transparent text-muted-foreground font-bold border border-[rgba(0,0,0,0.14)] dark:border-[rgba(255,255,255,0.13)] can-hover:hover:text-foreground can-hover:hover:border-foreground can-hover:dark:hover:text-foreground can-hover:dark:hover:border-foreground',
+          'bg-transparent text-muted-foreground font-bold border border-[var(--border-mid)] can-hover:hover:text-foreground can-hover:hover:border-foreground can-hover:dark:hover:text-foreground can-hover:dark:hover:border-foreground',
         link: 'text-faint underline underline-offset-3 font-medium can-hover:hover:text-foreground focus-visible:ring-offset-[3px]',
       },
       size: {
