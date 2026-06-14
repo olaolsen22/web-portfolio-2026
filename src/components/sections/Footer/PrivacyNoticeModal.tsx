@@ -9,11 +9,8 @@ import { animation } from '@/utils/animationConfig';
 import { Button } from '@/components/ui/button';
 import { Label, P } from '@/components/ui/typography';
 import { DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
-
-import { EMAIL_ADDRESS, LINKEDIN_URL } from '@/constants/links';
-
-const NETLIFY_PRIVACY_URL = 'https://www.netlify.com/privacy/';
-const DATATILSYNET_URL = 'https://www.datatilsynet.no/';
+import { privacyNoticeSections } from '@/content/privacyNoticeSections';
+import type { TranslationKey } from '@/content';
 
 const linkClass = 'underline underline-offset-2 can-hover:hover:opacity-80';
 
@@ -26,63 +23,6 @@ export const PrivacyNoticeModal = ({ open, onOpenChange }: PrivacyNoticeModalPro
   const { t } = useLanguage();
   const { motionAllowed } = useReducedMotion();
   const { transparencyAllowed } = useReducedTransparency();
-
-  const sections: Array<{ title: string; body: React.ReactNode }> = [
-    {
-      title: t('privacyNotice.whatSiteCollectsTitle'),
-      body: t('privacyNotice.whatSiteCollectsBody'),
-    },
-    {
-      title: t('privacyNotice.netlifyTitle'),
-      body: (
-        <>
-          {t('privacyNotice.netlifyBody')} {t('privacyNotice.netlifyBodyLinkPre')}
-          <a
-            href={NETLIFY_PRIVACY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={linkClass}
-          >
-            {t('privacyNotice.netlifyBodyLinkText')}
-          </a>
-          {t('privacyNotice.netlifyBodyLinkPost')}
-        </>
-      ),
-    },
-    {
-      title: t('privacyNotice.gdprTitle'),
-      body: (
-        <>
-          {t('privacyNotice.gdprBody')} {t('privacyNotice.gdprBodyLinkPre')}
-          <a
-            href={DATATILSYNET_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={linkClass}
-          >
-            datatilsynet.no
-          </a>
-          {t('privacyNotice.gdprBodyLinkPost')}
-        </>
-      ),
-    },
-    {
-      title: t('privacyNotice.questionsTitle'),
-      body: (
-        <>
-          {t('privacyNotice.questionsBodyPre')}
-          <a href={`mailto:${EMAIL_ADDRESS}`} className={linkClass}>
-            {t('privacyNotice.questionsEmailLinkText')}
-          </a>
-          {t('privacyNotice.questionsBodyOr')}
-          <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>
-            LinkedIn
-          </a>
-          {t('privacyNotice.questionsBodyPost')}
-        </>
-      ),
-    },
-  ];
 
   const modalContent = (
     <>
@@ -99,12 +39,33 @@ export const PrivacyNoticeModal = ({ open, onOpenChange }: PrivacyNoticeModalPro
       </DialogHeader>
 
       <div className="space-y-4 py-2">
-        {sections.map(({ title, body }) => (
-          <div key={title}>
+        {privacyNoticeSections.map((section) => (
+          <div key={section.titleKey}>
             <h3 className="mb-1.5">
-              <Label className="text-[0.8rem] font-extrabold tracking-[0.06em]">{title}</Label>
+              <Label className="text-[0.8rem] font-extrabold tracking-[0.06em]">
+                {t(section.titleKey)}
+              </Label>
             </h3>
-            <P>{body}</P>
+            <P>
+              {section.bodyParts.map((part, i) =>
+                'key' in part ? (
+                  <span key={i}>{t(part.key)} </span>
+                ) : (
+                  <a
+                    key={i}
+                    href={part.link.href}
+                    className={linkClass}
+                    {...(part.link.external
+                      ? { target: '_blank', rel: 'noopener noreferrer' }
+                      : {})}
+                  >
+                    {part.link.isTranslationKey
+                      ? t(part.link.text as TranslationKey)
+                      : part.link.text}
+                  </a>
+                )
+              )}
+            </P>
           </div>
         ))}
       </div>
