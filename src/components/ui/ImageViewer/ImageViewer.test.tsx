@@ -3,6 +3,10 @@ import userEvent from '@testing-library/user-event';
 import { axe } from 'vitest-axe';
 import { ImageViewer } from './ImageViewer';
 
+vi.mock('@/hooks/useLanguage', () => ({
+  useLanguage: () => ({ lang: 'en', t: (key: string) => key }),
+}));
+
 vi.mock('@/hooks/useReducedMotion', () => ({
   useReducedMotion: () => ({ motionAllowed: false }),
 }));
@@ -47,7 +51,7 @@ describe('ImageViewer', () => {
     renderViewer();
     await user.click(screen.getByRole('button', { name: 'Open' }));
     expect(screen.getByRole('dialog')).toBeInTheDocument();
-    await user.click(screen.getByRole('button', { name: 'Close' }));
+    await user.click(screen.getByRole('button', { name: 'common.close' }));
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 

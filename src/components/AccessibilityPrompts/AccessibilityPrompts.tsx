@@ -56,7 +56,7 @@ export const AccessibilityPrompts = () => {
               setShowTransparency(false);
             }
           }}
-          className="px-3 py-1.5 text-sm bg-primary text-primary-foreground rounded hover:opacity-90 transition-opacity"
+          className="px-3 py-1.5 text-sm bg-primary text-primary-foreground rounded can-hover:hover:opacity-90 transition-opacity"
         >
           {t('accessibility.enable')}
         </button>
@@ -68,7 +68,7 @@ export const AccessibilityPrompts = () => {
               setShowTransparency(false);
             }
           }}
-          className="px-3 py-1.5 text-sm border border-border rounded hover:bg-muted transition-colors"
+          className="px-3 py-1.5 text-sm border border-border rounded can-hover:hover:bg-muted transition-colors"
         >
           {t('accessibility.keepOff')}
         </button>
