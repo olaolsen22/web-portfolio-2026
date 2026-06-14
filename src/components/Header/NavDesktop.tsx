@@ -22,7 +22,7 @@ export const NavDesktop = ({ t }: NavDesktopProps) => (
               href={href}
               className="group/navlink px-3 py-2 transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
-              <NavLink className="transition-colors group-hover/navlink:text-foreground">
+              <NavLink className="transition-colors can-hover:group-hover/navlink:text-foreground">
                 {t(key)}
               </NavLink>
             </NavigationMenuLink>
