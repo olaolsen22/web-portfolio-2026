@@ -31,10 +31,8 @@ export const NorwegianBanner = ({
     role="region"
     aria-label="Norsk språknotat"
     className={cn(
-      'fixed top-[5.3rem] left-0 right-0 z-[49] w-full border-b',
-      transparencyAllowed
-        ? 'backdrop-blur-xl backdrop-saturate-[1.6] border-border-mid'
-        : 'bg-background border-border'
+      'fixed top-[5.3rem] left-0 right-0 z-[49] w-full border-b border-rule',
+      transparencyAllowed ? 'backdrop-blur-xl backdrop-saturate-[1.6]' : 'bg-background'
     )}
     style={transparencyAllowed ? { backgroundColor: 'var(--nav-bg)' } : undefined}
   >
