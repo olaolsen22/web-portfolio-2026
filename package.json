@@ -26,7 +26,6 @@
     ]
   },
   "dependencies": {
-    "@fontsource-variable/geist": "^5.2.9",
     "@fontsource-variable/geist-mono": "^5.2.8",
     "@fontsource-variable/plus-jakarta-sans": "^5.2.8",
     "@radix-ui/react-dialog": "^1.1.15",
@@ -49,8 +48,6 @@
     "@storybook/react": "8.6.18",
     "@storybook/react-vite": "8.6.18",
     "@storybook/test": "8.6.18",
-    "@tailwindcss/container-queries": "^0.1.1",
-    "@tailwindcss/typography": "^0.5.19",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^14.3.1",
     "@testing-library/user-event": "^14.6.1",
