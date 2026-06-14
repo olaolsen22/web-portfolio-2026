@@ -13,7 +13,7 @@ interface ScaleInProps {
 export const ScaleIn = ({
   children,
   delay = 0,
-  duration = animation.duration.base,
+  duration = animation.duration.standard,
   className,
 }: ScaleInProps) => {
   const { motionAllowed } = useReducedMotion();
