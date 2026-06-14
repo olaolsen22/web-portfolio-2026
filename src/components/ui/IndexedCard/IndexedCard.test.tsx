@@ -46,7 +46,7 @@ describe('IndexedCard', () => {
           <p>Content</p>
         </IndexedCard>
       );
-      expect(screen.getByText('01')).toHaveClass('group-hover:opacity-100');
+      expect(screen.getByText('01')).toHaveClass('can-hover:group-hover:opacity-100');
     });
   });
 

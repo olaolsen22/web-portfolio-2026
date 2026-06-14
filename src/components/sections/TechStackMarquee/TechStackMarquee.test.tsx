@@ -15,6 +15,10 @@ vi.mock('@/hooks/useReducedMotion', () => ({
   useReducedMotion: () => ({ motionAllowed: true }),
 }));
 
+vi.mock('@/hooks/useReducedTransparency', () => ({
+  useReducedTransparency: () => ({ transparencyAllowed: true }),
+}));
+
 describe('TechStackMarquee', () => {
   it('renders without crashing', () => {
     const { container } = render(<TechStackMarquee />);

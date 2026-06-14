@@ -15,6 +15,10 @@ vi.mock('@/hooks/useReducedMotion', () => ({
   useReducedMotion: () => ({ motionAllowed: false }),
 }));
 
+vi.mock('@/hooks/useReducedTransparency', () => ({
+  useReducedTransparency: () => ({ transparencyAllowed: true }),
+}));
+
 const mockItem: SelectedWorkItem = {
   id: '1',
   title: 'Nordlys Dashboard',

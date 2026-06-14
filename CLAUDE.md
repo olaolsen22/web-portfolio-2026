@@ -247,6 +247,7 @@ Switch automatically between light/dark: `--brand`, `--brand-glow`, `--surface`,
 - Update test files when components are added or removed.
 - Don't rewrite existing tests unless necessary.
 - Co-locate tests: `ComponentName/ComponentName.tsx` + `ComponentName.test.tsx`.
+- **Always run the full test suite (`pnpm test --run`) after all changes are finished** — never skip this step.
 
 ---
 

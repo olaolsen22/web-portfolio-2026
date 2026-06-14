@@ -99,7 +99,7 @@ export const PrivacyNoticeModal = ({ open, onOpenChange }: PrivacyNoticeModalPro
                 />
               </DialogPrimitive.Overlay>
 
-              <DialogPrimitive.Content asChild forceMount>
+              <DialogPrimitive.Content asChild forceMount aria-describedby={undefined}>
                 {/* Wrapper owns centering; motion.div owns animation — avoids transform conflict */}
                 <div className="fixed left-1/2 top-1/2 z-50 w-[calc(100vw-2rem)] sm:max-w-xl -translate-x-1/2 -translate-y-1/2 focus:outline-none">
                   <motion.div

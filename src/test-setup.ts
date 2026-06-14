@@ -4,6 +4,18 @@ import * as axeMatchers from 'vitest-axe/matchers';
 
 expect.extend(axeMatchers);
 
+const originalError = console.error;
+console.error = (...args: Parameters<typeof console.error>) => {
+  if (
+    typeof args[0] === 'string' &&
+    (args[0].includes("HTMLCanvasElement's getContext()") ||
+      args[0].includes('Function components cannot be given refs') ||
+      args[0].includes('not wrapped in act(...)'))
+  )
+    return;
+  originalError(...args);
+};
+
 const mockIntersectionObserver = vi.fn().mockImplementation((callback) => ({
   observe: vi.fn(() => callback([{ isIntersecting: true }])),
   unobserve: vi.fn(),

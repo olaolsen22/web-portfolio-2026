@@ -15,6 +15,10 @@ vi.mock('@/hooks/useReducedMotion', () => ({
   useReducedMotion: () => ({ motionAllowed: false }),
 }));
 
+vi.mock('@/hooks/useReducedTransparency', () => ({
+  useReducedTransparency: () => ({ transparencyAllowed: true }),
+}));
+
 describe('Footer', () => {
   it('renders without crashing', () => {
     const { container } = render(<Footer />);
