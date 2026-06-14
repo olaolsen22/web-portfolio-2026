@@ -52,6 +52,6 @@ describe('JourneyCard', () => {
   it('index span has group-hover opacity class', () => {
     render(<JourneyCard index={1} item={mockItem} />);
     const indexSpan = screen.getByText('01');
-    expect(indexSpan).toHaveClass('group-hover:opacity-100');
+    expect(indexSpan).toHaveClass('can-hover:group-hover:opacity-100');
   });
 });
