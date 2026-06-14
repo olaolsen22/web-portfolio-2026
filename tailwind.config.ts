@@ -1,7 +1,5 @@
 import { breakpoints } from './src/utils/breakpoints';
 import type { Config } from 'tailwindcss';
-import typography from '@tailwindcss/typography';
-import containerQueries from '@tailwindcss/container-queries';
 import plugin from 'tailwindcss/plugin';
 
 export default {
@@ -71,9 +69,10 @@ export default {
           foreground: 'hsl(var(--card-foreground))',
         },
         brand: {
-          DEFAULT: '#10b981',
-          dark: '#059669',
+          DEFAULT: 'hsl(var(--brand))',
+          dark: 'hsl(var(--brand-dark))',
         },
+        'status-progress': 'hsl(var(--status-progress))',
         'border-mid': 'var(--border-mid)',
         rule: 'var(--rule)',
         surface: 'var(--surface)',
@@ -97,8 +96,6 @@ export default {
     },
   },
   plugins: [
-    typography,
-    containerQueries,
     plugin(({ addVariant }) => {
       addVariant('can-hover', '@media (hover: hover)');
     }),
