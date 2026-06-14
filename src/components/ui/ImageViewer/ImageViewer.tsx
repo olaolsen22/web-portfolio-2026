@@ -28,7 +28,7 @@ export const ImageViewer = ({ src, srcLight, alt, children }: ImageViewerProps) 
             <>
               <DialogPrimitive.Overlay asChild forceMount>
                 <motion.div
-                  className="fixed inset-0 z-50 bg-white/90 dark:bg-black/90"
+                  className="fixed inset-0 z-50 bg-background/90 backdrop-blur-sm"
                   initial={motionAllowed ? { opacity: 0 } : false}
                   animate={{ opacity: 1 }}
                   exit={motionAllowed ? { opacity: 0 } : undefined}
