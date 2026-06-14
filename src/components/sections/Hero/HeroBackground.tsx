@@ -1,15 +1,9 @@
-import { useMemo } from 'react';
 import { cn } from '@/utils';
+import { useIsLowEndDevice } from '@/hooks/useIsLowEndDevice';
 import styles from './HeroBackground.module.css';
 
 export const HeroBackground = () => {
-  const noPerf = useMemo(() => {
-    if (typeof navigator === 'undefined') return false;
-    const lowCores = navigator.hardwareConcurrency < 4;
-    const nav = navigator as Navigator & { deviceMemory?: number };
-    const lowRam = nav.deviceMemory !== undefined && nav.deviceMemory < 4;
-    return lowCores || lowRam;
-  }, []);
+  const noPerf = useIsLowEndDevice();
 
   return (
     <>
