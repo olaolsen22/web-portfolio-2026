@@ -2,6 +2,10 @@ import { render, screen } from '@testing-library/react';
 import { axe } from 'vitest-axe';
 import { WorkStatusCard } from './WorkStatusCard';
 
+vi.mock('@/hooks/useReducedTransparency', () => ({
+  useReducedTransparency: () => ({ transparencyAllowed: true }),
+}));
+
 describe('WorkStatusCard', () => {
   it('renders without crashing', () => {
     const { container } = render(<WorkStatusCard workStatus="Open to work" location="Norway" />);

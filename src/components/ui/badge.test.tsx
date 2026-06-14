@@ -2,6 +2,10 @@ import { render } from '@testing-library/react';
 import { axe } from 'vitest-axe';
 import { Badge } from './badge';
 
+vi.mock('@/hooks/useReducedTransparency', () => ({
+  useReducedTransparency: () => ({ transparencyAllowed: true }),
+}));
+
 const variants = ['default', 'secondary', 'destructive', 'outline', 'glass', 'stack'] as const;
 
 describe('Badge', () => {

@@ -10,6 +10,10 @@ vi.mock('@/hooks/useLanguage', () => ({
   }),
 }));
 
+vi.mock('@/hooks/useReducedTransparency', () => ({
+  useReducedTransparency: () => ({ transparencyAllowed: true }),
+}));
+
 describe('Hero', () => {
   it('renders without crashing', () => {
     const { container } = render(<Hero />);
