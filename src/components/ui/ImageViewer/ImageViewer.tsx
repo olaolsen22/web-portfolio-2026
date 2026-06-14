@@ -36,7 +36,7 @@ export const ImageViewer = ({ src, srcLight, alt, children }: ImageViewerProps) 
                 />
               </DialogPrimitive.Overlay>
 
-              <DialogPrimitive.Content asChild forceMount>
+              <DialogPrimitive.Content asChild forceMount aria-describedby={undefined}>
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 focus:outline-none">
                   <DialogPrimitive.Title className="sr-only">{alt}</DialogPrimitive.Title>
 
