@@ -1,7 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { createEvent, fireEvent, render, screen } from '@testing-library/react';
 import { axe } from 'vitest-axe';
 import { MotionProvider } from '@/context/MotionContext';
+import { trackEvent } from '@/utils/analytics';
 import { Connect } from './Connect';
+
+vi.mock('@/utils/analytics', () => ({ trackEvent: vi.fn() }));
 
 vi.mock('@/hooks/useLanguage', () => ({
   useLanguage: () => ({
@@ -57,5 +60,19 @@ describe('Connect', () => {
       expect(link).toHaveAttribute('target', '_blank');
       expect(link).toHaveAttribute('rel', 'noopener noreferrer');
     });
+  });
+
+  it('tracks clicks on each contact link', () => {
+    renderWithProviders(<Connect />);
+    // Prevent jsdom's unimplemented mailto: navigation — React's onClick still fires
+    const emailLink = screen.getByRole('link', { name: 'connect.email' });
+    const emailClick = createEvent.click(emailLink);
+    emailClick.preventDefault();
+    fireEvent(emailLink, emailClick);
+    fireEvent.click(screen.getByRole('link', { name: /connect\.github/ }));
+    fireEvent.click(screen.getByRole('link', { name: /connect\.linkedin/ }));
+    expect(trackEvent).toHaveBeenCalledWith('click-email');
+    expect(trackEvent).toHaveBeenCalledWith('click-github');
+    expect(trackEvent).toHaveBeenCalledWith('click-linkedin');
   });
 });
