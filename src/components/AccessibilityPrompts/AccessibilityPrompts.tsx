@@ -38,9 +38,9 @@ export const AccessibilityPrompts = () => {
   if (!showMotion && !showTransparency) return null;
 
   return (
-    <div
-      role="banner"
-      className="fixed bottom-0 inset-x-0 p-4 bg-card border-t border-border shadow-lg flex items-center justify-between gap-4"
+    <section
+      aria-label={t('accessibility.promptLabel')}
+      className="p-4 bg-card border-t border-border shadow-lg flex items-center justify-between gap-4"
     >
       <p className="text-sm">
         {showMotion ? t('accessibility.enableAnimations') : t('accessibility.enableTransparency')}
@@ -73,6 +73,6 @@ export const AccessibilityPrompts = () => {
           {t('accessibility.keepOff')}
         </button>
       </div>
-    </div>
+    </section>
   );
 };

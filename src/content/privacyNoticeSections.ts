@@ -1,6 +1,7 @@
 import type { TranslationKey } from '@/content';
 import { EMAIL_ADDRESS, LINKEDIN_URL } from '@/constants/links';
 
+const UMAMI_PRIVACY_URL = 'https://umami.is/privacy';
 const NETLIFY_PRIVACY_URL = 'https://www.netlify.com/privacy/';
 const DATATILSYNET_URL = 'https://www.datatilsynet.no/';
 
@@ -14,12 +15,35 @@ export interface PrivacyLink {
 export interface PrivacySection {
   titleKey: TranslationKey;
   bodyParts: Array<{ key: TranslationKey } | { link: PrivacyLink }>;
+  // Renders the allow / turn off control for detailed statistics under the body
+  consentControl?: boolean;
 }
 
 export const privacyNoticeSections: PrivacySection[] = [
   {
     titleKey: 'privacyNotice.whatSiteCollectsTitle',
     bodyParts: [{ key: 'privacyNotice.whatSiteCollectsBody' }],
+  },
+  {
+    titleKey: 'privacyNotice.analyticsTitle',
+    bodyParts: [
+      { key: 'privacyNotice.analyticsBody' },
+      { key: 'privacyNotice.analyticsBodyLinkPre' },
+      {
+        link: {
+          href: UMAMI_PRIVACY_URL,
+          text: 'privacyNotice.analyticsBodyLinkText',
+          isTranslationKey: true,
+          external: true,
+        },
+      },
+      { key: 'privacyNotice.analyticsBodyLinkPost' },
+    ],
+  },
+  {
+    titleKey: 'privacyNotice.detailedTitle',
+    bodyParts: [{ key: 'privacyNotice.detailedBody' }],
+    consentControl: true,
   },
   {
     titleKey: 'privacyNotice.netlifyTitle',
