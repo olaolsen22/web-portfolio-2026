@@ -104,6 +104,27 @@ describe('SelectedWorkCard', () => {
     expect(link).toHaveAttribute('target', '_blank');
   });
 
+  it('renders separate UI and API GitHub buttons when githubApiUrl is provided', () => {
+    render(
+      <SelectedWorkCard
+        index={1}
+        item={{
+          ...mockItem,
+          githubUrl: 'https://github.com/test/ui',
+          githubApiUrl: 'https://github.com/test/api',
+        }}
+      />
+    );
+    expect(screen.getByRole('link', { name: /selectedWork\.githubUi/i })).toHaveAttribute(
+      'href',
+      'https://github.com/test/ui'
+    );
+    expect(screen.getByRole('link', { name: /selectedWork\.githubApi/i })).toHaveAttribute(
+      'href',
+      'https://github.com/test/api'
+    );
+  });
+
   it('renders Demo button when demoUrl is provided', () => {
     render(
       <SelectedWorkCard index={1} item={{ ...mockItem, demoUrl: 'https://demo.example.com' }} />

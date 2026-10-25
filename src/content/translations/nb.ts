@@ -37,6 +37,8 @@ export const nb: Translations = {
       blueprinted: 'Planlagt',
     },
     github: 'GitHub',
+    githubUi: 'GitHub (UI)',
+    githubApi: 'GitHub (API)',
     demo: 'Demo',
     viewImage: 'Se fullstendig bilde',
   },

@@ -34,6 +34,8 @@ export interface Translations {
       blueprinted: string;
     };
     github: string;
+    githubUi: string;
+    githubApi: string;
     demo: string;
     viewImage: string;
   };
@@ -144,6 +146,8 @@ export const en: Translations = {
       blueprinted: 'Blueprinted',
     },
     github: 'GitHub',
+    githubUi: 'GitHub (UI)',
+    githubApi: 'GitHub (API)',
     demo: 'Demo',
     viewImage: 'View full image',
   },

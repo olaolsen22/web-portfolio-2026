@@ -10,6 +10,7 @@ export interface SelectedWorkItem {
   imageUrlLight?: string;
   imageAlt: string;
   githubUrl?: string;
+  githubApiUrl?: string;
   demoUrl?: string;
 }
 
@@ -27,6 +28,19 @@ export const selectedWorkItems: Record<'en' | 'nb', SelectedWorkItem[]> = {
       imageAlt: "Screenshot of Ola O.'s personal developer portfolio website",
       githubUrl: 'https://github.com/olaolsen22/web-portfolio-2026',
       demoUrl: 'https://olao-dev.netlify.app/',
+    },
+    {
+      id: 'project-job-hunt-assistant',
+      title: 'Job Hunt Assistant',
+      status: 'live',
+      tags: ['Vue', 'TypeScript', '.NET', 'Claude'],
+      description:
+        'Tracks job applications and their stages, and uses AI to assess how well a posting fits you. Includes a built-in CV and cover letter generator with AI refinement, plus a profile of your skills and experience for quick application tailoring.',
+      imageUrl: '/images/projects/project-job-hunt-assistant-dark.jpg',
+      imageUrlLight: '/images/projects/project-job-hunt-assistant-light.jpg',
+      imageAlt: 'Screenshot of the Job Hunt Assistant application',
+      githubUrl: 'https://github.com/olaolsen22/job-hunt-assistant-ui-sept-2026',
+      githubApiUrl: 'https://github.com/olaolsen22/job-hunt-assistant-api-sept-2026',
     },
     {
       id: 'project-habit-tracker',
@@ -64,6 +78,19 @@ export const selectedWorkItems: Record<'en' | 'nb', SelectedWorkItem[]> = {
       imageAlt: 'Skjermbilde av Ola O.s personlige porteføljenettsted',
       githubUrl: 'https://github.com/olaolsen22/web-portfolio-2026',
       demoUrl: 'https://olaolsen22.github.io/web-portfolio-2026',
+    },
+    {
+      id: 'project-job-hunt-assistant',
+      title: 'Jobbsøkerassistent',
+      status: 'live',
+      tags: ['Vue', 'TypeScript', '.NET', 'Claude'],
+      description:
+        'Holder oversikt over jobbsøknader og hvilket stadium de er i, og bruker AI til å vurdere hvor godt en stilling passer deg. Har innebygd generator for CV og søknadsbrev med AI-forbedring, samt en profil med ferdigheter og erfaring som gjør det enkelt å tilpasse søknader.',
+      imageUrl: '/images/projects/project-job-hunt-assistant-dark.jpg',
+      imageUrlLight: '/images/projects/project-job-hunt-assistant-light.jpg',
+      imageAlt: 'Skjermbilde av Jobbsøkerassistent-applikasjonen',
+      githubUrl: 'https://github.com/olaolsen22/job-hunt-assistant-ui-sept-2026',
+      githubApiUrl: 'https://github.com/olaolsen22/job-hunt-assistant-api-sept-2026',
     },
     {
       id: 'project-habit-tracker',

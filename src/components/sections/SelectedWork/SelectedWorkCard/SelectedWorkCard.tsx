@@ -35,6 +35,15 @@ export const SelectedWorkCard = ({ index, item, className }: SelectedWorkCardPro
   const { t } = useLanguage();
   const { motionAllowed } = useReducedMotion();
 
+  const hasApiRepo = Boolean(item.githubApiUrl);
+  const githubLinks = [
+    item.githubUrl && {
+      url: item.githubUrl,
+      label: t(hasApiRepo ? 'selectedWork.githubUi' : 'selectedWork.github'),
+    },
+    item.githubApiUrl && { url: item.githubApiUrl, label: t('selectedWork.githubApi') },
+  ].filter((link): link is { url: string; label: string } => Boolean(link));
+
   return (
     <IndexedCard
       index={index}
@@ -88,27 +97,28 @@ export const SelectedWorkCard = ({ index, item, className }: SelectedWorkCardPro
           ))}
         </ul>
         <P className="leading-[1.72] max-w-[520px]">{item.description}</P>
-        {(item.githubUrl || item.demoUrl) && (
+        {(item.githubUrl || item.githubApiUrl || item.demoUrl) && (
           <div className="flex flex-row gap-2 mt-1 md:mt-auto">
-            {item.githubUrl && (
+            {githubLinks.map(({ url, label }) => (
               <Button
+                key={url}
                 variant="outline"
                 size="xs"
                 asChild
                 className="flex-1 md:flex-none [&_svg]:size-[15px]"
               >
                 <a
-                  href={item.githubUrl}
+                  href={url}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackEvent('click-project-github', { project: item.title })}
                 >
                   <GitHubIcon />
-                  {t('selectedWork.github')}
+                  {label}
                   <ArrowUpRight aria-hidden="true" />
                 </a>
               </Button>
-            )}
+            ))}
             {item.demoUrl && (
               <Button
                 variant="outline"
