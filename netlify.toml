@@ -2,6 +2,19 @@
   command = "pnpm build"
   publish = "dist"
 
+# Client-side analytics (after consent) only load on production deploys — not locally, in deploy
+# previews or branch deploys. The server-side page view (netlify/edge-functions/pageview) checks
+# the deploy context itself, since edge functions can't read these variables at runtime.
+[context.production.environment]
+  VITE_UMAMI_WEBSITE_ID = "5dd72d14-22e0-4d69-93ce-4c862e1f95c5"
+
+# First-party path so ad/DNS blockers don't drop the tracker; /_v/api/send is the
+# analytics-proxy edge function
+[[redirects]]
+  from = "/_v/script.js"
+  to = "https://cloud.umami.is/script.js"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]

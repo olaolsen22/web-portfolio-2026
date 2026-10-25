@@ -2,8 +2,10 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { LanguageProvider } from './context/LanguageContext';
 import { MotionProvider } from './context/MotionContext';
 import { useSiteTitle } from './hooks/useSiteTitle';
+import { useSectionViewTracking } from './hooks/useSectionViewTracking';
 import { SkipLink } from './components/SkipLink/SkipLink';
 import { AccessibilityPrompts } from './components/AccessibilityPrompts/AccessibilityPrompts';
+import { AnalyticsConsentPrompt } from './components/AnalyticsConsentPrompt/AnalyticsConsentPrompt';
 import { Header } from './components/Header/Header';
 import { Hero } from './components/sections/Hero/Hero';
 import { TechStackMarquee } from './components/sections/TechStackMarquee/TechStackMarquee';
@@ -16,6 +18,7 @@ const queryClient = new QueryClient();
 
 const PortfolioApp = () => {
   useSiteTitle();
+  useSectionViewTracking();
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SkipLink />
@@ -30,7 +33,11 @@ const PortfolioApp = () => {
         <Connect />
       </main>
       <Footer />
-      <AccessibilityPrompts />
+      {/* Shared bottom slot so the prompts stack instead of overlapping */}
+      <div className="fixed inset-x-0 bottom-0 z-40 flex flex-col">
+        <AccessibilityPrompts />
+        <AnalyticsConsentPrompt />
+      </div>
     </div>
   );
 };

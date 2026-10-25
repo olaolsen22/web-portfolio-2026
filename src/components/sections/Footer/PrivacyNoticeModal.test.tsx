@@ -3,6 +3,15 @@ import userEvent from '@testing-library/user-event';
 import { axe } from 'vitest-axe';
 import { PrivacyNoticeModal } from './PrivacyNoticeModal';
 
+const consentState = vi.hoisted(() => ({
+  consent: null as 'granted' | 'denied' | null,
+  available: true,
+  browserOptOut: false,
+  setConsent: vi.fn(),
+}));
+
+vi.mock('@/hooks/useAnalyticsConsent', () => ({ useAnalyticsConsent: () => consentState }));
+
 vi.mock('@/hooks/useLanguage', () => ({
   useLanguage: () => ({
     t: (key: string) => key,
@@ -20,6 +29,13 @@ vi.mock('@/hooks/useReducedTransparency', () => ({
 }));
 
 describe('PrivacyNoticeModal', () => {
+  afterEach(() => {
+    consentState.consent = null;
+    consentState.available = true;
+    consentState.browserOptOut = false;
+    consentState.setConsent.mockClear();
+  });
+
   it('renders without crashing when closed', () => {
     const { container } = render(<PrivacyNoticeModal open={false} onOpenChange={vi.fn()} />);
     expect(container).toBeTruthy();
@@ -45,9 +61,11 @@ describe('PrivacyNoticeModal', () => {
     expect(screen.getByText('privacyNotice.title')).toBeInTheDocument();
   });
 
-  it('renders all 4 section headings when open', () => {
+  it('renders all 6 section headings when open', () => {
     render(<PrivacyNoticeModal open={true} onOpenChange={vi.fn()} />);
     expect(screen.getByText('privacyNotice.whatSiteCollectsTitle')).toBeInTheDocument();
+    expect(screen.getByText('privacyNotice.analyticsTitle')).toBeInTheDocument();
+    expect(screen.getByText('privacyNotice.detailedTitle')).toBeInTheDocument();
     expect(screen.getByText('privacyNotice.netlifyTitle')).toBeInTheDocument();
     expect(screen.getByText('privacyNotice.gdprTitle')).toBeInTheDocument();
     expect(screen.getByText('privacyNotice.questionsTitle')).toBeInTheDocument();
@@ -68,6 +86,14 @@ describe('PrivacyNoticeModal', () => {
     render(<PrivacyNoticeModal open={true} onOpenChange={onOpenChange} />);
     await user.keyboard('{Escape}');
     expect(onOpenChange).toHaveBeenCalledWith(false);
+  });
+
+  it('renders Umami privacy policy link with correct attributes', () => {
+    render(<PrivacyNoticeModal open={true} onOpenChange={vi.fn()} />);
+    const link = screen.getByRole('link', { name: 'privacyNotice.analyticsBodyLinkText' });
+    expect(link).toHaveAttribute('href', 'https://umami.is/privacy');
+    expect(link).toHaveAttribute('target', '_blank');
+    expect(link).toHaveAttribute('rel', 'noopener noreferrer');
   });
 
   it('renders Netlify privacy policy link with correct attributes', () => {
@@ -93,5 +119,45 @@ describe('PrivacyNoticeModal', () => {
     expect(emailLink).toHaveAttribute('href', 'mailto:olatalabaolsen@gmail.com');
     expect(linkedInLink).toHaveAttribute('href', 'https://www.linkedin.com/in/ola-olsen-442b07a3/');
     expect(linkedInLink).toHaveAttribute('target', '_blank');
+  });
+});
+
+describe('PrivacyNoticeModal consent control', () => {
+  afterEach(() => {
+    consentState.consent = null;
+    consentState.available = true;
+    consentState.browserOptOut = false;
+    consentState.setConsent.mockClear();
+  });
+
+  it('lets visitors allow detailed statistics', async () => {
+    const user = userEvent.setup();
+    render(<PrivacyNoticeModal open={true} onOpenChange={vi.fn()} />);
+    expect(screen.getByText('privacyNotice.consentStatusOff')).toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: 'privacyNotice.consentAllow' }));
+    expect(consentState.setConsent).toHaveBeenCalledWith('granted');
+  });
+
+  it('lets visitors withdraw consent', async () => {
+    consentState.consent = 'granted';
+    const user = userEvent.setup();
+    render(<PrivacyNoticeModal open={true} onOpenChange={vi.fn()} />);
+    expect(screen.getByText('privacyNotice.consentStatusOn')).toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: 'privacyNotice.consentWithdraw' }));
+    expect(consentState.setConsent).toHaveBeenCalledWith('denied');
+  });
+
+  it('explains instead of offering a choice when the browser sends an opt-out signal', () => {
+    consentState.available = false;
+    consentState.browserOptOut = true;
+    render(<PrivacyNoticeModal open={true} onOpenChange={vi.fn()} />);
+    expect(screen.getByText('privacyNotice.consentBrowserSignal')).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'privacyNotice.consentAllow' })).toBeNull();
+  });
+
+  it('hides the control where analytics never runs', () => {
+    consentState.available = false;
+    render(<PrivacyNoticeModal open={true} onOpenChange={vi.fn()} />);
+    expect(screen.queryByText('privacyNotice.consentStatusOff')).toBeNull();
   });
 });

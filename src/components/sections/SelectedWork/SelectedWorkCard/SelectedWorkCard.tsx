@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { GitHubIcon } from '@/components/icons/BrandIcons';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
+import { trackEvent } from '@/utils/analytics';
 import { SelectedWorkCardImage } from './SelectedWorkCardImage';
 import type { TranslationKey } from '@/content';
 import type { SelectedWorkItem, WorkStatus } from '@/content/selectedWorkItems';
@@ -96,7 +97,12 @@ export const SelectedWorkCard = ({ index, item, className }: SelectedWorkCardPro
                 asChild
                 className="flex-1 md:flex-none [&_svg]:size-[15px]"
               >
-                <a href={item.githubUrl} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={item.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent('click-project-github', { project: item.title })}
+                >
                   <GitHubIcon />
                   {t('selectedWork.github')}
                   <ArrowUpRight aria-hidden="true" />
@@ -110,7 +116,12 @@ export const SelectedWorkCard = ({ index, item, className }: SelectedWorkCardPro
                 asChild
                 className="flex-1 md:flex-none [&_svg]:size-[15px]"
               >
-                <a href={item.demoUrl} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={item.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent('click-project-demo', { project: item.title })}
+                >
                   <ExternalLink aria-hidden="true" />
                   {t('selectedWork.demo')}
                 </a>

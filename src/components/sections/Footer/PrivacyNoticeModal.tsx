@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
+import { useAnalyticsConsent } from '@/hooks/useAnalyticsConsent';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { useReducedTransparency } from '@/hooks/useReducedTransparency';
 import { cn } from '@/utils';
@@ -18,6 +19,31 @@ interface PrivacyNoticeModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
+
+// Lets visitors give or withdraw consent for detailed statistics after closing the prompt
+const ConsentControl = () => {
+  const { t } = useLanguage();
+  const { consent, setConsent, available, browserOptOut } = useAnalyticsConsent();
+
+  if (browserOptOut) return <P className="mt-2">{t('privacyNotice.consentBrowserSignal')}</P>;
+  if (!available) return null;
+
+  const granted = consent === 'granted';
+  return (
+    <div className="mt-2 flex flex-wrap items-center gap-3">
+      <P aria-live="polite" className="font-medium text-foreground">
+        {t(granted ? 'privacyNotice.consentStatusOn' : 'privacyNotice.consentStatusOff')}
+      </P>
+      <Button
+        variant="outline"
+        size="sm"
+        onClick={() => setConsent(granted ? 'denied' : 'granted')}
+      >
+        {t(granted ? 'privacyNotice.consentWithdraw' : 'privacyNotice.consentAllow')}
+      </Button>
+    </div>
+  );
+};
 
 export const PrivacyNoticeModal = ({ open, onOpenChange }: PrivacyNoticeModalProps) => {
   const { t } = useLanguage();
@@ -66,6 +92,7 @@ export const PrivacyNoticeModal = ({ open, onOpenChange }: PrivacyNoticeModalPro
                 )
               )}
             </P>
+            {section.consentControl && <ConsentControl />}
           </div>
         ))}
       </div>

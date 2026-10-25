@@ -17,7 +17,7 @@ console.error = (...args: Parameters<typeof console.error>) => {
 };
 
 const mockIntersectionObserver = vi.fn().mockImplementation((callback) => ({
-  observe: vi.fn(() => callback([{ isIntersecting: true }])),
+  observe: vi.fn((target: Element) => callback([{ isIntersecting: true, target }])),
   unobserve: vi.fn(),
   disconnect: vi.fn(),
 }));

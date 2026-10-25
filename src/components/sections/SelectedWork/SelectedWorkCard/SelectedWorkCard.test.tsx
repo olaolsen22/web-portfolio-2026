@@ -1,7 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { axe } from 'vitest-axe';
+import { trackEvent } from '@/utils/analytics';
 import { SelectedWorkCard } from './SelectedWorkCard';
 import type { SelectedWorkItem } from '@/content/selectedWorkItems';
+
+vi.mock('@/utils/analytics', () => ({ trackEvent: vi.fn() }));
 
 vi.mock('@/hooks/useLanguage', () => ({
   useLanguage: () => ({
@@ -123,6 +126,25 @@ describe('SelectedWorkCard', () => {
     );
     expect(screen.getByRole('link', { name: /selectedWork\.github/i })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /selectedWork\.demo/i })).toBeInTheDocument();
+  });
+
+  it('tracks clicks on the project links with the project title', () => {
+    render(
+      <SelectedWorkCard
+        index={1}
+        item={{
+          ...mockItem,
+          githubUrl: 'https://github.com/test/repo',
+          demoUrl: 'https://demo.example.com',
+        }}
+      />
+    );
+    fireEvent.click(screen.getByRole('link', { name: /selectedWork\.github/i }));
+    fireEvent.click(screen.getByRole('link', { name: /selectedWork\.demo/i }));
+    expect(trackEvent).toHaveBeenCalledWith('click-project-github', {
+      project: 'Nordlys Dashboard',
+    });
+    expect(trackEvent).toHaveBeenCalledWith('click-project-demo', { project: 'Nordlys Dashboard' });
   });
 
   it('renders no link buttons when neither URL is provided', () => {

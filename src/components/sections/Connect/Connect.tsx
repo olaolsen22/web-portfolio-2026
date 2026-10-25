@@ -7,6 +7,7 @@ import { H2Display, Muted } from '@/components/ui/typography';
 import { GitHubIcon, LinkedInIcon } from '@/components/icons/BrandIcons';
 import { ConnectBackground } from './ConnectBackground';
 import { EMAIL_ADDRESS, GITHUB_URL, LINKEDIN_URL } from '@/constants/links';
+import { trackEvent } from '@/utils/analytics';
 
 export const Connect = () => {
   const { t } = useLanguage();
@@ -44,7 +45,7 @@ export const Connect = () => {
               asChild
               className="w-full sm:w-auto will-change-[transform] [&_svg]:size-[18px]"
             >
-              <a href={`mailto:${EMAIL_ADDRESS}`}>
+              <a href={`mailto:${EMAIL_ADDRESS}`} onClick={() => trackEvent('click-email')}>
                 <Mail aria-hidden="true" />
                 {t('connect.email')}
               </a>
@@ -55,7 +56,12 @@ export const Connect = () => {
               asChild
               className="w-full sm:w-auto will-change-[transform] [&_svg]:size-[18px]"
             >
-              <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent('click-github')}
+              >
                 <GitHubIcon />
                 {t('connect.github')}
                 <ArrowUpRight aria-hidden="true" />
@@ -67,7 +73,12 @@ export const Connect = () => {
               asChild
               className="w-full sm:w-auto will-change-[transform] [&_svg]:size-[18px]"
             >
-              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent('click-linkedin')}
+              >
                 <LinkedInIcon />
                 {t('connect.linkedin')}
                 <ArrowUpRight aria-hidden="true" />

@@ -137,14 +137,16 @@ Switch automatically between light/dark: `--brand`, `--brand-glow`, `--surface`,
 
 ## Hooks & Context
 
-| Hook                       | Returns                                          |
-| -------------------------- | ------------------------------------------------ |
-| `useLanguage()`            | lang, setLang, t() for translations              |
-| `useDarkMode()`            | isDark, toggle()                                 |
-| `useReducedMotion()`       | motionAllowed, hasOSReduction, setUserPref       |
-| `useReducedTransparency()` | transparencyAllowed, hasOSReduction, setUserPref |
-| `useGitHubRepos()`         | React Query hook for GitHub repos                |
-| `useSiteTitle()`           | Sets document.title from translations reactively |
+| Hook                       | Returns                                                             |
+| -------------------------- | ------------------------------------------------------------------- |
+| `useLanguage()`            | lang, setLang, t() for translations                                 |
+| `useDarkMode()`            | isDark, toggle()                                                    |
+| `useReducedMotion()`       | motionAllowed, hasOSReduction, setUserPref                          |
+| `useReducedTransparency()` | transparencyAllowed, hasOSReduction, setUserPref                    |
+| `useGitHubRepos()`         | React Query hook for GitHub repos                                   |
+| `useSiteTitle()`           | Sets document.title from translations reactively                    |
+| `useSectionViewTracking()` | Sends a `view-<id>` analytics event per nav section (after consent) |
+| `useAnalyticsConsent()`    | consent, setConsent, available, browserOptOut                       |
 
 **Providers** (in App.tsx): `LanguageProvider` → `MotionProvider` → app content
 
@@ -152,24 +154,28 @@ Switch automatically between light/dark: `--brand`, `--brand-glow`, `--surface`,
 
 ## Where to Find Things
 
-| What                                          | Where                                                              |
-| --------------------------------------------- | ------------------------------------------------------------------ |
-| Translations (EN/NB)                          | `src/content/translations/`                                        |
-| Translation key type                          | `src/content/index.ts` → `TranslationKey`                          |
-| All text, content, and data                   | `src/content/` (journeyItems, selectedWorkItems, techStackSkills)  |
-| External URLs (GitHub, LinkedIn, email)       | `src/constants/links.ts`                                           |
-| Nav link definitions                          | `src/constants/nav.ts`                                             |
-| CSS custom properties / shadcn tokens         | `src/styles/globals.css`                                           |
-| Breakpoints (single source of truth)          | `src/utils/breakpoints.ts`                                         |
-| Animation config (durations, easing, stagger) | `src/utils/animationConfig.ts`                                     |
-| `cn()` class utility                          | `src/utils/cn.ts`                                                  |
-| shadcn components                             | `src/components/ui/`                                               |
-| Animation wrappers                            | `src/components/animations/`                                       |
-| Page sections                                 | `src/components/sections/`                                         |
-| Custom hooks                                  | `src/hooks/`                                                       |
-| Context providers                             | `src/context/LanguageContext.tsx`, `src/context/MotionContext.tsx` |
-| Icon components                               | `src/components/icons/BrandIcons.tsx`                              |
-| GitHub API types                              | `src/types/github.ts`                                              |
+| What                                               | Where                                                              |
+| -------------------------------------------------- | ------------------------------------------------------------------ |
+| Translations (EN/NB)                               | `src/content/translations/`                                        |
+| Translation key type                               | `src/content/index.ts` → `TranslationKey`                          |
+| All text, content, and data                        | `src/content/` (journeyItems, selectedWorkItems, techStackSkills)  |
+| External URLs (GitHub, LinkedIn, email)            | `src/constants/links.ts`                                           |
+| Nav link definitions                               | `src/constants/nav.ts`                                             |
+| CSS custom properties / shadcn tokens              | `src/styles/globals.css`                                           |
+| Breakpoints (single source of truth)               | `src/utils/breakpoints.ts`                                         |
+| Animation config (durations, easing, stagger)      | `src/utils/animationConfig.ts`                                     |
+| `cn()` class utility                               | `src/utils/cn.ts`                                                  |
+| shadcn components                                  | `src/components/ui/`                                               |
+| Animation wrappers                                 | `src/components/animations/`                                       |
+| Page sections                                      | `src/components/sections/`                                         |
+| Custom hooks                                       | `src/hooks/`                                                       |
+| Context providers                                  | `src/context/LanguageContext.tsx`, `src/context/MotionContext.tsx` |
+| Icon components                                    | `src/components/icons/BrandIcons.tsx`                              |
+| GitHub API types                                   | `src/types/github.ts`                                              |
+| Analytics (`loadAnalytics`, `trackEvent`, consent) | `src/utils/analytics.ts`                                           |
+| Server-side page view (no consent needed)          | `netlify/edge-functions/pageview/`                                 |
+| Analytics proxy (Umami collect endpoint)           | `netlify/edge-functions/analytics-proxy/`                          |
+| Analytics consent prompt                           | `src/components/AnalyticsConsentPrompt/`                           |
 
 ---
 
